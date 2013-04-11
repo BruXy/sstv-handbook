@@ -1,0 +1,2 @@
+scp $1 rxsat.sh.cvut.cz:/var/www/html/file_repository/
+

@@ -1,0 +1,433 @@
+\startchapter
+[title={Ham radio image\crlf operations},
+list={Ham radio image operations}] 
+
+%\chapter{Ham radio image\crlf operations}
+
+SSTV and radiofax broadcasting has their own rules, as well as other 
+communication modes. If you already have a station equipped with some
+SSTV device and you are familiar with your SSTV software and have 
+TRX interfaced with computer, you can start your image operations.
+
+The ideal beginning is to ask experienced operator for a first test
+QSO. During this first QSO you or your partner can reveal some
+problems like bad settings of synchronization rates or noise 
+affecting your computer signal or another problem you cannot reveal 
+yourself. You can also contact your local SSTV party for help.
+
+International Amateur Radio Union (IARU) recommends usage of 
+amateur bands and recommends specified frequencies for voice,
+digital and image operations. Latest band plans dates of 
+March 2009. For I.T.U. region I (Europe, Africa and  Middle East and
+Northern Asia) there are recommended frequencies \in[tab:sstvfreq]{in
+table}.
+
+\placetable[here][tab:sstvfreq]{Band plan recommendations for image communication.}
+{
+\bTABLE[offset=\dimexpr1mm+.5pt]
+\setupTABLE[column][1][align=center,alignmentcharacter={.},aligncharacter=yes]
+\bTABLEhead
+\bTR\bTH Frequency\eTH\bTH[align=center] Recommendation\eTH\eTR
+\eTABLEhead
+\bTABLEbody
+\bTR\bTD 	3,735\,kHz  \eTD\bTD  center of activity       \eTD\eTR
+\bTR\bTD 	7,165\,kHz  \eTD\bTD  center of activity (previously 7\,030~--7\,040\,kHz)  \eTD\eTR
+\bTR\bTD    14,230\,kHz  \eTD\bTD  center of activity  \eTD\eTR
+\bTR\bTD    21,340\,kHz  \eTD\bTD  center of activity  \eTD\eTR
+\bTR\bTD    28,680\,kHz  \eTD\bTD  center of activity  \eTD\eTR
+\bTR\bTD   144,500\,kHz  \eTD\bTD  calling frequency for SSTV    \eTD\eTR
+\bTR\bTD   432,500\,kHz  \eTD\bTD  narrowband SSTV   \eTD\eTR
+\bTR\bTD   433,400\,kHz  \eTD\bTD  SSTV (FM/AFSK)    \eTD\eTR
+\eTABLEbody
+\eTABLE
+}
+
+The usage of side band is same like for voice operations,
+on bands below 10\,MHz it is LSB and for above bands it is USB.
+
+Before you start calling CQ make sure that chosen frequency and its
+neighborhood are free. SSTV operations are recommended in same sections of
+bands as voice communication and other modes so it is very unpleasant to
+interference each other. So before you start transmission ask on chosen
+frequency: \uv{Is this frequency free for SSTV?} and again listen if the
+frequency is really free. There is unpleasant feature of some bands, e.\,g. 20
+meters (14\,MHz), that closer stations we can't detect, although only a noise
+sounds from speakers doesn't mean that no connection is make on the frequency. 
+
+There are centre of activities recommended on all bands, so for
+stations we should look around these frequencies. They are also 
+can be used as calling frequency and after the station calling CQ on
+the frequency makes contact, the both station should tune to another
+free frequency (QSY) within the SSB segment. 
+
+Unfortunately, reality does not comply with this, so situation
+on very crowded band 20 meters is such, that stations are glued
+to each other around 14,230\,kHz, they are interfering each other
+and weaker long distance stations are noised by undisciplined
+nearer stations. If you find that there is activity tune to another
+frequency at least $\pm3$\,kHz. Good practice is chose frequency near
+centra of activity in 3kHz steps, e.g. on 15 meters:
+
+\startalignment[center,offset=1em]
+\ldots{} 21,334 \quad 21,337 \quad {\bf 21,340} \quad 21,343 \quad 21,346 \ldots
+\stopalignment
+
+%\let\normalunderbar\underbar
+%\def\underbar#1{\normalunderbar{#1\hskip\zeropoint\relax}}
+
+There is great probability to find stations calling CQ or your own CQ will be
+heard by the other side. You can call CQ by sending the image in the desired
+SSTV mode. The image must contain code CQ. It is good practice to place CQ test
+to the bottom of a picture, so a station that tunes to the frequency later
+finds what is going on. If you call CQ on calling frequencu add code QSY
+(Change to transmission on another frequency [(or on ${\underbar
+~~~~~~~~}$\,kHz]) and specify frequency where you can continue the QSO.
+
+An answering to CQ call is possible in two ways. The first one is that you
+answer by sending the image always in the same mode as called station. Of
+course, listen first that they are not another answering station. Add the call
+signs, e.\,g. {\ss OK1AAA de OK2BBB} and report RSV into your picture. The
+second method, which is less used, you can contact the station by voice and
+than send your image.
+
+Beyond that it depends on your choice what style you will prefer when you make
+the SSTV connection. It is possible to communicate only in SSTV, when all
+informations are transmitted in pictures or use SSTV as addition for voice
+operations, when both stations during QSO change few images. First way prefers
+mainly European stations, but in northern America is preferred second one for
+making QSOs. SSTV operation is closely linked with voice operation and although
+\uv{one picture can say thousand words}, it is sometimes more effective to  use
+the microphone for communication. In particular, if we enter into an ongoing
+QSO or calling party of more stations it is preferred to call firstly by voice
+before you send an image.
+
+In earlier times operators before sending image said the mode they are
+use, but now the SSTV software can automatically detect modes during
+transmission and the announcing mode is obsolete.
+
+\placefigure[][none]{Sample received SSTV images for your inspiration.}
+{
+	\externalfigure[ostatni/obr/prijate_obrazky.jpg][width=\makeupwidth]
+}
+
+Broadcast images can contain almost everything, do not forget
+to send your own image or photograph of hamshack, your equipment 
+and QTH. You can also add descriptive texts. It is suitable to get
+a video digitizer or small webcam and broadcast live images. 
+
+I do not recommend send images which may be distorted during 
+transmission like fractals, stereograms and contain a lot of details,
+which is lost due to analog transmission. Keep in mind that some
+picture topics might embarrass your QSO partner.
+
+Texts in picture should by written by some nice readable
+font. Choose a color that has enough contrast with the image
+background. It is good practice to add contrast edge to letters.
+Note, that conditions on the opposite side is not always perfect
+and it should be hard to decipher small letters in noisy image.
+
+\section{The reporting system}
+
+The message about report contains info about~-- readability, signal
+strength and picture quality report. The report message is transerred
+as a three-letter code RSV (Readability, Strength, Video),
+see~\in{table}[tab:rsv].
+
+\startdescr{Readability} -- shows quality of signal reception in 5 degrees.
+\stopdescr
+
+\startdescr{Signal strength} -- describes strength of received signal in 9 degrees.
+Tool to determine the strength is measuring instrument called S-meter,
+which is part of most receivers. Absolute deviation of his pointer is
+not very good indication, because by the S-meter we can only compare
+the signal with anothers in current conditions on a band.
+\stopdescr
+
+\startdescr{Video} -- the quality of received image you can consider visually
+in 5 degrees, see \in{fig.}[fig:view]. The same method is used in ATV  picture
+quality reporting system.
+\stopdescr
+
+\placetable[][tab:rsv]{Signal reporting with RSV code.}
+{
+\bTABLE[offset=\dimexpr1mm+.5pt]\tfx
+\bTABLEhead
+\bTR[align=center]
+	\bTH \eTH
+	\bTH R -- Readability\eTH
+	\bTH S -- Sig. strength\eTH
+	\bTH V -- Video\eTH
+\eTR
+\eTABLEhead
+\bTABLEbody
+\bTR \bTD 1\eTD \bTD Unreadable\eTD                                        \bTD Faint signal, barely perceptible\eTD \bTD Barely perceptible\eTD\eTR
+\bTR \bTD 2\eTD \bTD Barely readable, occasional words distinguishable\eTD \bTD Very weak\eTD                        \bTD Poor\eTD\eTR
+\bTR \bTD 3\eTD \bTD Readable with considerable difficulty\eTD             \bTD Weak\eTD                             \bTD Fair\eTD\eTR
+\bTR \bTD 4\eTD \bTD Readable with practically no difficulty\eTD           \bTD Fair\eTD                             \bTD Good\eTD\eTR
+\bTR \bTD 5\eTD \bTD Perfectly readable\eTD                                \bTD Fairly good\eTD                      \bTD Excellent\eTD\eTR
+\bTR \bTD 6\eTD \bTD \eTD                                                  \bTD Good\eTD                              \bTD \eTD  \eTR
+\bTR \bTD 7\eTD \bTD \eTD                                                  \bTD Moderately strong\eTD                 \bTD \eTD \eTR
+\bTR \bTD 8\eTD \bTD \eTD                                                  \bTD Strong\eTD                            \bTD \eTD \eTR
+\bTR \bTD 9\eTD \bTD \eTD                                                  \bTD Very strong signals\eTD                \bTD \eTD \eTR
+\eTABLEbody
+\eTABLE
+}
+
+The report can expand information on interference (QRM, QRN) or if the image is
+slanted add entry {\ss SLANT}.  The example report is {\ss RSV 595} when the
+reception is awesome.
+
+
+\placefigure[][fig:view]{Picture quality reporting system.}
+{
+	\startcombination[3*1]
+{\externalfigure[ostatni/obr/p1.png][width=0.3\makeupwidth]}{Barely perceptible}
+{\externalfigure[ostatni/obr/p2.png][width=0.3\makeupwidth]}{Poor}
+{\externalfigure[ostatni/obr/p3.png][width=0.3\makeupwidth]}{Fair}
+	\stopcombination
+	
+	\startcombination[2*1]
+{\externalfigure[ostatni/obr/p4.png][width=0.3\makeupwidth]}{Good}
+{\externalfigure[ostatni/obr/p5.png][width=0.3\makeupwidth]}{Excellent}
+	\stopcombination
+}
+
+\section{SSTV not only for hams}
+
+The SSTV found application in other sectors in the past, mainly due to
+commercial production equipment destined for amateurs, and image
+transfer by phone.
+
+Perhaps the most notable applications is the use of SSTV to monitor
+active Volcano \cite{volcano}. U.S. Geological Survey installed in
+September 1987 sensing camera and FM radio transceiver for observation
+of volcanic activity on Mount St. Helena.
+
+SSTV was used for remote medical applications during eighties, e.\,g.
+transfer of radiologic pictures over phone lines and over satellite 
+narrow band communication channels.
+
+Often repeated mistake is that NASA has used the same system as
+amateurs for the SSTV transmissions from space in Apollo mission and
+that the first images from the Moon were transmitted in same way as
+amateur slow-scan TV. An NASA system for video transmission is
+different, but their engineers also named it {\em slow-scan TV}, but
+it transmitted images at rate 10 frames per second with 320 lines. The
+conversion to a normal television broadcast was made by optical path,
+the television camera panned SSTV monitor for broadcast to millions of
+households.
+
+The Amateur SSTV fly to space later, when SSTV images were sent
+from space shuttle in SAREX missions or from orbital stations Mir
+and ISS. These broadcasts were received by many hams over the World.
+
+\section{Diplomas and QSL cards}
+
+A tangible confirmation of ham radio contact is a QSL card, although 
+after finished QSO you may have few saved pictures on your hard drive
+as a memory of the contact. But QSL cards still remains as traditional 
+contact confirmation. Also, list of confirmed QSOs (those you've obtained
+QSL cards) must be also accompanied for obtaining a number of ham radio
+diplomas. So the picture of QSL has not same value as real QSL card.
+
+In addition to diplomas issued directly only for SSTV contacts, the diplomas
+like WAS, WAC, ADXA, CQ DX Award and many more can be obtained with indication
+of used communication mode and some additional variants like QRP. 
+
+There are few diplomas for exclusive two-way QSO using slow-scan television
+listed bellow. 
+
+\subsection{IVCA DX Achievement Award DXAA}
+
+The award is issued to amateurs and listeners for two-way SSTV
+contact/reception with 50 countries from DXCC list. Additional stickers
+are for every more 25 countries. 
+
+\subsection{DANISH DX SSTV AWARD}
+
+The award can be obtained by radio amateurs and listeners for confirmed
+contacts with 50 different ARRL's DXCC countries. A QSL list must contain:
+call, time , date, band, mode (SSTV) and country and confimed by two licensed
+amauteurs and signed by applicant. All bands legally used in applicant's
+country are accepted, but no contacts via repeaters. It is possible to 
+get additional stickers for contacts with 100 countries and 1 OZ station
+(silver), 150+2 (gold) and 200 (diamant).
+
+The fee for basic award is \$8 or \euro{}10.
+
+Award manager: {\em S.K.Mogensen OZ6SM, Rundhøjvej 8, DK 7970 Redsted, Danmark\/}, email: {\tt oz6sm@nypost.dk}.
+
+\PutURL{http://www.ddxg.dk/awards/sstvaward.htm}
+
+
+\subsection{Russian SSTV Award}
+
+This award is sponsored by the CRC of Krenkelya and the Moscow section SSTV to
+popularize the use of SSTV in Russia and other countries of the CIS. Earn 75
+points by contacting Russian and CIS stations on the SSTV mode on or after
+1\high{st} March 1998. Contacts with members of the Moscow SSTV is valuated by
+3 points and one point for contacts with CIS countries or stations not members of the Moscow SSTV 1.
+
+Send GCR list and fee of \$5, 10 IRC or equivalent to: {\em Verigin Dmitriy Andreevich, Lyubertsy, Moscovskaya oblast, Novaya street, 10-48, 140002, Russia},
+email: {\tt ra3ahq@online.ru}
+
+\PutURL{http://olympia.fortunecity.com/bruno/544/award/msstvs/rusaward.html}
+
+\section{Contests}
+
+\placetable[here][none]{none}{
+\bTABLE[offset=\dimexpr1mm+.5pt]\tfx
+\bTABLEhead
+\bTR[align=center]\bTH Contest                \eTH\bTH  Date\eTH\eTR
+\eTABLEhead
+\bTABLEbody
+\bTR\bTD DARC SSTV Contest      \eTD\bTD  3\high{rd} weekend in March\eTD\eTR
+\bTR\bTD Russian SSTV Contest   \eTD\bTD  2\high{nd} Saturday in April\eTD\eTR
+\bTR\bTD NVCG SSTV Contest      \eTD\bTD  2\high{nd} week of July\eTD\eTR
+\bTR\bTD Danish SSTV Contest    \eTD\bTD  1\high{st} weekend in May\eTD\eTR
+\bTR\bTD DARC HF--FAX--Contest  \eTD\bTD  3\high{rd} weekend in August\eTD\eTR
+\bTR\bTD JASTA SSTV Activity    \eTD\bTD  from 1\high{st} to 31\high{st} August\eTD\eTR
+\bTR\bTD Ukrainian SSTV Contest \eTD\bTD  1\high{st} Saturday in December\eTD\eTR
+\eTABLEbody
+\eTABLE
+}
+
+\subsection{DARC SSTV Contest}
+
+It takes place the 3\high{rd} weekend in March, begins at 12:00 UTC on Saturday
+and ends at 12:00 UTC on Sunday. Competing has categories operator and 
+SWL, on the bands 3.5 to 28\,MHz. Transmit RSV and the number of QSOs
+beginning with 001, each QSO is valued by a point. Multipliers are WAE/DXCC
+countries, W, VE and JA  districts. Logs should be sent within 4 weeks
+after the contest at: {\em Werner Ludwig DF5BX, Post Box 1270, D-49110
+Georgsmarienshuette, Germany}, email: {\tt df5bx@darc.de}.
+
+\subsection{Russian SSTV Contest}
+
+Takes place in 2\high{nd} Saturday in April from 00:00 MSK to 24:00 MSK
+(UTC\,=\,MSK\,--\,3). Bands: 80, 40, 20, 15, 10, 6, 2\,m. There are several
+categories: A. Multi-operators, all bands; B. One operator, all bands (legal in
+Russia); C. One operator, all bands; D. One operator, one band; E. listener. A
+CQ image should contains {\ss CQ RUSTEST}. Transmit RSV and the number of QSOs
+beginning with 001, Russian stations transmit RSV, zone and number of QSOs.
+Scoring: 6 points for each QSO, plus 2 points for QSO with MsstvS member,
+additional points for QSO with station from MsstvS scoring list. Final score:
+total sum of points plus additional points. Send log
+separately for each band, must include band, date, time in UTC, call
+sign messages sent and received. Stations with multiple operators must 
+deliver list of names and signatures for all operators. The log send to 
+24\high{th} April. Organizer: {\em Russian SSTV Contest Manager Krenkel of CRC
+Russia, P.O. Box 88, Moscow, Russia}.
+
+\subsection{NVCG SSTV Contest}
+
+The contest is organize Nishi Nippon Visual Communication Group and takes up 9
+days in July. Score is 2 points for two-way SSTV QSO with NVCG member (they
+used \uv{M} letter in report, e.\,g. 595M), and 1 point for another QSO. Only
+one QSO with same station is counted regardless of band. The multiplier is the
+total number of different prefixes. Send log to {\em Susumu Tokuyasu JA6GN,
+3-1-6 Jyousei Sawaraku, Fukuoka 814-0003, Japan} or email: {\tt
+sstv-contest-nvcg@wak.bbiq.jp}.
+
+\subsection{Danish SSTV Contest}
+
+The contest is organized by Danish SSTV Group. Takes place first
+weekend in May, from Saturday 00:00 UTC to Sunday 24:00 UTC. Bands:
+80, 40, 20, 15, 10, 6, 2\,m. Score: 2 points for every DXCC country, 1
+point for contact and bonus 1 point for contact with Danish station.
+It is possible to make QSO with same station on different band. The
+stations on 1\high{st} to 5\high{th} place will receive certificates.
+Mail logs to: {\em Carl Emkjer, Soborghus Park 8, DK 2860 Soborg,
+Denmark}.
+
+\subsection{JASTA SSTV Activity}
+
+Takes place in August from 1\high{st} 00:00 UTC to 31\high{st} 24:00
+UTC on 3.5MHz band and all upper bands. There are two categories:
+\uv{J}~-- Japanese stations; \uv{S}~-- all stations operating outside
+of Japan. Exchange the usual RSV and number of QSO starting with 001.
+Regardless of  bands used a station may only be contacted only once each
+UTC day. The points for QSOs depend on band: 1 point 3.5--28\,MHz, 2
+points 50--430\,MHz and 3 point for 1200\,MHz and upper bands.
+Multipliers are districts JA1 to JA0, DXCC countries and working days
+(max. 10). Prefixes 7K to 7N are all JA1 districts. Contest manager: 
+{\em Yoshikazu Tanabe JA3WZT/1, 905-8, Shimotaniganuki, IRUMA,
+SAITAMA, 358 Japan}, send logs in TXT format to {\tt ja3wzt@mue.biglobe.ne.jp}.
+
+\PutURL{http://homepage3.nifty.com/jasta/}
+ 
+\subsection{Ukrainian SSTV Contest}
+
+Takes place in first Saturday in December, from 12:00 UTC to Sunday
+12:00 UTC. Bands:  80, 40, 20, 15 and 10\,m. There are contest
+categories: A. One operator; B. One operator, one band; C. Multiple
+operators; F. listeners. The CQ picture should contain text {\ss CQ
+UKR Contest}. Exchange report RSV and number from 001. Ukrainian
+stations send two-letter region code too. The score is 1 point for
+QSO with same country station, 2 points for same continent QSO, 3
+points for QSO with other continent, QSO with Ukrainian station is 
+for 10 points. Multipliers are DXCC and WAE countries and Ukrainian
+district for each band. The score is counted separately for Ukrainian
+and foreign stations. Logs send in usual form for each band to
+organizer: {\em UKR SSTV CONTEST, P. O. Box 10, Kerch, 98300 Ukraine}.
+
+\section{SSTV repeaters}
+
+An SSTV repeater is radio station for relaying of SSTV signals. A
+typical repeater is equipped with HF or VHF transceiver and computer
+with sound card. A software must have an option to work as repeater.
+
+SSTV repeaters are used by amateur radio operators for exchanging
+pictures. If two stations can not copy each other, they can still
+communicate through a repeater.
+
+To activate repeater send the activation tone of frequency 1750\,Hz,
+when the repeater is activated, it's send --.-- (K) in morse code.
+The station must start sending a picture in approximately 10 seconds.
+After reception the received image is transmitted on the repeater's
+operation frequency.
+
+Repeaters should operate in common SSTV modes, but it depends on the
+software used (MMSSTV, JVComm32, MSCAN). Some repeater are not
+activated by audio tone, but instead by the SSTV vertical
+synchronization signal.
+
+Some repeaters works also as beacon and sends periodically random
+images with identification and timestamp.
+
+\subsection{HF and 50\,MHz repeater list}
+
+\placetable[][none]{none}{
+\bTABLE[offset=\dimexpr1mm+.5pt]\tfx
+
+\setupTABLE[column][1][align=center,alignmentcharacter={.},aligncharacter=yes]
+\setupTABLE[column][4,5][align=center]
+
+\bTABLEhead
+	\bTR[align=center]
+		\bTH Freq. \eTH
+		\bTH Call \eTH
+		\bTH QTH \eTH
+		\bTH Activation \eTH
+		\bTH Power \eTH
+		\bTH Note \eTH
+	\eTR
+\eTABLEhead
+
+\bTABLEbody
+\bTR\bTD 3,720  \eTD\bTD  F5ZFJ  \eTD\bTD 	Haute Sa\^{o}ne, JN27UR         \eTD\bTD  image    \eTD\bTD   \eTD\bTD  linked with repeater on 144,525\,MHz  \eTD\eTR
+\bTR\bTD 14,236 \eTD\bTD  VK3DNH \eTD\bTD  	Rochester      \eTD\bTD           \eTD\bTD       \eTD\bTD Active 24 hours \eTD\eTR
+\bTR\bTD 14,239 \eTD\bTD  VK2ISP \eTD\bTD  Coogee, New South Wales \eTD\bTD   \eTD\bTD   \eTD\bTD  Aktive 24 hours \eTD\eTR  
+\bTR\bTD 21,349 \eTD\bTD  VK6ET \eTD\bTD  	Brackenridge, approx. 20\,km north from Brisbane \eTD\bTD   \eTD\bTD   50--100\,W  \eTD\bTD  QRV 22:00-08:00 UTC \eTD\eTR
+\bTR\bTD 28,660 \eTD\bTD  GI4GTY \eTD\bTD   Lisburn        \eTD\bTD  image    \eTD\bTD       \eTD\bTD  \eTD\eTR 
+%http://www.qsl.net/k3asi/
+\bTR\bTD 28,688 \eTD\bTD  HB9AC \eTD\bTD  Eighental, Lucerne JN47CA \eTD\bTD   1750\,Hz \eTD\bTD     \eTD\bTD  Linked with repeater on 144,825\,MHz FM. \eTD\eTR
+\bTR\bTD 28,690 \eTD\bTD  K3ASI \eTD\bTD  	North Carolina \eTD\bTD  1750\,Hz \eTD\bTD  45\,W  \eTD\bTD  Aktive 24 hours, beacon every 15-20 minut.\eTD\eTR
+\bTR\bTD 28,700 \eTD\bTD  ON4VRB \eTD\bTD  	Heist o/d Berg \eTD\bTD  1750\,Hz \eTD\bTD       \eTD\bTD  Linked with repeater on 433,925\,MHz. \eTD\eTR
+\bTR\bTD 28,750 \eTD\bTD  ON0DTG  \eTD\bTD 	Doornik        \eTD\bTD          \eTD\bTD        \eTD\bTD       \eTD\eTR
+\bTR\bTD 28,900 \eTD\bTD  EA8EE \eTD\bTD                   \eTD\bTD          \eTD\bTD        \eTD\bTD      \eTD\eTR
+\bTR\bTD 50,500 \eTD\bTD  F6IKY  \eTD\bTD 	Haute Savois (700 m)  \eTD\bTD 	     \eTD\bTD        \eTD\bTD  USB \eTD\eTR
+\bTR\bTD 50,510 \eTD\bTD  OZ6STV \eTD\bTD  Copenhagen, JO65ER         \eTD\bTD  1750\,Hz \eTD\bTD  60\,W   \eTD\bTD  Beacon every 30 minutes.  \eTD\eTR
+\eTABLEbody
+\eTABLE
+}

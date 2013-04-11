@@ -1,0 +1,420 @@
+\chapter{Computer operations}
+
+In one afternoon, an equipped hamradio operator can begin receiving SSTV.
+All that is needed is to make a connection cable between a transceiver and a
+sound card and download some SSTV related software. Then tune into 14.230\,MHz
+USB for 24 hour-a-day SSTV activity.
+
+Programs for SSTV operations are very similar and provide equivalent basic
+functions, of course with different comfort levels. Some of them are intuitive and
+well-arranged, while others require studying a manual. Everybody has the possibility to
+choose from more variants and see what is best for him and what provides
+requested functions. Every operator must know these basic functions:
+
+\startitemize
+\item to configure an accurate sampling frequency for reception and transmission,
+\item to set proper sound card volume levels,
+\item to use the tuning indicator,
+\item to manually change the transmission mode,
+\item to load and save images in common graphic formats,
+\item to create an image gallery for transmission and
+\item to add text into transmitted images.
+\stopitemize
+
+\section{Hardware configuration}
+
+Take your time in selecting a suitable configuration of
+the computer in your hamshack. The unpleasant fact is that,
+operating system and software requirements  are constantly on the rise.
+For SSTV operations it is possible to use obsolete
+PCs with old 386 processors. The {\em Hamcomm} modem and some other
+popular programs from the nineties run on DOS. In this case,
+4\,MB of RAM, a hundred megabytes hard disk and SVGA
+graphics card with 256 colors are enough. But graphic cards with 32 or 64 thousand colors are more suitable.
+
+To use a sound card a good PC is needed. At the least it
+should be configured with 150MHz Pentium, 64\,MB
+RAM and few gigabytes hard disk. A graphics card
+needs to support 1024$\times$768 resolution in 
+64 thousands or 16.7 million color mode. The minimal operating
+system is Windows\,95 OSR\,2, but some new programs may not
+run in Win95. I recommend having better hardware but you don't
+need the latest mega-hyper model. 
+
+There are also software products for Mac\,OS\,X and for GNU/Linux, but
+the largest selection is for Microsoft Windows.
+
+\section{Sound card as a modem}
+
+A sound card is standard PC equipment these days. It can be used as a music
+player, for multimedia, games and recording. The main application of a sound card
+in hamshacks is as a MODEM. The modem~-- MOdulator/DEModulator allows computer
+information to be transmitted and received over physical media like radio
+waves or telephone lines. The modem translates analog signals to digital data
+and vice versa.
+
+\subsection{Sound processing in PCs}
+
+To allow the computer to work with sound signals, the signal must be converted 
+into a format suitable for data processing (digital or discrete signal).
+
+\subsubsection[sampling]{Sampling}
+
+The digital conversion process begins with {\em sampling}. Sampling
+is an activity which periodically scans the current value of the analog
+signal.  For example, this happens 11,025 times per second or
+depends on a user defined sample rate supported  by the sound card. 
+The sampling frequency of sound cards ranges from
+8\,kHz suitable for internet telephony up to 96\,kHz designated
+for more exacting requirements of recording studios.
+
+\placefigure[][none]{The conversion of an analog signal into numeric data.}
+{\externalfigure[software/obr/ac_prevod.pdf]}
+
+The answer to the question of what sampling frequency should be used gives us
+Shannon's theorem (also knows as Nyquist-Kotělnik-Shannon theorem). It defines
+that a signal continuous in time, containing spectral components with the
+highest frequency $f_{max}$, can be clearly reconstructed from a sequence
+of evenly spaced samples with a sampling frequency $f_s$ greater than double
+$f_{max}$:
+
+\startformula
+f_{s} > 2f_{max}
+\stopformula
+
+You can see the importance of Shannon's theorem in the 
+example below. The signal in \in{figure}[pic:sampled]a expresses the
+dependency between time $t$ and amplitude $A$.  Using Fourier's analysis, we can find 
+(see \in{chapter}[bandwidth]), that the signal contains two harmonic components, showed
+in~\in[pic:sampled]b.
+
+\placefigure[][pic:sampled]{Example of signal.}
+\startcombination[2*1]
+		{\externalfigure[software/obr/signal-A.pdf]}{a) Surveyed signal}
+		{\externalfigure[software/obr/signal-B.pdf]}{b) Spectral components}
+\stopcombination
+
+By using Fourier's transformation, the signal can also be expressed as a
+dependency between amplitude $A$ and frequency $f$~-- {\em signal spectrum}.
+Both frequency components are evident $f_1$ and $f_2=f_{max}$ in the
+signal in \in{fig.}[pic:spectrum].
+
+\placefigure[][pic:spectrum]{The frequency spectrum of signal in \in{fig.}[pic:sampled]a}
+{\externalfigure[software/obr/spektrum.pdf]}
+
+For explicit signal reconstruction the condition $f_{s} > 2f_{max}$ must be
+satisfied, see fig.~\in[pic:sampleok]. If a sampling frequency is
+lower then $2f_{max}$ then  the higher frequency components are lost. This
+error is called {\em aliasing}.
+
+\placefigure[][pic:sampleok]{The signal sampled with a frequency higher than $2f_{max}$}
+{\externalfigure[software/obr/signal-VZ.pdf]}
+
+\placefigure[][pic:samplebad]{The sample rate does not meet the Shannon's theorem.}
+{\externalfigure[software/obr/signal-VZbad.pdf]}
+
+For the sampling of common narrow band signals like SSTV, RTTY, PSK31 or WEFAX,
+which are transferred via SSB channel with a bandwidth of about 2\,500---3\,000\,Hz;
+a sample rate of 11,025\,Hz is enough.
+
+%CONTINUE
+
+
+\subsection{Analog-to-digital conversion}
+
+The next way of an analog signal continues to the analog-to-digital (A/D) converter.
+The current value of signal converted into digital data in this device. Some A/D
+converters works with a resolution 8 or 16 bits according to type or settings
+of a sound card. The resolution of A/D converter indicates the accuracy of
+signal amplitude scan in a defined range, for 8 bits it is $2^8=256$ values and
+for 16 it is 65,536. 
+
+Constrained resolution of A/D converter causes an {\em quantization} error. E.g.
+for 8 bit converter processing voltage range 0--5.0\,V it's the error
+$5.0/(2^8-1) \doteq 0.02$\,V. The 8bit converter cannon distinguish
+voltage levels lower then 0.02\,V. So for input voltage 3.111\,V it could
+find corresponding numeric value $10011110_2\,\approx 3.098$\,V
+or $10011111_2\,\approx 3.118$\,V because less significant bit is 
+influenced by quantization error. The size of the error can be
+decreased by greater resolution of A/D converter. For our purposes
+the 16bit resolution is acceptable.
+
+A modern sound cards could be equipped with digital signal processor (DSP),
+which extend card functions e.g. for filtering or data compression during
+recording so it can lighten load of main computer CPU. E.g. {\em Sound Blaster
+Live!} contains programmable DSP labeled {\em EMU10K1}.
+
+The choice of sound card type depends only on user's preferences and his
+intends of use. Many PCs has integrated sound card directly on a motherboard.
+
+\subsection{Interface between TRX and PC}
+
+The basic interface is made of shielded cables and 3.5mm jack plugs. A
+reception cable connects sound card input {\em Line In} and TRX headphones
+output or output for external speaker. For use of sound card microphone input
+can be used TRX output often labeled as {\ss AF OUT} with impedance about
+10\,k$\Omega$ which gives max. output voltage 100\,mV. This output could be also
+used for interfacing tape deck or audio amplifier. Microphone input of sound
+card has automatic gain controller (AGC) for better recording and it is
+possible connect dynamics microphones with impedance from 600 to
+10.000\,$\Omega$.
+
+\placefigure[][none]{Basic interface between transceiver and sound card.}
+{\externalfigure[software/obr/sound_card.pdf][width=0.6\makeupwidth]}
+
+For the transmission it is possible to use {\em Line Out} with impedance
+about  600\,$\Omega$. The {\em Line Out} can be connected to microphone
+input of TRX or a rear panel connector like {\ss PATCH IN}.
+
+Some transceivers has a feature that microphone input and rear panel input
+are interconnected so it is necessary disconnect the microphone during
+AFSK transmission, because noise in hamshack could interfere with
+sound card signal! Check your TRX instruction manual for particular
+interfacing.
+
+Last thing you need to set up is audio levels of received and transmitted
+signal. It can be made using operating system tools. The level of
+transmitted signal should be about 2/3 of max. level. The signal
+could not be too attenuated or over-excited and distorted. You can detect
+it by monitor of outgoing signals. For receiving signal you can set
+proper level directly on TRX and check the input level in your SSTV software.
+
+	\placefigure[][none]{Software volume control.}
+	{\externalfigure[software/obr/hlas.png][width=.8\makeupwidth]}
+
+After the audio mixer configuration it is useful to save your
+sound card settings (you can restore it every time before operations).
+A program {\em QuickMix} is can easily store your settings, because
+some other program can change it.
+
+\PutURL{http://quickmix.softpedia.com/}
+
+\subsection{PTT control}
+
+The PTT (Push-To-Talk) button switch between reception and transmission. For
+its control there are several possibilities:
+
+\startitemize[n]
+\item Manual PTT switching. This handy method is not very elegant, but for the 
+first experiments can be used.
+
+\item Automatic switching can provide TRX with a VOX feature, when the
+TRX is automatically keyed by signal in the input. An disadvantage of this
+method may be that its reaction is not immediate, so in case of digital modes
+the beginning states of transmission or SSTV vertical synchronization can be
+lost. Keep in ming that operating system often produce malicious sounds that could
+accidentally key the transmitter.
+
+\item Automatic PTT switch can control a computer. All SSTV programs support
+PTT control over a simple serial port (COM, RS-232) circuit. The circuit contains
+one switching transistor or opto-isolator and few passive parts. See
+\in{schematic}[pic:trafo] for details. The control signal is connected to {\tt RTS}
+pin (7 at Cannon DB9 connector, 4 at DB25) or {\tt DTR} (4 at DB9, 20 at DB25), selected pin can
+be changed by software configuration. The ground is on serial port wired on pin
+5 at DB9 or 7 at DB25.
+
+The big amount of handheld TRXs has a similar pin for microphone input and PTT.
+In this case an audio signal should be galvanicaly separated by capacitor about
+100\,nF and PTT signal is connected by resistor which resistance can by find in
+TRX instruction or you can connect trimming resistor about 15\,k$\Omega$ and
+test the max. value when TRX switching.
+
+\item Some transceivers support control over serial port. This CAT (Computer
+Aided Transceiver) interface can provide PTT switching. Over CAT interface can
+be send commands e.g. for tuning, mode control, etc. This method must be
+supported by software, for example MixW can control some TRXes so it is not needed
+to practically touch the TRX buttons.
+\stopitemize
+
+What to do if your computer is not equipped with serial port? Some motherboard manufacturers 
+build only one serial port and notebook manufacturers doesn't provide any serial port.
+If this happens you can use VOX or obtain USB/RS232 interface. Some programs also support
+similar switching circuit as described before but on parallel port (LPT).
+
+\subsection{Eliminate supply noise}
+
+A computer and a TRX can have slightly different electrical potential and in
+this case the direct connection causes annoying noise in communication channel.
+It is possible to remove noise witch galvanic separation of both devices. The
+path of audio signal should go throught galvanic transformer and PTT control
+switch with opto-isolator, e.g. 4N25, 4N33, etc. Maybe you will need to change
+{\ss R2} to lower value when the opto-isolator is not switched properly when
+serial port signal is on.
+
+\placefigure[][pic:trafo]{The galvanic separation of transceiver and sound card.}
+{\externalfigure[software/obr/sound_if.pdf]}
+
+\section[slant]{Timing oscillator configuration}
+
+There is description of synchronous (free-run) SSTV system in
+\in{section}[horsync]. Horizontal synchronization pulses (syncs) are detected
+only at the beginning of reception and after synchronization a reception device stops
+detect syncs and receive with free-run scan. Due to this there are excessive
+requirements for accurate timing of corresponding stations.
+
+If the timing slightly differs then images are distorted~-- inaccurate timing
+causes image {\em slant}. You can see image slant for 0.01\,\% timing difference
+in \in{fig.}[pic:slant]. If a transmitting station has higher timing (and reception
+lower) the image slants to the right (\in[pic:slant]a) in opposite situation to the left
+(\in[pic:slant]b).
+
+\placefigure[][pic:slant]{Image slant distortion when inaccurate timing is used for
+free-run modes.}
+\startcombination[2*1]
+	{\externalfigure[software/obr/slant1.png][width=5cm]}{a) Opposite station has higher timing}
+	{\externalfigure[software/obr/slant2.png][width=5cm]}{b) Opposite staion has lower timing}
+\stopcombination
+	
+However timing derived from sample rate is not used to be exactly
+11,025.00\,Hz, but often can differ up to few tenths of percent for each peace
+of hardware. For speech and music processing it doesn't matter, but in free-run
+transmission of SSTV it causes problems.
+
+\warning{
+The configuration of accurate timing/sample rate for reception and transmission 
+apart must be done to meet the strict requirements for synchronous SSTV broadcast.
+Your signal must be acceptable for any SSTV device.
+}
+
+All SSTV program are equipped with a tool for the timing configuration. 
+
+It is possible to receive SSTV signal from a band and by an edge of received
+image set the timing~-- program will automatically compute timing deviation.
+This way has a disadvantage, because not all SSTV stations has proper transmit
+timing. This is caused by offset between receiving and transmitting timing.
+
+Much more precise way is use of shortwave broadcast of timing normal. Programs
+are equipped with special reception option, which displays spectrum in a second
+cycles. For timing setting just tune to the frequency of broadcast and leave to
+plot received pulses for several minutes.
+
+The usable transmitter is a Moscow station {\ss RWM} operating on frequencies
+4,996.0, 9,996.0, 14,996.0\,kHz with 8\,kilowatts power. So it can be nicely
+received in Europe/Asia region. Select CW mode and tune your receiver directly
+to one of station frequencies. The unmodulated carrier is transmitted between
+0. and 8. minute of an hour, telegraphy identification goes from 9. minute and
+then the timing signal will continue. Pulses in intervals 1/60 and 1\,Hz goes
+between 10. and 20. minute and 10Hz pulses goes between 20. and 30. minute.
+This is repeated every 30 minutes. 
+
+\placefigure[][none]{The configuration of accurate timing with {\ss RMW} reception
+	 in MMSSTV.}
+{\externalfigure[software/obr/rmw_nastaveni.png][width=.75\makeupwidth]}
+
+The reception of {\ss WWV} station is the next possibility. This station
+broadcast timing pulses and announcement on frequencies 2,500.0, 5,000.0,
+10,000.0, 15,000.0, 20,000.0\,kHz and uses double sideband (DSB) modulation.
+You can receive it with AM mode selected. The {\ss WWV} operates from the North
+America, Fort Collins in Colorado. The used power ranges from 2.5  to 10\,kW.
+
+There is yet another way with WEFAX station reception, because these stations
+must have accurate timing too due to synchronous transfer.
+
+The deviance error you should measure use to be expressed like absolute value
+of actual frequency, e.g. $f=11024{,}45$\,Hz or like deviance from $f_s$ the
+$\Delta_f=-0{,}55$\,Hz. Some program this measure in {\em parts per million
+(ppm)} unit. The ppm deviance can be computed:
+
+$$\Delta = \frac{\Delta_f}{f_s}\cdot10^6.$$
+
+For the $f=11024{,}45$\,Hz the deviance in ppm is:
+
+ $$\Delta =
+ \frac{\Delta_f}{f_s}\cdot10^6=\frac{-0{,}55}{11025{,}00}\cdot10^6\,\rm{ppm}\doteq-50\,\rm{ppm}.$$ 
+
+\subsection{Transmit timing offset}
+
+There is necessity to configure transmit timing {\em TX offset} after the
+precise configuration of reception sample rate, when received SSTV images are
+not slanted. It is important for your own transmission, because inaccurate
+transmit timing causes image slant on reception side. 
+
+Some programs makes possible to monitor outgoing SSTV signals, so with this
+feedback it is practicable to check the TX offset~-- deviance between reception
+and transmission sample rate. The feedback can be internal or external. {\em
+Extenal feedback} needs to connect Line Out and Line In with cable and it
+requires a sound card with full-duplex mode enabled. By this way you can set {\em
+TX offset} precisely on your own.
+
+The {\em internal feedback} doing almost the same, but no external cables
+is needed. But some sound cards support only software feedback, so you will
+find zero deviance, but it is not real fact! Then the TX offset setting must be
+done with external feedback or with opposite station help. You need to disable
+any automatic corrections of received signals in this way.
+
+Anyway you need to make \uv{dry run} QSO before your first CQ. This helps you
+to uncover possible problems with TX offset, supply noise, audio level, etc.
+
+The TX offset issue is often pretty messy. You can notice that some software
+running concurrent with your SSTV program can influence sound cart output and
+then the change of sample rate occurs. Even the simple Volume Control tool can do
+this. So it is useful to stop unnecessary program running in the background.
+Especially programs that can influence sound card output or decreases stability
+of Microsoft Windows.
+
+You may notice a strange behaviour if you are user of modern sound card with
+full duplex mode enabled with several output channels with a support of
+different sample rates for each channel. This is for example {\em SB Live!
+Value}. I have noticed that my TX offset randomly changes! I have this
+experiences with SB Live! Value and I found that another radio amateurs has
+same. You can try to set other sample rate than 11,025.0\,Hz in this case, if
+this doesn't load your computer too much. For example try 48,000.0\,Hz, this
+value is fixed sample rate (see your card user's guide) and best results you
+can achieve with using of this value or its half or quarter~-- 24,000.0\,kHz or
+12,000.0\,kHz. When you change this value you need to recalibrate your accurate
+timing again.
+
+To avoid these problems you can constantly monitor the outgoing signal through
+the external feedback with the TRX monitor enabled and before your today first
+transmission you will check that everything is fine. It's unpleasant that
+problems often occurs during QSO and then you will stunned by counterpart
+replay images. 
+
+\section{SSTV tuning}
+
+First of all, we need to find SSTV stations by listening near calling frequencies.
+Thanks to typical SSTV sound and clattering of syncs it is not a problem to distinguish
+between SSTV and other communication modes.
+
+Every SSTV program is equipped with precise tuning indicators~-- spectroscopes,
+see fig.~\in[pic:tuning]. The spectroscope shows frequency band from 1000\,Hz
+to 2500\,Hz with marks for critical frequncies~-- 1200\,Hz for syncs, 1500\,Hz
+and 2300\,Hz for the video signal.
+
+Is is possible to simple detect band of video signal and syncs during
+clear reception. Rotate the tuning knob to achieve that all important frequencies
+are aligned in spectroscope display.
+
+\placefigure[][pic:tuning]{Spectroscopes in common SSTV programs.}
+\startcombination[3*2]
+%\scalebox{\scale}
+{\externalfigure[software/obr/chromapix.png][width=.15\makeupwidth]}{Chroma Pix}
+%\scalebox{.35}
+{\externalfigure[software/obr/mmsstv.png][width=.3\makeupwidth]}{MMSSTV}
+%\scalebox{\scale}
+{\externalfigure[software/obr/jvfax1.png][width=.3\makeupwidth]}{JVComm32}
+%\scalebox{0.7}
+{\externalfigure[software/obr/mscan.png][width=.3\makeupwidth]}{MSCAN}
+%\scalebox{0.7}
+{\externalfigure[software/obr/qsstv.png][width=.3\makeupwidth]}{QSSTV}
+%\scalebox{1}
+{\externalfigure[software/obr/mixw.png][width=.3\makeupwidth]}{MixW}
+\stopcombination
+
+\section{Video digitalization}
+
+The video digitizer should be additional equipment of SSTV station. The device
+can convert output signal from camera into computer form. There is a great
+choice of many different devices with varying capabilities, parameters and
+price. You can choose some webcams, frame grabbers, TV cards or digital
+cameras. Then your broadcast will not be limited only to pre-prepared images
+and you will have a lot more fun with live transmission.
+
+The cheapest option are web cameras, they are equipped with a low-resolution CCD
+and low-cost optics, but provided quality is suitable for SSTV.
+
+An another option is a TV card with video input. This possibility is more
+expensive because you must connect an external camera where the choices ranges
+from cheap CCTV black and white or color CCD cameras up to professional studio
+equipment. 
+

@@ -1,0 +1,60 @@
+\def\bps{b\,$\cdot$\,s$^{-1}${}}
+
+\startchapter
+[title={Introduction to\crlf digital slow-scan TV},
+list={Introduction to digital slow-scan TV}]
+
+%\chapter{Introduction to digital slow-scan TV}
+
+The development of computers and new opportunities, which gives us the use of
+powerful processors and sound cards modems have resulted in the design of new
+communication modes. One of these modes is the digital slow-scan television
+(DSSTV), which allows transmission of images without any loss of quality.
+
+We have two choices for digital image transmission. The first system is {\em
+RDFT~-- Redundant Data File Transfer}, which is the result of several years of
+creative efforts of Barry Sanderson, KB9VAK and a group of ham radio
+enthusiasts. 
+
+The second system is called {\em Digital Radio Mondiale (DRM)\/}. It's open
+standard for digital broadcast on short waves. It was developed by DRM
+Consorcium and was standardized by organizations ITU, IEC and ETSI. The DRM
+system is used mainly by short-wave broadcast stations and its modification
+for ham radio purposes is called {\em HamDRM}.
+
+It is possible to use these modes also for transfer of any types of files
+(text, sounds, software,\dots) instead of images.
+
+The difference between analog and digital SSTV is huge. There are used entirely
+different modulation principles and essentially some files in JPEG, JPEG200,
+PNG, etc. formats are sent. Also the error correction and detection is
+implemented using Reed-Solomon code.
+
+The result is, that image is transfered without any distortion (means transfer
+distortion, the images should be distorted due to loss compression techniques,
+but you can control the degree of it). There is no constrain in image
+resolution, it is given by image file parameters. Only constrain is the
+bandwidth of SSB channel and the resulting maximum data rate and the time
+required for transmission.
+
+There are also bigger requirements for stations equipment in comparison with
+classic SSTV. You need better computer, at least 1GHz CPU and 256\,MB RAM. In
+your ham-shack you can use without any problems an oldish computer (e.g.
+Pentium 150\,MHz) for digital modes like RTTY or PSK, packet radio and analog
+SSTV, but algorithms of signal processing for DSSTV is so complex that a slow
+150MHz Pentium would not be able to process signals in real-time.
+
+Also, there are increased requirements on the transceiver used. Used modulation
+techniques use the maximal width of the communication channel and SSB
+transceiver without the linear range of SSB channel isn't usable for DSSTV. Of
+course, there must be switched off any additional signal and  modulation
+filters (speech processor, equalizer,\ldots).
+
+Sound card interfacing is same as for classic SSTV, the connection between
+TRX and sound card is enough. Output level of sound card should be about
+$^1\!/\!_3$ of maximum (switch off software AGC). When signal is overexcited,
+the intermodulation causes disproportionately large signal and distortion
+and the signal cannot be decoded. A peak power with 100W transceiver 
+is about 20--25\,W.
+
+

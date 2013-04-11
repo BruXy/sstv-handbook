@@ -1,0 +1,13 @@
+\def\singlefile{1}
+
+\input style.ctex
+
+\starttext
+\setupheadnumber[chapter][3]
+\input sstv/bw_mode.ctex
+\input sstv/color.ctex
+\input sstv/hi-res.ctex
+\input sstv/experiment.ctex
+\stoptext
+
+

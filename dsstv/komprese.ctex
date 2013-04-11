@@ -1,0 +1,533 @@
+\section{Data compression}
+
+The image with resolution 320$\times$240 with a color depth of 16 million
+colors ($256^3$) takes 230,400\,Bytes (320$\times$240$\times$3) without
+compression. This file would be transmitted fortyone minutes by RDFT with speed
+92 Bytes per second! This time is really scary in comparison with analog SSTV.
+It is really necessary to reduce the file size and reduce the time required for
+transmission.
+	
+The {\em data compression\/} is widely used in such cases, where
+the data capacity of communication channels or storage media
+and memory is limited.
+
+The compression is the process where the physical data block size is
+reduces to a certain level. Input data is compressed using the
+compression algorithm and then stored on media or transmitted via
+communication channel. The data are decompressed in its original form,
+when  a media is read or  a signal received.
+
+One of the important parameters of compression algorithms is {\em
+lossy}. While the programs or text must by stored in perfect form, 
+but in case of sound, images or animations we can settle with the
+omission of certain details, then we're talking about lossy
+compression method.
+
+\subsection[entropie]{Information entropy}
+
+When Clause E. Shannon was engaged in applied mathematic of communication
+theory during 1940s, he started with definition of informational value of
+message content. The message which is repeated often is less informative than
+the message, which occurs sporadically. So, the often repeated message is more
+likely than the unique. The probability in mathematic is expressed by real
+numbers in range from 0 (for a completely unlikely events) to 1 (for the
+phenomena that occur surely). Shannon defined the amount of information
+$I(x_i)$ for the message $x_i$ with the probability of occurrence $p(x_i)$ as
+follows:
+
+\startformula
+I(x_i)=-\log_2{p(x_i)}.
+\stopformula
+
+The graph of negative logarithm see on~\in{fig.}[entropy]~-- 
+if the message content is less likely that its information value is
+higher. 
+
+\placefigure[][entropy]{The relation between information
+content $I(x_i)$ and its probability $p(x_i)$.}
+{
+	\externalfigure[dsstv/obr/entropie-1.pdf]
+}
+
+{\em Information entropy} $H$ is defined as {\em average rate
+of information value $I(x_i)$}:
+
+\startformula
+H=\sum_{i=1}^Np(x_i)I(x_i) = -\sum_{i=1}^Np(x_i)\log_2{p(x_i)} \qquad 
+\mathrm{[bit]} 
+\stopformula
+
+We show the entropy meaning in example. We need to transfer messages
+$a_1, a_2, \ldots{} a_8$ and probability of their occurrence is same:
+ $p_i=1/8=0{,}125$. The entropy of source is
+
+\startformula
+H=-\sum_{i=1}^8p(a_i)\log_2{p(x_i)}=-\left(8\cdot{}\frac{1}{8}\log_2{\frac{1}{8}}\right)=3\,\mathrm{bits}.
+\stopformula
+
+The observed entropy determines how the message content can be encoded for data
+transmission. The length of message in bits is greater then or equal to the
+entropy, without loss of information. So the message can be encoded as word of
+3bit length: 000, 001, 010,\ldots Maximum entropy is reached when the
+probability of occurrence of each message is the same.
+
+But the messages have often different probabilities in many cases. In this
+example we need to transfer messages $a_1, a_2, \ldots{} a_7$. Their
+probabilities are 
+$p(a_1)=0.235$,
+$p(a_2)=0.206$,
+$p(a_3)=0.176$,
+$p(a_4)=0.147$,
+$p(a_5)=0.118$,
+$p(a_6)=0.059$,
+$p(a_7)=0.029$,
+$p(a_8)=0.029$. 
+Entropy of source is
+
+\startformula
+%\startarray
+\eqalign{
+H & = -\displaystyle\sum_{i=1}^7 p(a_i)\log_2{p(a_i)} = \cr 
+~ & = - \big(0.235\cdot{}(-2.09)+
+0.206\cdot{}(-2.28)+
+0.176\cdot{}(-2.50)+
+0.147\cdot{}(-2.76)+ \cr
+& 0.118\cdot{}(-3.08)+
+0.059\cdot{}(-4.08)+
+0.029\cdot{}(-5.08)+
+0.029\cdot{}(-5.08)
+\big)\,\mathrm{bits} \cr 
+H & \approx -2.712\,\mathrm{bits} \cr
+} 
+%\stoparray
+\stopformula
+
+We see, that the entropy of source is lower and because data bits are not
+divisible, it is necessary to encode the message again to the words of length
+3. But suspect that such an encoding is no longer optimal. There is the idea to
+encode frequently occurring words as the message of the shorter length. This
+idea was well-counseled by David A. Huffman, the Shannon's student.
+
+\subsection{Huffman coding}
+
+We can show an example of Huffman coding construction. The
+message we are going to encode if following: 
+
+\startalignment[center]
+{\tt THE SHELLS SHE SELLS ARE SEASHELLS}
+\stopalignment
+
+This message contains 8 symbols (S, E, L, \uv{~}, H, A, T, R). The message can
+be expressed with code words of 3bit length. Its whole length is $3\cdot 34 =
+102$\,bits.
+
+For Huffman coding we need to determine number of each symbol
+and their probabilities.
+
+\placetable[here][none]{none}
+{
+\bTABLE[align=center,offset=\dimexpr1mm+.5pt]
+\bTABLEbody
+\bTR
+	\bTD S \eTD
+	\bTD E \eTD
+	\bTD L \eTD
+	\bTD  \eTD
+	\bTD H \eTD
+	\bTD A \eTD
+	\bTD T \eTD
+	\bTD R \eTD
+\eTR
+\bTR
+	\bTD 8$\times$ \eTD
+	\bTD 7$\times$ \eTD
+	\bTD 6$\times$ \eTD
+	\bTD 5$\times$ \eTD
+	\bTD 4$\times$ \eTD
+	\bTD 2$\times$ \eTD
+	\bTD 1$\times$ \eTD
+	\bTD 1$\times$ \eTD
+\eTR
+\bTR
+	\bTD 0.235 \eTD
+	\bTD 0.206 \eTD
+	\bTD 0.176 \eTD
+	\bTD 0.147 \eTD
+	\bTD 0.118 \eTD
+	\bTD 0.059 \eTD
+	\bTD 0.029 \eTD
+	\bTD 0.029 \eTD
+\eTR
+\eTABLEbody
+\eTABLE
+}
+
+There is used {\em binary tree}, it is a data structure often used
+in programming. The symbols are sorted by their frequency and then
+each symbol represents a tree leaf, and its weight is given by 
+symbol occurrence. In first step join two leafs with the lowest
+weight, in our case {\ss T} and {\ss R} and create a node. The node
+weight is sum of weights {\ss T} and {\ss R}. In the next step join
+leafs or nodes with the lowest weight and proceed as long as there
+is only one node (the root of binary tree). 
+
+Now, go from the root toward leafs by the edges and each edge label by 0 or 1,
+if the edge goes up or down (in tree terminology to left or right subtree). The
+constructed tree with labeled edges see on \in{fig}[fig:huffman_tree]. To find
+the code of each symbol pass all ways from the root towards the leaves. The
+path going along the edges of 0, 0 ends in {\ss S}, the path going along 1, 1,
+1, 0 ends in {\ss A}.
+
+\placefigure[here][fig:huffman_tree]{The results of Huffman encoding.}
+{
+\startcombination[2*1]
+	{\bTABLE[align=center]
+	\bTABLEhead
+	\bTR
+		\bTH Symbol \eTH
+		\bTH Code \eTH
+	\eTR
+	\eTABLEhead
+	\bTABLEbody
+	\bTR\bTD S\eTD\bTD 00\eTD\eTR
+	\bTR\bTD E\eTD\bTD 10\eTD\eTR
+	\bTR\bTD L\eTD\bTD 010\eTD\eTR
+	\bTR\bTD  \eTD\bTD 011\eTD\eTR
+	\bTR\bTD H\eTD\bTD 110\eTD\eTR
+	\bTR\bTD A\eTD\bTD 1110\eTD\eTR
+	\bTR\bTD T\eTD\bTD 11110\eTD\eTR
+	\bTR\bTD R\eTD\bTD 11111\eTD\eTR
+	\eTABLEbody
+	\eTABLE
+	}{}
+	{\externalfigure[dsstv/obr/huffman-en.pdf]}{}
+\stopcombination
+}
+
+We see, that more frequent symbols with high probability of occurrence
+have shorter code than sporadic symbols. Our message after encoding:
+
+\definecolor[aw][s=0.2]
+
+\startalignment[center]
+\startlines
+{\tt
+{11110}\color[aw]{110}{01}\color[aw]{101}{00}\color[aw]{110}{01}\color[aw]{100}{100}\color[aw]{00}{101}
+\color[aw]{00}{110}\color[aw]{01}{101}\color[aw]{00}{01}\color[aw]{100}{100}\color[aw]{00}{101}\color[aw]{1110}{11
+111}\color[aw]{01}{101}\color[aw]{00}{01}\color[aw]{1110}{00}\color[aw]{110}\color[aw]{01}{100}\color[aw]{100}{00}
+}
+\stoplines
+\stopalignment
+
+The message length was reduced from 102 to 93\,bits. For decoding the binary
+tree \in{on}[fig:huffman_tree] can be used again. We will start in the root and
+go along edges 1, 1, 1, 1, 0 until we arrive to lead, here symbol {\ss T}, then
+we return to the root and go along 1, 1, 0 and we arrive to leaf {\ss H}. By
+this way we continue until the whole message is decoded. Because Huffman coding
+is has unique {\em prefixes} for each code, and this prefixes is not start of
+another codeword the decoding can not do mistake. 
+
+Other compression algorithms using dictionary methods. These methods are based
+on fact that some words in the input file occur more frequently. Repeating
+words are stored in the dictionary. These words are replaced with their
+corresponding code words in output file. Among the representatives of this type
+of compression belongs {\em LZW (Lempel-Ziv-Welch)} as used in the ZIP
+compression or GIF or a variant of the TIFF formats. 
+
+\subsection{Lossless data compression}
+
+Many applications needs for their requirements that data aren't impaired if
+they are compressed. E.g. for binary programs and data. Lossless
+compression has its justification in the field of computer graphics and image
+storage too. Lossy compression fits on \uv{nature images} and photographs, but
+when it is used on a computer-generated graphics such as diagrams and charts,
+the image distortion is more noticeable on sharp edges and color gradients,
+even at low compress ratio (see \in{section}[ztrvsbztr].).
+
+Many compression algorithms were developed for lossless compression. A simple
+algorithm is for example {\em Run Length Encoding (RLE)}. This algorithm stores
+repeated bytes as their value and number. E.g. {\tt AB AB AB CD EF EF EF EF EF}
+is stored as {\tt 03 AB 01 CD 05 EF}, so instead of 9 bytes should be only 6
+stored.
+
+Other types of algorithms are based on statistical methods. Before or during
+the compression process the algorithm determines the relative representations
+of elements of the file, and those repeated frequently are expressed as a
+short code word. Such algorithm is the Huffman coding described above. Also,
+Morse code is one of those codes, frequently recurring characters such as E (.)
+A (.--), I (..) have assigned shorter codes and the less frequent, such as H
+(....), J (.--\,--\,--), F (..--.) longer codes.
+
+\subsubsection{Portable Network Graphics}
+
+The PNG is appropriate graphics format with lossless compression. PNG was
+created to replace the outdated GIF format. PNG is not limited to a palette of
+256 colors like GIF and  allows to set a continuous level of transparency
+{\em (alpha-channel)} compared to GIF, which has the option to choose only two
+levels (yes or no transparency). If you want to save the lossless image just
+choose PNG.
+
+The algorithm used in PNG is called {\em deflate}. This method is enhanced in
+some ways, the image lines are firstly processed by filter, which tries to find
+a similar neighborhood for each pixel. After processing there is a large number
+of data with zero value or a value close to zero (for same or similar values),
+so compression algorithms finds in data areas with same value so it can shrinks
+the length of the resulting file.
+
+\subsection{Lossy compression}
+
+The principle of lossy compression takes advantage of the processing equipment,
+in the case of the human eye it is unable to process certain information, so
+it actually would be an extra piece of information omitted.
+
+A widely used method for lossy image compression format is {\em JPEG (Joint
+Photographic Experts Group)}. The JPEG is the standard established by the ISO
+and ITU, released in 1992 (later upgraded in 1997). A successor is upgraded
+format {\em JPEG2000}. It was developed by JPEG committee since 1995, was
+released in December 2000 and further revised in 2003, but it is not so
+widespread as its predecessor.
+
+\subsubsection{JPEG compression}
+
+JPEG usually does not use RGB color coding but use YCrCb, see
+\in{chapter}[ycrcb], because th human eye perceives brightness and colors with
+different sensitivity. The storage of YCrCb colors, mostly in the ration
+4\,:\,2\,:\,0 reduces size of file, but itself is not enough. The image
+is further transformed, see schema in \in{fig.}[fig:jpeg_demo].
+
+In first step the image is divided on square block of $8 \times 8$ pixels and
+these 64 points is transformed from spatial domain ($x$, $y$) to frequency
+($i$, $j$) by discrete cosine transform. Just for completeness, as follows:
+
+\startformula
+%\startarray 
+\eqalign{
+	\mathrm{DCT}(i, 
+	j)=&\displaystyle\frac{1}{4}\,\mathrm{C}(i)\cdot\mathrm{C}(j)\sum_{x=0}^7\sum_{y=0}^7 
+	\mathrm{pixel}(x, y)\cdot\cos\left[\frac{(2x+1)i\pi}{16}\right] 
+	\cdot\cos\left[\frac{(2y+1)j\pi}{16}\right], \cr %\\ 
+	& \mathrm{where}~\mathrm{C}(a)=\left\{ 
+	%\startarray 
+	\eqalign{
+		\frac{1}{\sqrt{2}} & \quad \mathrm{for}~a = 0; \cr %\\ 
+		 1 & \quad \mathrm{in~other~cases}. \cr %\\ 
+	%\stoparray
+	}\right.
+} 
+%\stoparray
+\stopformula 
+
+The first position $i=0$, $j=0$ holds {\em DC coefficient},
+the mean value of the waveform for 64 values of block. The other
+positions contains {\em AC coefficients} and their value is derived
+from deviations between each values and DC coefficient. Basically, the
+DCT trying the block of 8$\times$8 \uv{to fit} a linear combination
+of shapes given byt the previous formula.
+
+\placefigure[][fig:jpeg_demo]{The JPEG compression for one 8$\times$8 block
+of brightness.}
+{	
+	\externalfigure[dsstv/obr/jpeg_demonstrace-en.pdf][factor=fit]
+}
+
+Then follows a step that most affects the resulting image and a perception of
+the lossy compression level. The quantization is carried out by individual
+members of a predefined luminance quantization table (chrominance component has
+a different predefined table). A member of the block at position 00 is divided
+by a member 00 of the quantization table and the position of the integer part
+of number is stored at position 00, continues 01/01, 02/02,\ldots up to each
+value is divided by its corresponding coefficient. The result of this process
+is a square matrix, where most information is stored in the upper left corner
+and around the lower right corner are just zeros.
+
+This matrix is linearized into a sequence. Thanks to \uv{zig-zag}
+reading the non-zero values appear in front of the sequence and
+remain part is filled by unnecessary zeroes.
+
+Then the sequence is divided into categories, the first is DC coefficient and
+then other values continue  and for each is determined following values:
+(number of preceding zeros~/ category~/ intrinsic value). The redundant zeros
+are reduces by RLE coding and from some place are presented only zeros. The all
+zeros are omitted and replaced by EOB (end of block) mark. DC coefficient,
+brightness and chrominance values have their codings.
+
+For AC coefficients are zeroes labeled as category 0, for other integer
+values their categories is given by bit length of value. For 
+most common AC coefficients $\{-1, +1\}$ it is 1, these two values
+can be represented by value 0 or 1, for $\{-3, -2, +2, +3\}$ is
+length 2, and it is represented by $\{00, 01, 10, 11\}$, for 
+ $\{-7,\dots,-4,+4,\dots,+7\}$ is length 3, etc. The result code
+depends on number of preceding zeros and bit length, so 0/1 (no zero/
+length 1) has 00, 0/2 01, 0/3 100, 1/1 (1 zero/length 1) 1100, 5/1 1111010,
+etc. The results of Huffman coding for one block se in \in{fig.}[fig:jpeg_demo].
+
+\placefigure[][fig:jpeg]{The file size as result of JPEG compression loss degree.}
+{
+\startcombination[2*2]
+{\externalfigure[dsstv/obr/ara_jpeg_75.jpg][width=5.5cm]}
+{Quality 75\% \crlf 15,970 B}
+{\externalfigure[dsstv/obr/ara_jpeg_40.jpg][width=5.5cm]}
+{Quality 40\% \crlf  9,564 B}
+{\externalfigure[dsstv/obr/ara_jpeg_10.jpg][width=5.5cm]}
+{Quality 10\% \crlf 4,277 B}
+{\externalfigure[dsstv/obr/ara_jpeg_3.jpg][width=5.5cm]}
+{Quality 3\% \crlf 2,474 B}
+\stopcombination
+}
+
+We have an option to choose the image quality for JPEG files. For quality of
+75\,\% the distortion is not noticeable in most cases and compress ratio can be
+around 20\,:\,1 to 25\,:\,1. The results of different quality for image with
+$256\times{}192$ seen in \in{fig.}[fig:jpeg]. You can notice little distortion
+for quality about 50\,\%, mainly in areas with sharp color gradients.
+	
+\placefigure[][none]{The detail of image saved in 10\% quality.}
+{	
+	\externalfigure[dsstv/obr/bad_jpeg/jpeg_zoom.pdf]
+}
+
+Lossy compression of JPEG is not suitable for all types of images. It is good
+for \uv{natural} images, but it is problematic for computer generated graphics
+like schematic diagrams, 3D renders, etc., where there are many sharp color
+gradients. The example of bad chose of compression see
+in~\in{fig.}[fig:badcompress]. The file size of both images is almost same.
+While for lossless PNG we cannot see any distortion, in the right image stored
+in JPEG format with compression set to the closest file size to PNG, we see
+that a DCT transform cannot handle sharp edges and the bias around them makes
+image heavily distorted.
+
+\placefigure[][fig:badcompress]{The detail of image with unproper compression.}
+{
+	\startcombination[2*1]
+		{\externalfigure[dsstv/obr/bad_jpeg/smili_face.png]}
+		{PNG, 1,016 Bytes}
+		{\externalfigure[dsstv/obr/bad_jpeg/smili_face_1-jpg.png]}
+		{JPEG 1\,\% quality, 1,378 Bytes}
+	\stopcombination
+	
+	\externalfigure[dsstv/obr/bad_jpeg/jpeg_zoom_vect.pdf]
+}
+
+There is also an option for storage data in {\em progressive mode}. In
+progressive mode, in first step the DC coefficients of all image blocks are
+transferred, then first AC coefficients, second AC coef., etc. This allows a
+low detail preview after receiving only a portion of the data and during
+a reception more and more details are displayed. The progressive mode is very
+useful for slow DSSTV transfer.
+
+\subsubsection{JPEG2000}
+
+When compared with original JPEG standard the new JPEG2000 has many
+improvements. There are used more sophisticate mathematical methods. The DCT is
+not used, but {\em discrete wavelet transformation (DWT)}. Wavelet
+transformation is one of methods for frequency domain representation of signal
+and has some advantages over DCT. A functions with defined wave shape are used
+instead of sinuses and cosinuses.
+
+Thanks to new transform method the compress ratio is better about
+20 to 30\,\%. The images with sharp edges and color gradients have
+lower distortion.
+
+Users of new format appreciate the most a better compression ratio and higher
+image quality when using the lossy compression. DCT in JPEG format requires the
+division of the image into small $8\times{}8$ blocks, while JPEG2000 uses the
+whole image. The RGB color coding is used. And in addition the user has the
+choice to mark  \uv{area of interest}. These areas are part of the image, where
+is required to set lower or higher compression ratio. For use in DSSTV is
+advantageous fault tolerance of the data stream. Only a small portion of the
+image displays poorly in the case of faulty transmission, other sections
+carried well are not affected. For older JPEG, the image part following the
+fault data of stream used to be completely discarded.
+
+\placefigure[][fig:jpeg2000]{File size depends on the compression ratio of JPEG 2000.}
+{
+\startcombination[2*2]
+	{\externalfigure[dsstv/obr/ara_0_1.png][width=5.5cm]}
+	{Ratio 10\,:\,1\crlf 14,628\,B}
+	{\externalfigure[dsstv/obr/ara_0_05.png][width=5.5cm]}
+	{Ratio 20\,:\,1\crlf 7,310\,B}
+	{\externalfigure[dsstv/obr/ara_0_035.png][width=5.5cm]}
+	{Ratio 29\,:\,1\crlf 4,779\,B}
+	{\externalfigure[dsstv/obr/ara_0_02.png][width=5.5cm]}
+	{Ratio 50\,:\,1\crlf 2,909\,B}
+\stopcombination
+}
+
+The new JPEG2000 has also progressive mode like an old JPEG. So the
+received image can be viewed during reception. You can see phases
+of reception in~\in{fig.}[fig:jp2_progress].
+
+
+\placefigure[][fig:jp2_progress]{Progressive display of JPEG2000 image
+depends on amount of transfered data, original image has $400\times298$ resolution.
+}
+{
+\startcombination[3*3]
+{\externalfigure[dsstv/obr/jp2_progress/drm_006.png][width=4cm]}
+{3\,\% }
+{\externalfigure[dsstv/obr/jp2_progress/drm_023.png][width=4cm]}
+{10\,\% }
+{\externalfigure[dsstv/obr/jp2_progress/drm_058.png][width=4cm]}
+{26\,\% }
+{\externalfigure[dsstv/obr/jp2_progress/drm_095.png][width=4cm]}
+{42\,\% }
+{\externalfigure[dsstv/obr/jp2_progress/drm_123.png][width=4cm]}
+{54\,\% }
+{\externalfigure[dsstv/obr/jp2_progress/drm_152.png][width=4cm]}
+{67\,\% }
+{\externalfigure[dsstv/obr/jp2_progress/drm_180.png][width=4cm]}
+{80\,\% }
+{\externalfigure[dsstv/obr/jp2_progress/drm_209.png][width=4cm]}
+{92\,\% }
+{\externalfigure[dsstv/obr/jp2_progress/drm_full_226.png][width=4cm]}
+{100\,\% }
+\stopcombination
+}
+
+\subsubsection[ztrvsbztr]{Lossy versus lossless image compression ---
+conclusion}
+
+In JPEG section is described that lossy compression is not suitable for all
+types of images. Charts, diagrams and other images featuring sharp color
+gradients get significant loss, see \in{fig.}[fig:badcompress]. Despite the
+significant quality loss the file size is not considerable reduced.
+in{Table}[tab:comparison] contains a comparison of file size for various
+formats. As the input file was used \uv{smiling face} from
+\in{fig.}[fig:badcompress] stored at a resolution of $256\times{}192$ in 16
+colors.
+
+Even relatively dumb RLE algorithm for lossless compression, but maintaining a
+100\% quality beats JPEG. It is the user's choice how to deal with the right
+choice of format and select a suitable compromise between resolution, number
+of colors and image quality.
+
+\placetable[][tab:porovnani]{Comparison of file sizes for different
+graphic formats.}
+{
+	\bTABLE[offset=\dimexpr1mm+.5pt]
+	\setupTABLE[column][2][align=center,alignmentcharacter={\%},aligncharacter=yes]
+	\setupTABLE[column][3][align=center,alignmentcharacter={,},aligncharacter=yes]
+	\bTABLEhead
+	\bTR
+        \bTH[align=center] Format \eTH
+		\bTH Quality \eTH
+		\bTH File size \eTH 
+	\eTR
+	\eTABLEhead
+	\bTABLEbody
+	\bTR\bTD Windows Bitmap 	\eTD\bTD 100\,\% 	\eTD\bTD 24,654\,B \eTD\eTR 
+	\bTR\bTD JPEG 	\eTD\bTD 100\,\% 	\eTD\bTD 17,740\,B \eTD\eTR 
+	\bTR\bTD JPEG 	\eTD\bTD 75\,\% 	\eTD\bTD 7,300\,B \eTD\eTR 
+	\bTR\bTD JPEG 	\eTD\bTD 50\,\% 	\eTD\bTD 5,298\,B \eTD\eTR 
+	\bTR\bTD TIFF, PackBits compression	\eTD\bTD 100\,\% 	\eTD\bTD 4,352\,B \eTD\eTR 
+	\bTR\bTD Windows Bitmap RLE 	\eTD\bTD 100\,\% 	\eTD\bTD 3,984\,B \eTD\eTR 
+	\bTR\bTD TIFF, komprese LZW 	\eTD\bTD 100\,\% 	\eTD\bTD 3,850\,B \eTD\eTR 
+	\bTR\bTD JPEG 	\eTD\bTD 25\,\% 	\eTD\bTD 3,766\,B \eTD\eTR 
+	\bTR\bTD GIF 	\eTD\bTD 100\,\% 	\eTD\bTD 1,569\,B \eTD\eTR 
+	\bTR\bTD JPEG 	\eTD\bTD 1\,\% 	\eTD\bTD 1,378\,B \eTD\eTR 
+	\bTR\bTD Portable Network Graphics 	\eTD\bTD 100\,\% 	\eTD\bTD 1,111\,B \eTD\eTR
+	\eTABLEbody
+	\eTABLE 
+}
+
+ 

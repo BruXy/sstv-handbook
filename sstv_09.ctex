@@ -1,0 +1,14 @@
+\input style.ctex
+
+\starttext
+
+\setupheadnumber[chapter][8]
+% Digital SSTV
+\input dsstv/dsstv_uv.ctex
+\input dsstv/komunikace.ctex
+%\input{dsstv/entropie.tex}
+\input dsstv/code.ctex
+\input dsstv/komprese.ctex
+\stoptext
+
+

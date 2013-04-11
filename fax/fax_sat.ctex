@@ -1,0 +1,170 @@
+\section{Satellite imagery retransmission}
+
+Following list is compiled from % CITACE noaasched.
+It's the list of stations retransmitting meteo-satellites imagery. All listed 
+stations transmit in 120\,lpm and IOC 576.
+
+\def\faxsathead{
+\bTR
+    \bTH UTC \eTH
+    \bTH Station \eTH
+    \bTH Ident. \eTH
+    \bTH Frequencies (kHz)\eTH
+    \bTH Note\eTH
+\eTR
+}
+
+\bTABLE[split=repeat,style=\tfx,frame=off]
+
+\setupTABLE[colum][3][style=\tfx\ss,align=center]
+\setupTABLE[header][align=center]
+
+\bTABLEhead
+	\faxsathead
+\eTABLEhead
+
+\bTABLEnext
+	\faxsathead
+\eTABLEnext
+
+\bTABLEbody
+\bTR\bTD 00:34\eTD	\bTD Hawai, USA\eTD	\bTD KVM70\eTD	\bTD  9982.5; 11090; 16135\eTD	\bTD East pacific GOES IR\eTD\eTR
+\bTR\bTD 00:48\eTD	\bTD Hawai, USA\eTD	\bTD KVM70\eTD	\bTD  9982.5; 11090; 16135\eTD	\bTD SW pacific GOES IR\eTD\eTR
+\bTR\bTD 01:01\eTD	\bTD Halifax, Canada\eTD	\bTD CFH\eTD	\bTD 122.5; 4271; 6496.4; 10536; 13510\eTD	\bTD IR\eTD\eTR
+\bTR\bTD 01:10\eTD	\bTD Tokyo, Japan\eTD	\bTD JMHx\eTD	\bTD 3622.5; 7795; 13988.5\eTD	\bTD MTSAT\eTD\eTR
+\bTR\bTD 01:20\eTD	\bTD Taipei, China\eTD	\bTD BMF\eTD	\bTD 4616; 8140; 13900; 18560\eTD	\bTD GMS\eTD\eTR
+\bTR\bTD 01:43\eTD	\bTD California, USA\eTD	\bTD NMC\eTD	\bTD 8682; 12786; 17151.2; 22527\eTD	\bTD NE GOES IR\eTD\eTR
+\bTR\bTD 01:54\eTD	\bTD California, USA\eTD	\bTD NMC\eTD	\bTD 8682; 12786; 17151.2; 22527\eTD	\bTD Pacific GOES IR\eTD\eTR
+\bTR\bTD 02:00\eTD	\bTD Lousiana, USA\eTD	\bTD NMG\eTD	\bTD 4317.9; 8503.9; 12789.9; 17146.4\eTD	\bTD Tropical GOES IR\eTD\eTR
+\bTR\bTD 03:51\eTD	\bTD Massachusetts, USA\eTD	\bTD NMF\eTD	\bTD  4235; 6340.5; 9110; 12750\eTD	\bTD \eTD\eTR
+\bTR\bTD 05:06\eTD	\bTD Alaska, USA\eTD	\bTD NOJ\eTD	\bTD 2054; 4298; 8459; 12412.5\eTD	\bTD GOES IR\eTD\eTR
+\bTR\bTD 06:35\eTD	\bTD Hawai, USA\eTD	\bTD KVM70\eTD	\bTD  9982.5; 11090; 16135\eTD	\bTD East pacific GOES IR\eTD\eTR
+\bTR\bTD 06:49\eTD	\bTD Hawai, USA\eTD	\bTD KVM70\eTD	\bTD  9982.5; 11090; 16135\eTD	\bTD SW pacific GOES IR\eTD\eTR
+\bTR\bTD 07:10\eTD	\bTD Tokyo, Japan\eTD	\bTD JMHx\eTD	\bTD 3622.5; 7795; 13988.5\eTD	\bTD MTSAT\eTD\eTR
+\bTR\bTD 07:20\eTD	\bTD Taipei, China\eTD	\bTD BMF\eTD	\bTD 4616; 8140; 13900; 18560\eTD	\bTD GMS\eTD\eTR
+\bTR\bTD 07:37\eTD	\bTD California, USA\eTD	\bTD NMC\eTD	\bTD 8682; 12786; 17151.2; 22527\eTD	\bTD Tropical GOES IR\eTD\eTR
+\bTR\bTD 08:00\eTD	\bTD Lousiana, USA\eTD	\bTD NMG\eTD	\bTD 4317.9; 8503.9; 12789.9; 17146.4\eTD	\bTD Tropical GOES IR\eTD\eTR
+\bTR\bTD 09:06\eTD	\bTD Hawai, USA\eTD	\bTD KVM70\eTD	\bTD  9982.5; 11090; 16135\eTD	\bTD Pacific GOES IR\eTD\eTR
+\bTR\bTD 09:08\eTD	\bTD California, USA\eTD	\bTD NMC\eTD	\bTD 8682; 12786; 17151.2; 22527\eTD	\bTD Pacific GOES IR\eTD\eTR
+\bTR\bTD 09:43\eTD	\bTD Hawai, USA\eTD	\bTD KVM70\eTD	\bTD  9982.5; 11090; 16135\eTD	\bTD Tropical GOES IR\eTD\eTR
+\bTR\bTD 09:51\eTD	\bTD Massachusetts, USA\eTD	\bTD NMF\eTD	\bTD  4235; 6340.5; 9110; 12750\eTD	\bTD \eTD\eTR
+\bTR\bTD 10:22\eTD	\bTD Halifax, Canada\eTD	\bTD CFH\eTD	\bTD 122.5; 4271; 6496.4; 10536; 13510\eTD	\bTD IR\eTD\eTR
+\bTR\bTD 11:17\eTD	\bTD Alaska, USA\eTD	\bTD NOJ\eTD	\bTD 2054; 4298; 8459; 12412.5\eTD	\bTD GOES IR\eTD\eTR
+\bTR\bTD 11:30\eTD	\bTD Playa Ancha, Chile\eTD	\bTD CBV\eTD	\bTD 4228; 8677; 17146.4\eTD	\bTD \eTD\eTR
+\bTR\bTD 12:32\eTD	\bTD Hawai, USA\eTD	\bTD KVM70\eTD	\bTD  9982.5; 11090; 16135\eTD	\bTD East pacific GOES IR\eTD\eTR
+\bTR\bTD 12:48\eTD	\bTD Hawai, USA\eTD	\bTD KVM70\eTD	\bTD  9982.5; 11090; 16135\eTD	\bTD SW pacific GOES IR\eTD\eTR
+\bTR\bTD 13:10\eTD	\bTD Tokyo, Japan\eTD	\bTD JMHx\eTD	\bTD 3622.5; 7795; 13988.5\eTD	\bTD MTSAT\eTD\eTR
+\bTR\bTD 13:20\eTD	\bTD Taipei, China\eTD	\bTD BMF\eTD	\bTD 4616; 8140; 13900; 18560\eTD	\bTD GMS\eTD\eTR
+\bTR\bTD 14:00\eTD	\bTD Lousiana, USA\eTD	\bTD NMG\eTD	\bTD 4317.9; 8503.9; 12789.9; 17146.4\eTD	\bTD Tropical GOES IR\eTD\eTR
+\bTR\bTD 14:03\eTD	\bTD California, USA\eTD	\bTD NMC\eTD	\bTD 8682; 12786; 17151.2; 22527\eTD	\bTD NE GOES IR\eTD\eTR
+\bTR\bTD 14:14\eTD	\bTD California, USA\eTD	\bTD NMC\eTD	\bTD 8682; 12786; 17151.2; 22527\eTD	\bTD Pacific GOES IR\eTD\eTR
+\bTR\bTD 15:03\eTD	\bTD Massachusetts, USA\eTD	\bTD NMF\eTD	\bTD  4235; 6340.5; 9110; 12750\eTD	\bTD \eTD\eTR
+\bTR\bTD 16:45\eTD	\bTD Playa Ancha, Chile\eTD	\bTD CBV\eTD	\bTD 4228; 8677; 17146.4\eTD	\bTD \eTD\eTR
+\bTR\bTD 17:06\eTD	\bTD Alaska, USA\eTD	\bTD NOJ\eTD	\bTD 2054; 4298; 8459; 12412.5\eTD	\bTD GOES IR\eTD\eTR
+\bTR\bTD 18:35\eTD	\bTD Hawai, USA\eTD	\bTD KVM70\eTD	\bTD  9982.5; 11090; 16135\eTD	\bTD East pacific GOES IR\eTD\eTR
+\bTR\bTD 18:49\eTD	\bTD Hawai, USA\eTD	\bTD KVM70\eTD	\bTD  9982.5; 11090; 16135\eTD	\bTD SW pacific GOES IR\eTD\eTR
+\bTR\bTD 19:02\eTD	\bTD California, USA\eTD	\bTD NMC\eTD	\bTD 8682; 12786; 17151.2; 22527\eTD	\bTD Tropical GOES IR\eTD\eTR
+\bTR\bTD 19:10\eTD	\bTD Tokyo, Japan\eTD	\bTD JMHx\eTD	\bTD 3622.5; 7795; 13988.5\eTD	\bTD MTSAT\eTD\eTR
+\bTR\bTD 19:20\eTD	\bTD Taipei, China\eTD	\bTD BMF\eTD	\bTD 4616; 8140; 13900; 18560\eTD	\bTD GMS\eTD\eTR
+\bTR\bTD 19:30\eTD	\bTD Playa Ancha, Chile\eTD	\bTD CBV\eTD	\bTD 4228; 8677; 17146.4\eTD	\bTD \eTD\eTR
+\bTR\bTD 20:00\eTD	\bTD Lousiana, USA\eTD	\bTD NMG\eTD	\bTD 4317.9; 8503.9; 12789.9; 17146.4\eTD	\bTD Tropical GOES IR\eTD\eTR
+\bTR\bTD 21:06\eTD	\bTD Hawai, USA\eTD	\bTD KVM70\eTD	\bTD  9982.5; 11090; 16135\eTD	\bTD Pacific GOES IR\eTD\eTR
+\bTR\bTD 21:13\eTD	\bTD California, USA\eTD	\bTD NMC\eTD	\bTD 8682; 12786; 17151.2; 22527\eTD	\bTD Pacific GOES IR\eTD\eTR
+\bTR\bTD 21:43\eTD	\bTD Hawai, USA\eTD	\bTD KVM70\eTD	\bTD  9982.5; 11090; 16135\eTD	\bTD Tropical GOES IR\eTD\eTR
+\bTR\bTD 21:51\eTD	\bTD Massachusetts, USA\eTD	\bTD NMF\eTD	\bTD  4235; 6340.5; 9110; 12750\eTD	\bTD \eTD\eTR
+\bTR\bTD 23:17\eTD	\bTD Alaska, USA\eTD	\bTD NOJ\eTD	\bTD 2054; 4298; 8459; 12412.5\eTD	\bTD GOES IR\eTD\eTR
+\bTR\bTD 23:25\eTD	\bTD Playa Ancha, Chile\eTD	\bTD CBV\eTD	\bTD 4228; 8677; 17146.4\eTD	\bTD \eTD\eTR
+\eTABLEbody
+\eTABLE
+
+It depends on your own position if you have interest in reception of images
+from these stations. For long distance stations should not be reception
+conditions so good every day. Their images for me in Europe is not interesting
+for weather forecast, but there are images of hurricanes, typhoons and other
+unusual weather phenomena.
+
+\placefigure[][none]{Restransmission of satellite image
+from Boston {\ss NMF} station received on 12.750\,kHz, hurricane
+Katrina is devastating Mexican gulf}
+{
+	\externalfigure[fax/obr/boston_katrina.png][width=\makeupwidth]
+}
+
+\subsection{Meteorologic satellites}
+
+If you are interested in reception of satellite imagery, there is few basic
+informations.
+
+For amateur reception it is possible to use NOAA satellites on low Earth orbit.
+These satellites transmit in 137MHz band in WEFAX mode with amplitude
+modulation, so an sound card can be used as signal decoder with some dedicated
+software like JVComm32 or WXtoIMG. For the best reception should be used a
+receiver with 30 kHz intermediate frequency (IF) width, which unfortunately
+common receivers and TRXes don't support. The narrower IF causes image
+distortion and receiver for wideband FM (about 200\,kHz) is not very suitable
+due to more noise that affecting signal. Also it is necessary to use an antenna
+with right-handed circular polarization as {\em turnstile antenna} (crossed dipoles) or {\em QFH (Quadrifillar Helix Antenna)}.
+
+Satellites NOAA, MetOp and Fengyun are carrying high resolution scanners and
+digital transmitters~-- {\em HRPT (High Resolution Image Transmission)\/}. 
+They broadcast on 1.6GHz band, but used system is digital and for data
+reception must be used band converter, special modem and main difficulty 
+rests in need of antenna aiming. A computer controlled rotator is needed for
+aiming of azimuth and elevation.
+
+Next option is a reception of geostationary satellites of Meteosat and GOES
+family. The analog WEFAX broadcast in 1.6GHz band was discontinued. For analog
+WEFAX reception could be used NOAA receiver with band converter and
+dish or yagi antenna.
+
+The follower of the analog broadcasst is new system {\em MSG (Meteosat
+Second Genereation)}, it is fully operational since 2004. Digital data {\em
+LRIT (Low Rate Information Transmission)\/} and {\em HRIT (High Rate
+Information Transmission)\/} are broadcast via television transponder
+EuroBird\,9 (Ku band 10.7~-- 12.75\,GHz) on 11,976.82\,MHz (EUMETCAST). An
+extension PCI card for DVB-S reception is used for data reception, e.g.
+SkyStar\,2 card for PCI or external version for USB. The data are decoded
+with tq\circledR-TELLICAST software. The disadvantage is that almost all
+data is distributed encrypted, so it is necessary to register at Eumetsat
+provider and buy the hardware decoding key. The price for hobby purposes is
+\euro{}100 (software is for \euro{}60 and key is for \euro{}40). The are
+also higher demands on PC configuration: 2GHz CPU, 1\,GB RAM and 36\,GB
+hard disk. 
+
+The radiometer of Meteosat 8 and 9 provides images in 11 spectral channels
+in 3\,km/pixel resolution and in {\em HRV (High Resolution Visible} channel
+it is 1\,km/pixel, although in regard to slant projection of the Earth's
+surface the resolution for Europe and Globe edges is lower. Image data
+{\em (High Rate SEVIRI)\/} have a standard size 3712$\times$3712 pixels
+and for HRV it is 5568$\times$11136 pixels. Data from satellite are send
+first to the primary station in German Darmstadt and then they are 
+processed and they are distributed via EuroBird\,9.
+
+The Meteosat\,9 provides image of Earth globe every 15 minutes, the
+Meteosat\,8 sends data every 5 minutes (Rapid Scanning Service), but only
+European part of globe is sent. In addition to these data via EUMETCAST
+are broadcast further meteorological products, such as  NOAA and MetOp
+HRPT imagery and processed data from other satellite sensors (infrared,
+microwaves,\ldots{}).
+
+\subsection{Essential Services}
+
+The unencrypted data from Meteosat 9 and Meteosat 7 are transmitted every
+	six hours, also GOES and MTSAT-1R is available every 3 hours. 
+
+
+\placetable[here][tab:eurobird]{Essential services data.}{
+	\bTABLE[style=\tfx]
+	\setupTABLE[header][align=center]
+	\setupTABLE[column][2][align=center]
+	\bTABLEhead
+		\bTR \bTH Satellite \eTH  \bTH  Interval \eTH   \bTH Transmittion times (UTC)   \eTH \eTR
+	\eTABLEhead
+	\bTABLEbody
+		\bTR\bTD Meteosat 9 HRIT/LRIT\eTD    \bTD 6 hours\eTD 	\bTD 05:45, 11:45, 17:45, 23:45\eTD\eTR
+		\bTR\bTD Meteosat 7\eTD			\bTD 6 hours\eTD     \bTD 00:00, 06:00, 12:00, 18:00\eTD\eTR
+		\bTR\bTD GOES 9, 10, 12; MTSAT-1R\eTD	\bTD 3 hours\eTD		\bTD 00:00, 03:00, 06:00, 09:00, 12:00, 15:00, 18:00, 21:00\eTD\eTR
+	\eTABLEbody
+	\eTABLE
+}
+

@@ -1,0 +1,269 @@
+\section{Experimental modes}
+
+During the years of the SSTV boom many modes were created, but never 
+gained popularity. Many of them are totally forgotten, like
+WinPix GVA, Proscan J-120, WA7WOD system or ScanMate, although some of them 
+have a few interesting features which we are about to delve into.
+
+\subsection{MSCAN TV}
+
+The modes TV-1 and TV-2 were one of many experiments in the SSTV
+transmission field. An interesting feature is the use of
+{\em interlaced} transmission. They do not use the same half-frame
+interlacing like normal television does. But the whole image, is divided
+into four quarter-frames. These frames are transmitted gradually
+in the direction from top to bottom, so you can get  a first 
+preview of the image after the first quarter of transmission time, but only in
+low resolution. Thanks to interlacing the resolution increases
+gradually during transmission up to 320$\times$256. 
+
+It is possible to receive these modes with conventional equipment
+without interlacing support, because their line speed are the same as for
+Wraase SC-180 (TV-1) and Martin M1 (TV-2) modes. But in this condition,
+the image will contain four bars with all quarter-frames.
+
+\placefigure[][none]{MSCAN TV image interlacing.}
+{
+	\startcombination[4*1]
+	{\externalfigure[sstv/obr/mscan_60.png][width=0.2\makeupwidth]}{1.}
+	{\externalfigure[sstv/obr/mscan_120.png][width=0.2\makeupwidth]}{2.}
+	{\externalfigure[sstv/obr/mscan_180.png][width=0.2\makeupwidth]}{3.}
+	{\externalfigure[sstv/obr/mscan_240.png][width=0.2\makeupwidth]}{4.}
+	\stopcombination
+}
+
+\subsection{Kenwood FAST FM}
+
+This mode is built in the mobile SSTV converter {\em Visual Comunicator
+VC-H1} from Kenwood (see \in{section}[vch1]). This unit
+support some normal modes and the \uv{FAST FM} mode.
+
+The FAST FM mode sends video signals in the 2800\,Hz (black) to
+4400\,Hz (white) band. The vertical synchronization and VIS code format
+is similar to Robot's standard, it has a value of 90, but  
+uses odd parity (the number of logical ones must be odd). After the VIS code
+there is a digital header and then an image with a resolution of
+320$\times$240.
+
+%http://www.hi-ho.ne.jp/~jf1qci/engfast.htm
+
+The duration of one scan-line is 53.6\,ms, so the total transmission time 
+for an image is 13.5 seconds. The mode uses  YCrCb color coding in
+the 4\,:\,2\,:\,0 format. The brightness signal occupies 35.4\,ms of
+scan-line, and than there is a pulse of 3600\,Hz that lasts 0.41\,ms and
+then color signals are sent. Each even scan-line contains $R-Y$ and
+odd line $R-Y$. The scan-line is ended by 0.41\,ms pulse again. 
+The transmission of a whole image is ended by one second pulse of
+1900\,Hz.
+
+Due to fast transmission, the used bandwidth of FAST FM is in 1.0
+to 6.2\,kHz range, so it cannot be used in the SSB voice channel, but only in FM
+channels on VHF. The image quality is comparable to the Robot 36 Color mode.
+
+\subsection[mmscan]{Modes MP, MR, ML}
+
+These modes were created by Makoto Mori, JE3HHT, the author of
+MMSSTV software. Some of these modes became quite popular, because
+of the success of MMSSTV. The author created modes with both standard and
+high resolutions. They use YCrCb colors and extended VIS code. Some
+modes use a narrower band for syncs and video signals.
+
+\placefigure[][none]{The comparison of modes in real conditions on the 3.7MHz band.}
+{
+	\startcombination[2*1]
+	{\externalfigure[sstv/obr/test_m1.jpg][width=0.4\makeupwidth]}{Martin M1}
+	{\externalfigure[sstv/obr/test_mp115.jpg][width=0.4\makeupwidth]}{MP115}
+	\stopcombination
+}
+
+The change he made to the traditional VIS specification extends the code
+by 8 extra bits, so a 16-bit code is sent instead. The first 8 bits (LSB) 
+are the same for each mode with a value of 35 (0x23) that identifies the system.
+While the remaining bits (MSB) distinguish a particular mode. Odd parity is used as a simple check.
+
+
+\placefigure[][none]{The 16-bit VIS code of MP115 mode with a 0x2923 value.}
+{
+	\externalfigure[sstv/obr/vis_mp115-en.pdf]
+}
+
+VIS used in narrowband modes has a very little in common with the
+original standard. Initially, during vertical synchronization {\em
+N-VIS\/} pulses of 1900Hz and 2300Hz in 100\,ms are sent, followed by
+a start bit of 1900\,Hz (see \in{fig.}[fig:mp110-n-en]). 
+
+All code bits have a duration of 22\,ms (modulation speed is 45.45\,Bd). Logic one has
+1900\,Hz and logic zero 2100\,Hz. The code word length is 24 bits and
+it is divided into four groups of 6 bits, bits are sent in the following
+order: 
+
+% 5 & 4 & 3 & 2 & 1 & 0 & 15 & 14 & 13 & 12 & 11 &10 & 25 & 24 & 23 & 22 & 21 & 20 & 35 & 34 & 33 & 32 & 31 & 30 \\
+
+Each group has the following meaning:
+
+\startitemize
+\item Group 0 (5--0) = 101101
+\item Group 1 (15--10) = 010101
+\item Group 2 (25--20) = N-VIS
+\item Group 3 (35--30) = 010101 {\tt xor} N-VIS
+\stopitemize
+
+For example, MP73-N has N-VIS = 000010  (0x02) and the whole code word is:
+
+\startalignment[center]
+101101\,010101\,000010\,010111.
+\stopalignment
+
+\placefigure[fig:mp110-n-en][none]{Vertical synchronization and scan-line of the MP110-N narrowband mode.}
+{
+	\externalfigure[sstv/obr/mp110-n-en.pdf]
+}
+
+MP modes use the same principle as PD modes. The sync takes
+9.0\,ms followed by a short 1500\,Hz gap of 1.0\,ms, then odd scan-line
+$Y$ brightness is sent followed by the $R-Y$ and $B-Y$ chrominance signals. The
+chrominance signals are the average of two neighborhood scan-lines. The
+scan-line is ended by the even $Y$ luminance signal. These sequence is 
+repeated 128$\times$.
+
+MP modes also have narrowband variants (MPxx-N) and their video
+signals occupy frequencies from 2044 to 2300\,Hz.
+
+The MR and ML modes use YCrCb color coding in 4\,:\,2\,:\,2 format, same
+as the Robot 72 Color mode. Horizontal syncs are same as in MP modes. 
+The scan-line begins with luminance $Y$, then 0.1\,ms gap is sent followed by
+$R-Y$, a gap, and $B-Y$, the line then ends with a 0.1ms gap. These gaps
+should have the same frequency as the last pixel of the previous color
+component. The MLxx group has a high resolution of 640$\times$496.
+
+The MC-N modes are narrowband, but they use RGB color coding.
+Horizontal pulses last 8.0\,ms and are followed by a 0.5\,ms gap
+of 2044\,Hz. The order of color components is red~-- green~-- blue.
+
+%\splitfloat[]
+%{
+\placetable[][]{The parameters of MMSSTV modes.}
+%}
+%{
+{
+\bTABLE[style=small,offset=\dimexpr1mm,background=color,split=repeat]\tfx
+\setupTABLE[column][each][align=center]
+\setupTABLE[column][1][width=2cm]
+\setupTABLE[column][5,6,7,8,9][align=center,alignmentcharacter={.},aligncharacter=yes]
+\bTABLEhead
+\bTR
+	\bTH[bottomframe=off]  Mode\eTH
+	\bTH[bottomframe=off] Transfer\eTH
+	\bTH[nr=2,align={center,lohi}] Resolution\eTH
+	\bTH[bottomframe=off] VIS\eTH
+	\bTH[bottomframe=off] Color\eTH
+	\bTH[nc=4] Scan-line (ms) \eTH
+	\bTH[bottomframe=off] Speed\eTH
+	\eTR
+
+	\bTR
+	\bTH[topframe=off] name\eTH
+	\bTH[topframe=off] time \eTH
+	\bTH[topframe=off] 16-bit \eTH
+	\bTH[topframe=off] sequence \eTH
+	\bTH[align=center] Sync \eTH
+	\bTH[align=center] Y\eTH
+	\bTH[align=center] R--Y\eTH
+	\bTH[align=center] B--Y\eTH
+	\bTH[topframe=off] (lpm)\eTH
+	\eTR
+\eTABLEhead
+
+\bTABLEbody
+\bTR\bTD MP115 	\eTD\bTD  115\,s 	\eTD\bTD  320$\times$256 \eTD\bTD  0x2923 \eTD\bTD  YCrCb \eTD\bTD  9.0 \eTD\bTD  223.0\eTD\bTD  223.0\eTD\bTD  223.0     \eTD\bTD 133.037694 \eTD\eTR
+\bTR\bTD MP140 	\eTD\bTD  140\,s 	\eTD\bTD  320$\times$256 \eTD\bTD  0x2a23 \eTD\bTD  YCrCb \eTD\bTD  9.0 \eTD\bTD  270.0\eTD\bTD  270.0\eTD\bTD  270.0     \eTD\bTD 110.091743 \eTD\eTR
+\bTR\bTD MP175 	\eTD\bTD  175\,s 	\eTD\bTD  320$\times$256 \eTD\bTD  0x2c23 \eTD\bTD  YCrCb \eTD\bTD  9.0 \eTD\bTD  340.0\eTD\bTD  340.0\eTD\bTD  340.0     \eTD\bTD 87.591241  \eTD\eTR
+%%%\bTR\bTD 
+\bTR\bTD MR73 	\eTD\bTD  73\,s 	\eTD\bTD  320$\times$256 \eTD\bTD  0x4523	\eTD\bTD  YCrCb \eTD\bTD  9.0 \eTD\bTD  138.0\eTD\bTD  69.0\eTD\bTD  69.0     \eTD\bTD 419.140761\eTD\eTR
+\bTR\bTD MR90 	\eTD\bTD  90\,s 	\eTD\bTD  320$\times$256 \eTD\bTD  0x4623	\eTD\bTD  YCrCb \eTD\bTD  9.0 \eTD\bTD  171.0\eTD\bTD  85.5\eTD\bTD  85.5     \eTD\bTD 340.618791\eTD\eTR
+\bTR\bTD MR115 	\eTD\bTD  115\,s 	\eTD\bTD  320$\times$256 \eTD\bTD  0x4923	\eTD\bTD  YCrCb \eTD\bTD  9.0 \eTD\bTD  220.0\eTD\bTD  110.0\eTD\bTD  110.0   \eTD\bTD 266.489007\eTD\eTR
+\bTR\bTD MR140 	\eTD\bTD  140\,s 	\eTD\bTD  320$\times$256 \eTD\bTD  0x4a23	\eTD\bTD  YCrCb \eTD\bTD  9.0 \eTD\bTD  269.0\eTD\bTD  134.5\eTD\bTD  134.5   \eTD\bTD 218.858289\eTD\eTR
+\bTR\bTD MR175 	\eTD\bTD  175\,s 	\eTD\bTD  320$\times$256 \eTD\bTD  0x4c23	\eTD\bTD  YCrCb \eTD\bTD  9.0 \eTD\bTD  337.0\eTD\bTD  168.5\eTD\bTD  168.5   \eTD\bTD 175.361683\eTD\eTR
+%%%\bTR\bTD 
+\bTR\bTD ML180 	\eTD\bTD  180\,s 	\eTD\bTD  640$\times$496 \eTD\bTD  0x8523	\eTD\bTD  YCrCb \eTD\bTD  9.0 \eTD\bTD  176.5\eTD\bTD  88.25\eTD\bTD  88.25   \eTD\bTD 330.305533\eTD\eTR
+\bTR\bTD ML240 	\eTD\bTD  240\,s 	\eTD\bTD  640$\times$496 \eTD\bTD  0x8623	\eTD\bTD  YCrCb \eTD\bTD  9.0 \eTD\bTD  236.5\eTD\bTD  118.25\eTD\bTD  118.25 \eTD\bTD 248.292986\eTD\eTR
+\bTR\bTD ML280 	\eTD\bTD  280\,s 	\eTD\bTD  640$\times$496 \eTD\bTD  0x8923	\eTD\bTD  YCrCb \eTD\bTD  9.0 \eTD\bTD  277.5\eTD\bTD  138.75\eTD\bTD  138.75 \eTD\bTD 212.276667\eTD\eTR
+\bTR\bTD ML320 	\eTD\bTD  320\,s 	\eTD\bTD  640$\times$496 \eTD\bTD  0x8a23	\eTD\bTD  YCrCb \eTD\bTD  9.0 \eTD\bTD  317.5\eTD\bTD  158.75\eTD\bTD  158.75 \eTD\bTD 185.960019\eTD\eTR
+\eTABLEbody
+\eTABLE
+
+\noindent{}{\bf\ss Narrowband modes:}
+
+\blank[2mm]
+
+\bTABLE[style=small,offset=\dimexpr1mm,background=color]\tfx
+%\bTABLE[style=small,offset=\dimexpr1mm+.5pt,background=color]\tfx
+\setupTABLE[column][1][width=2cm]
+\setupTABLE[column][each][align=center]
+\setupTABLE[column][5,6,7,8,9][align=center,alignmentcharacter={.},aligncharacter=yes]
+\bTABLEhead
+\bTR
+	\bTH[bottomframe=off] Mode \eTH
+	\bTH[bottomframe=off] Transfer \eTH
+	\bTH[nr=2,bottomframe=off,align={lohi}] Resolution \eTH
+	\bTH[nr=2,bottomframe=off,align={lohi}] N-VIS \eTH
+	\bTH[bottomframe=off] Color \eTH
+	\bTH[nc=4] Scan-line (ms) \eTH
+	\bTH[bottomframe=off] Speed \eTH	
+\eTR
+\bTR
+	\bTH[topframe=off] name \eTH
+	\bTH[topframe=off] time \eTH
+	\bTH[topframe=off] sequence \eTH
+	\bTH[topframe=off] Sync \eTH
+	\bTH Y \eTH
+	\bTH R--Y \eTH
+	\bTH B--Y \eTH
+	\bTH[topframe=off] (lpm)\eTH
+\eTR
+\eTABLEhead
+\bTABLEbody
+\bTR\bTD MP73-N \eTD\bTD  73\,s 	\eTD\bTD  320$\times$256 \eTD\bTD  0x02	\eTD\bTD  YCrCb \eTD\bTD  9.0 \eTD\bTD  140.0\eTD\bTD  140.0\eTD\bTD  140.0       \eTD\bTD 210.526316 \eTD\eTR
+\bTR\bTD MP110-N \eTD\bTD  115\,s 	\eTD\bTD  320$\times$256 \eTD\bTD  0x04	\eTD\bTD  YCrCb \eTD\bTD  9.0 \eTD\bTD  212.0\eTD\bTD  212.0\eTD\bTD  212.0       \eTD\bTD 139.860140 \eTD\eTR %133.037694 \\
+\bTR\bTD MP140-N \eTD\bTD  140\,s 	\eTD\bTD  320$\times$256 \eTD\bTD  0x05	\eTD\bTD  YCrCb \eTD\bTD  9.0 \eTD\bTD  270.0\eTD\bTD  270.0\eTD\bTD  270.0       \eTD\bTD 110.091743 \eTD\eTR
+%%%
+\bTR[aligncharacter=no]
+	\bTD[nc=5]\eTD
+	\bTD[align={center}]{\bf Sync}\eTD
+	\bTD[align={middle}]{\bf  R}\eTD
+	\bTD[align={middle}]{\bf  G}\eTD
+	\bTD[align={middle}]{\bf  B}\eTD
+	\bTD \eTD
+\eTR
+\bTR\bTD MC110-N \eTD\bTD  110\,s   \eTD\bTD  320$\times$256 \eTD\bTD   0x14  \eTD\bTD  R--G--B \eTD\bTD  8.0 \eTD\bTD  143.0\eTD\bTD  143.0\eTD\bTD  143.0\eTD\bTD  137.142857\eTD\eTR
+\bTR\bTD MC140-N \eTD\bTD  140\,s   \eTD\bTD  320$\times$256 \eTD\bTD   0x15  \eTD\bTD  R--G--B \eTD\bTD  8.0 \eTD\bTD  180.0\eTD\bTD  180.0\eTD\bTD  180.0\eTD\bTD  109.389243\eTD\eTR
+\bTR\bTD MC180-N \eTD\bTD  180\,s   \eTD\bTD  320$\times$256 \eTD\bTD   0x16  \eTD\bTD  R--G--B \eTD\bTD  8.0 \eTD\bTD  232.0\eTD\bTD  232.0\eTD\bTD  232.0\eTD\bTD  85.166785\eTD\eTR
+\eTABLEbody
+\eTABLE
+} % \placetable
+%} % \splitfloat
+
+\subsection{Martin HQ}
+
+The Martin HQ system from Martin Emmerson's workshop  was released
+at the end of 1996. These modes were developed for Robot
+1200C, SUPERSCAN 2001 and other compatible converters with the EPROM version 4.6,
+or 1.6. Unlike previous Martin modes, they use YCrCb color
+coding. The transmission time of chrominance signals is half of
+luminance (format 4\,:\,2\,:\,2).  There are 6 signals sent between
+two doubled syncs. The first three signals create an odd scan-line:
+luminance $Y$, $R-Y$, $B-Y$. And the next three signals contain even 
+scan-line: luminance $Y$, $Y-R$, $Y-B$. The opposite \uv{polarity} of
+chrominace compensates for possible color distortion when signals are not
+tuned precisely. The HQ1 mode has 90 seconds for image transmission
+and HQ2 has 112 seconds.
+
+Unfortunately, the author refused to disclose the exact specification
+of the system, so this improved system is not commonly found.
+
+\placefigure[][none]{Two scan-lines of Martin HQ modes, when color
+bars are sent.}
+{
+	\externalfigure[sstv/obr/HQ2_bars-en.pdf][]
+}
+

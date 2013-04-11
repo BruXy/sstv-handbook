@@ -1,0 +1,62 @@
+﻿\chapter{Preface}
+
+There are various methods used in transferring messages through
+radio waves. With miscellaneous communication modes that are
+suitable for use under different conditions, varying in speed of
+transmission, modulation or data protocol.
+
+And many of them are used by radio amateurs to connect worldwide on short waves,
+connections over satellite relays or message downloads from 
+local packet-radio BBS on very short waves. The book you are
+about to read is about image transmission. 
+
+The most common method to transfer images is television
+broadcasting ({\em Fast-Scan Television}\/). An analog FSTV
+broadcast can be produced in amateur conditions too. Both
+picture and sound transmitted on amateur bands can be
+received via a regular TV set or by a satellite tuner in the
+case of frequency modulation. These connections are held only on
+ultrashort or microwave bands, because the signal needs a large
+bandwidth and thus the signal can be transported only through
+relatively small distances. 
+
+However the issue of this book is {\em image transmission on
+short waves}. 
+
+The most popular narrow-band mode for image transmission is
+SSTV~-- {\em Slow-scan Television}. Unlike the classic TV it can
+broadcast only static images with lower resolution.
+
+ An SSTV image is converted to an audio signal, which can then be
+transmitted over a voice channel by a communication transceiver
+on shortwave bands. With an expansion of radio broadcast
+digitalization, digital SSTV was also developed and uses
+advanced technologies like data compression, error correction
+codes and discrete multi-tone modulations for relatively fast
+narrow-band data transfer.
+
+Another option for shortwave image transmission is {\em
+radiofax}, the predecessor of what is now commonly known as
+office fax. Radiofax is mostly used by meteorological stations
+for the broadcast of synoptic maps and satellite images. Or by
+press agencies for the broadcast of news (and photographs in the
+past) on longwave and shortwave bands. Synoptic maps should be
+transferred in high quality, so image transmission takes about
+10 minutes  or more on average. Despite the pervasiveness of Internet technology,  this
+broadcast method is still widely used. 
+
+For a long time the integral part of our hamshacks has been the
+personal computer. An essential part of a PC; the sound card
+inputs signals into the PC. And then specialized software converts
+ the signal to data and vice versa. The data that is
+of interest in this book will be that of transmitted images. 
+
+I hope this book will spur those who are interested in these
+fascinating modes of communication to get immediately active in
+the field. 
+
+%\vspace{2cm}
+\blank[2cm]
+
+In Žďář nad Sázavou, \currentdate \hfill Martin OK2MNM
+

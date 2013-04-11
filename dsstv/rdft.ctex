@@ -1,0 +1,183 @@
+\section{Redundant Data File Transfer}
+
+This communication mode uses {\em phase shift keying (PSK)\/} modulation. The
+simplest PSK modulation changes subcarrier between two phase states {\em
+(BPSK~-- biphase shift keying)\/} and these states corresponds to level of
+logical zero or one. This is used for example for teletype mode PSK31.
+
+% http://www.aintel.bi.ehu.es/psk31.html
+
+
+\placefigure[][fig:psk]{Two-phased digital PSK modulation.}
+{
+	\externalfigure[dsstv/obr/psk.pdf]
+}
+
+
+%http://replay.web.archive.org/20090410002431/http://www.svs.net/wyman/examples/hdsstv/0f.htm
+
+RDFT uses similar principle but much more extended. The signal is composed from
+eight subcarriers from 590\,Hz to 2200\,Hz with 230Hz steps. Each subcarrier
+uses nine modulation states~-- eight informational states and one state with
+{\em no change} meaning. The data from inner encoder are used for phase
+assignment. 
+
+The first step in modulation process is to take a cosine of modulation angle
+plus 1400Hz subcarrier angle. In next steps the energy around 1400 Hz is
+isolated  and translated onto right subcarrier. Then the subcarriers are
+compiled together and resulting spectrum of signal is in
+\in{fig.}[fig:wyman_spectrum].
+
+
+\placefigure[][fig:rdft_modulator]{Block diagram of RDFT modulator for
+one subcarrier.}
+{
+	\externalfigure[dsstv/obr/rdft_modulator.pdf]
+}
+
+\placefigure[][fig:wyman_spectrum]{RDFT frequency spectrum}
+{
+	\externalfigure[dsstv/obr/wyman_spectrum-en.pdf]
+}
+
+The signal contains two levels of error-coding. The outer coding scheme use RS
+code $(306, x)$, where $x$ is set by level of error control, see
+\in{tab.}[tab:wyman]. The symbol numbers, produced by the outer encoder, are
+the input to the inner encoder. The inner coding scheme uses RS($(8, 4)$, where
+is 50\% redundancy. All 8 symbols are used for phase settings for each of 8
+subcarriers, so the inner code-block is transferred paralely. The decoder of
+inner code on reception side is able to correct whole block if 6 of 8 symbols
+are transferred without error.
+
+Operator can choose one of four modes, in all cases the modulation
+speed is same 122,5\,Bd, but the level of error control differs.
+
+
+\placetable[][tab:wyman]{RDFT communication modes.}
+{\tfx
+\bTABLE
+\setupTABLE[column][each][align={center,middle},width=2cm]
+\bTABLEhead
+\bTR[bottomframe=off]
+	\bTH RDFT mode \eTH
+	\bTH  Subcarrier number  \eTH
+	\bTH  RS code \eTH
+	\bTH  Redundancy \eTH
+	\bTH  Maximum errors \eTH
+	\bTH  Bandwidth \eTH
+	\bTH  Bit rate\eTH
+	\bTH  Symbol rate \eTH\eTR
+\eTABLEhead
+\bTABLEbody
+\bTR\bTD Wyman 11 \eTD\bTD  8 \eTD\bTD  (306, 274) \eTD\bTD       10\,\% \eTD\bTD 16  \eTD\bTD    1840\,Hz \eTD\bTD  866\,bps \eTD\bTD  122,5\,Bd \eTD\eTR
+\bTR\bTD Wyman 12 \eTD\bTD  8 \eTD\bTD  (306, 242) \eTD\bTD       20\,\% \eTD\bTD 32  \eTD\bTD    1840\,Hz \eTD\bTD  765\,bps \eTD\bTD  122,5\,Bd \eTD\eTR
+\bTR\bTD Wyman 13 \eTD\bTD  8 \eTD\bTD  (306, 178) \eTD\bTD       40\,\% \eTD\bTD 64  \eTD\bTD    1840\,Hz \eTD\bTD  563\,bps \eTD\bTD  122,5\,Bd \eTD\eTR
+\bTR\bTD Wyman 14 \eTD\bTD  8 \eTD\bTD  (306, 92)  \eTD\bTD       70\,\% \eTD\bTD 107 \eTD\bTD    1840\,Hz \eTD\bTD  291\,bps \eTD\bTD  122,5\,Bd \eTD\eTR
+\eTABLEbody
+\eTABLE
+}
+
+\in{Table}[tab:wyman] are parameters of RDFT modes. You can choose lower error
+control level when band conditions are good or higher level in case of bad
+conditions and big interference. The redundant data consume 70\,\% of all
+transferred data for {\em Wyman~14}, so there is possible to apply an extensive
+error-correction. The Wyman 13 is recommended for long-distance contacts and
+Wyman 12 for intracontinental QSOs.
+
+
+\placefigure[][fig:rdft_cesta]{RDFT communication channel.}
+{
+	\externalfigure[dsstv/obr/rdft_cesta.pdf]
+}
+
+Transferred data block consists of three parts:
+
+\startitemize
+\item The first is {\em LEADER}, it uses always same modulation scheme
+and error-coding. It contains RDFT mode identification and it is used
+for detection of two parameter. The first parameter is a tuning deviation
+in Hz, because most SSB transceivers have  smallest tunning step 10\,Hz
+it is not possible to tune accurately. The next parameter is clock rate 
+difference, it is caused by inexact sample rates of sound cards and
+there is also small difference on receiver and transmitter side. Both these
+parameters are dynamically found during transmission and they are used
+in demodulation process.
+\item The next part is {\em CODEBLOCK}, it is sequence of data frames 
+of transferred file with redundancy symbols for error correction.
+\item The transfer ends with {\em TRAILER}, it contains mode identification
+like the first part.
+\stopitemize
+
+The average bit rate of transfer is about 736 bps (92 bytes per second).
+
+The input of demodulator are samples of RDFT signal, the output are some phase
+states of each subcarrier. The block circuit of demodulator is in
+\in{fig.}[fig:rdft_modulator]. The {\em delay} block provides a delay of one
+symbol period. Subtracting the angle values separated in time by one symbol
+period is the \uv{differential} portion of this \uv{differential phase
+demodulator}. The {\em average} block averages 24 adjacent differences and
+divides by the unit phase step, to produce the final demodulator output. This
+averaging helps reduce the intersymbol interference produced by the low pass
+filters.
+
+\placefigure[][fig:rdft_demodulator]{The RDFT demodulator block diagram.}
+{
+	\externalfigure[dsstv/obr/rdft_demodulator.pdf]
+}
+
+\subsection{RDFT operations}
+
+The audio level of sound card is the most important setting on TX side. It
+must be inside linear range, it is usually the middle half of its dynamic range.
+On RX side should be sound card level adjusted too. The input signal should
+not be overdriven, it causes unwanted nonlinearities. 
+
+The stations should be very precisely tuned to each other for making
+successful contact. The station before the data transfer should 
+send tunning signal. This signal consist of two tones 1180 and 1520\,Hz.
+These frequencies are labeled on spectroscope, so you can fine tune 
+and align the frequency peeks with the marks.
+
+\placefigure[][fig:digtrx_id]{The tuning spectrospoce in DIGTRX.}
+{
+	\startcombination[2*1]
+	{\externalfigure[dsstv/obr/tuning.png][width=4cm]}{Tunning signal and station id.}
+	{\externalfigure[dsstv/obr/rdfttx.png][width=4cm]}{Spectroscope with data transmission.}
+	\stopcombination
+}
+ 
+Following operations must be done for transmission and reception of images:
+
+\startitemize[n]
+\item Original data file is processes, in case of images the resolution
+and compression level are set. Then is generated WAV audio file, which
+contains a audio signal for radio transmission. The time spent to signal
+generation is derived from input file size and computer configuration. 
+It can took form a second or two (2GHz and faster CPUs) up to several
+minutes on slower systems (400\,MHz).
+
+\item The audio file is played and transmitted. The reception station
+records sound and store it on a hard drive.
+
+\item The software  process recorded WAV file and reconstructs original file.
+This step is also computationally very demanding and  the time  needed for
+decoding depends not only on the volume of data and processor speed, but also
+on how much is necessary to use the error-correction algorithm. This step may
+take several minutes on a slow computer, on a 2GHz machine it takes 15 seconds.
+\stopitemize
+
+
+Barry Sanderson, KB4VAK, developed programs for RDFT encoding. These
+program are command line driven and it is available as open source under
+GNU GPL license. So programmers can implement it to several 
+computer platforms. So thanks to open source idea, there is few programs
+where is the RDFT mode available.
+
+%http://replay.web.archive.org/20080528090630/http://www.svs.net/wyman/examples/hdsstv/
+
+
+\URL{RDFT presentation in Dayton conference}{http://replay.web.archive.org/20080528090630/http://www.svs.net/wyman/examples/hdsstv/}
+
+
+%\URL{DIGTRX}{http://paginas.terra.com.br/lazer/py4zbz/}
+

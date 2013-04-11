@@ -1,0 +1,10 @@
+\input style.ctex
+
+\starttext
+
+\setupheadnumber[chapter][12]
+
+\input ostatni/pcgfx.ctex
+%\input ostatni/gimp....
+\stoptext
+

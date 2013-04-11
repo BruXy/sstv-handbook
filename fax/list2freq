@@ -1,0 +1,51 @@
+BEGIN {
+	const_length = length("\\subsection{")+1;
+	FS = " & ";
+}
+
+/subsection/{
+	STATION = substr($0, const_length, length($0)-const_length); 
+}
+
+/FREQ$/ {
+	/* Ident. Kmitocet lpm IOC Vykon Poznamka */
+	FREQ = substr($2, 0, length($2)-4);
+
+	/* Uprava TeXoveho zapisu cisla to promenne, kvuli trideni */	
+	split(FREQ, FR, ",");			
+/*	BAND = substr(FR[1],0, length(FR[1])-1); */
+	BAND = FR[1];
+	printf("%s%s =",BAND,FR[2]);
+
+	if(match($3, "60, 90")){
+		POZN = "60 lpm";
+		LPM = 90;
+	}
+	else if(match($3, "60, 90, 120")){
+		POZN = "60 a 120 lpm" ;
+		LPM = 90;
+	}
+	else if(match($3, "120, 180")){
+		POZN = "180 / 576" ;
+		LPM = 90;
+	}
+	else
+		LPM = $3
+
+	if(match($4, "576, 288")){
+		IOC = 576
+
+		if(length(POZN)>0)
+			SEP=", "
+		POZN = POZN SEP "IOC 288";
+	}	
+	else
+		IOC = $4;
+
+
+/*	print FREQ,"\\t  \\eTD\\bTD  ", "\\{ss " $1,"}\\t  \\eTD\\bTD  ", STATION,"\\t  \\eTD\\bTD  ", LPM,"\\t  \\eTD\\bTD  ", IOC,"\\t  \\eTD\\bTD  ", POZN $6; */
+	print "\\bTR\\bTD", FREQ, "\t  \\eTD\\bTD  ", "{\\ss " $1,"}\t  \\eTD\\bTD  ", STATION,"\t  \\eTD\\bTD  ", LPM,"\t  \\eTD\\bTD  ", IOC,"\t  \\eTD\\bTD ", POZN $6 "\\eTD\\eTR ";
+
+	POZN = "";
+}
+

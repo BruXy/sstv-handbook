@@ -1,0 +1,46 @@
+\section{Software for Windows}
+
+\subsection{List of programs}
+
+\subsubsection{SSTV software}
+
+\useURL[chromapix][http://www.barberdsp.com/]
+\useURL[jvcomm][http://www.jvcomm.de/]
+\useURL[mmsstv][http://mmhamsoft.ham-radio.ch/]
+\useURL[mscan][http://www.mscan.com/]
+\useURL[w95sstv][http://www.barberdsp.com/w95sstv/w95sstv.htm]
+\useURL[winskan][http://webpages.charter.net/jamie\_5/]
+
+\startitemize
+\item Chroma Pix -- \url[chromapix]
+\item JVComm32 -- \url[jvcomm]
+\item MMSSTV --  \url[mmsstv]
+\item MSCAN SSTV, Meteo -- \url[mscan]
+\item Winskan, SSTV32 -- \url[winskan]
+\item W95SSTV -- \url[w95sstv]
+\stopitemize
+
+\subsubsection{Digital mode software with SSTV support}
+
+\useURL[multipsk][http://f6cte.free.fr/index_anglais.htm]
+\useURL[mixw][http://www.mixw.net/]
+
+\startitemize
+\item MULTIPSK -- \url[multipsk]
+\item MixW -- \url[mixw]
+\stopitemize
+
+\subsubsection{Software for dedicated interfaces}
+
+This programs don't use sound card as modes but special
+interfaces.
+
+\useURL[radiocom][http://www.computer-int.com/rc.htm]
+\useURL[roy][http://www.roy1.com/dvb_ham/dvb_1.htm]
+\useURL[wraase][http://www.wesacom.de/sstv/]
+
+\startitemize
+\item Bonito Radiocom -- \url[radiocom] 
+\item Roy 1 --  \url[roy]
+\item Wraase SC-4 -- \url[wraase]
+\stopitemize

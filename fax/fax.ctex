@@ -1,0 +1,281 @@
+\chapter[facsimile]{Facsimile --- Radiofax}
+
+Facsimile (from latin {\em facere} -- make and {\em simile} -- similar) is one
+of the oldest communication modes and it is used for an image transmission. The
+facsimile is mainly used by professional services for wireless distribution of
+meteorological maps and informations, hence the name {\em Weather Facsimile
+(WEFAX)\/} follows from it. The {\em radiofax} can be used by radio amateurs
+too.
+
+\section{The history of image transmission}
+
+Already in 1843 a Scottish clockmaker Alexander Bain suggested that
+some images can be broadcast via electric lines, when it is
+electrically scanned by rows and point by point. That's the basic
+idea of image transmission.
+
+Bain's example was soon followed by other entrepreneurs. In 1847
+an Englishman Frederick Collier Bakewell reeled an image in the transmitter
+and sheet of paper to cylinder in the receiver, which was turned by 
+the clock machine. The picture were printed with fat on a tinfoil sheet.
+	
+	
+\placefigure[][]{Bakewell's image telegraph.}
+{
+	\externalfigure[fax/obr/bakewell][width=0.5\makeupwidth]
+}
+
+A honor for the first fax service, however belongs to Giovanni
+Caselli, Italian catholic priest and physicist. In 1856 he built 
+device named {\em panthèlègraph}. With pantèlègraph could be sent
+images or texts.
+
+Caselli received enthusiastic support from the French emperor Napoleon\,III.
+The emperor personally visited his workshop in 1860 and enabled him an access
+to telegraphy lines. The first commercial fax service started in 1865 in Paris
+and it was connecting some major cities of France. Indeed the transmission was
+very slow and the fees were high so there was only few clients. The service
+wasn't profitable and had to be stopped.
+
+In 1901 a German scientist Dr. Arthur Korn invented the principle of
+the photoelectric reading and began to transfer some positive
+photographic slides on a transparent substrate. These slides 
+were illuminated point by point and row by row and light passed
+through transparent slide influence the selenium cell. The cell 
+changes its resistance depending on the light intensity and transform
+image pixel shade to electric current. The receiver contained
+\uv{light relay}, a device with early gas-discharge lamp.  The
+intensity of light exposed present point on photographic paper and
+it varied according to current flowed form receiver.
+
+Dr. Korn designed the first phototelegraph device in 1902 and already in
+March 1904 he managed to reproduce photo transfered form Munich to
+Nuremberg. The transfer of postcard size photo took 24 minutes. In
+1907 major cities Berlin, Munich, Paris and London were linked and his
+devices were bought by newspaper agencies and the first
+phototelegraphic service was founded. 
+
+The transfer was simplified by using of an electric photocell. Thanks to the
+photocell the transfer speed increased and the preparation of transparent
+slides wasn't necessary. The photocell is so sensitive that it is influenced by
+reflected light and some photos could be scanned directly. The photocell was
+used for the first time by American captain Richard H. Ranger for test
+transmission between Cleveland and New York. In November 30th, 1924 was
+wirelessly transfered photo of the British royal couple from London to New
+York. The first phototelegraphic service between America and Europe was
+established in May 1st, 1926.
+
+\section[faksimile]{The fax mode}
+ 
+The modern facsimile (fax) is used for transmitting images in the high resolution
+(usually 1810 dots per line) with image size up to several thousand lines. An relatively
+long time of transmission is used due to small bandwidth. In dependency on image size and
+transmission speed it takes from 3 to 20 minutes.
+
+\subsection[faxtrans]{Image transmission}
+
+A typical mechanical transmitter consist of cylinder rotated by crystal controlled synchronous
+motor. Broadcast material is attached to the cylinder, which rotates in a constant speed. A small
+ray of light is focused on the broadcast medium (map, text, photos, etc.). The light reflected
+from the medium is processed by a photoelectric sensor. The sensor bears the light source,
+photocell and moves along rolled in a constant speed. The sensor moves from one end to the other
+and captures the image line by line. Voltage difference from the photo sensor are amplified and it is
+used to modulate the signal carrier.
+
+\placefigure[][]{The principle of an electromechanical image capture.}
+{
+	\externalfigure[fax/obr/fax.pdf]
+}
+
+The fax transmission on shortwaves has only few similarities with the
+fax machines you know from home and offices. The fax transmission is based
+on CCITT recommendations {\en Facsimile CCITT Group 1 (T.2)} of 1968, the short
+wave recommendation is described \in{chapter}[fax_standard]. The CCITT recommends
+the frequency 1500\,Hz for white and 2300\,Hz for black. In North America it is
+ 1500\,Hz for white and 2300\,Hz or 2400\,Hz for black. The transmission speed 
+is 180\,lpm. The fax machines of this type could be adjusted for amateur operation.
+The later recommendations T.3, T.4 or T.30 can not be used on HF and there are
+used in telephone lines.
+
+The frequency modulation {\em F3C} is used for shortwave transmission ($F$~-- frequency modulation,
+$3$~-- single channel containing analog information, $C$~-- facsimile). The transmitter modulates
+the frequency of carrier in the range $\pm$400\,Hz on shortwaves and $\pm$150\,Hz on
+long waves. This range is called {\em signal deviation}.
+
+The fax signal can be created by direct modulation of broadcast frequency or by
+frequency modulation of subcarrier 1900\,Hz. Then the transmitter changes
+frequency between black and white colour. Black color corresponds to 1500\,Hz
+and white 2300\,Hz.
+
+The amplitude modulation (AM) used for image transmission on VHF and microwave
+meteo satellite downlinks. There is used positive AM and level of modulation
+determines the brightness. For black colour it is 4\,\% level and for white it
+is 90\,\% to 100\,\%. The negative modulation inverts levels, the minimal value
+is for white and the maximal  value for black.
+
+Most commercial stations use {\em APT~-- Automatic Picture Transmission} for a
+fully automated reception without requiring the presence of an receiver
+operator. The image transmission begins with {\em start tone}, when transmitter
+modulates the carrier with some frequency, mostly 300\,Hz (changing the maximal
+levels of modulation 300$\times$ in a second). This signal is recognized be the
+receiving device and it switches from stand-by mode to working mode and waits for
+{\em phasing signal}.
+
+\placefigure[][]{The start of facsimile transmission.}
+{
+	\externalfigure[fax/obr/fax_apt.pdf][width=.9\makeupwidth]
+}
+
+The phasing signal is used for synchronization and it is broadcast few second
+before an image. Normally consist of rows of 95\,\% black and 5\,\% white. It
+generats a vertical white line, which identifies the edge of the transmitted
+image.
+
+After the end of image transmission another APT signal is sent, it has
+modulation 450\,Hz and switches the receiving device back to stand-by mode.
+
+\subsection{The reception}
+
+Shortwave facsimile reception can be realized by using upper single sideband
+(USB) receiver. For this reason, you'll have to tune on the frequency, which si
+about 1900\,Hz below the station frequency. So if the station uses frequency
+3855.0\,kHz, you must tune in USB on 3853.1\,kHz (i.e. 1900 Hz below). All
+facsimile reception software is equipped by spectroscope, the same as for SSTV,
+so precise tuning should not be a problem. You can control tuning by the fact
+that the largest portion in the fax image is mostly white.
+
+\placefigure[][]{Modern receiver Sony CRF-V21 for WEFAX and RTTY reception
+equipped with printer.}{
+	\externalfigure[fax/obr/crfv21cs.jpg][width=.7\makeupwidth]
+}
+
+There are still used analog WEFAX receivers with electromechanical printers,
+but in our case we can use only PC with sound card and proper software.
+
+The most important parameters of the transmission are the speed and {\em index
+of cooperation~-- IOC}. The IOC relates with a horizontal scan rate and
+can be converted to number of pixels by simple formula:
+
+\startformula
+\rm{line} = \pi \times IOC~\rm{pixels}
+\stopformula
+
+The most frequently used IOC is 576 (1810 pixels), then 288 (900 pixels).
+
+\placefigure[][]{Typical synoptic map transmitted on HF by facsimile, here from station DDH3, line speed 120\,lpm and IOC 576.}{
+	\externalfigure[fax/obr/offenbach_synopt.png][width=.8\makeupwidth]
+}
+
+The speed of transmission is given by rotation of cylinder (round per minute,
+rpm) and it is equivalent to number of lines per minute, lpm. Professional
+stations use most often 120\,lpm, in eastern European countries and in
+post-soviet states it is 90\,lpm, news agencies use 60\,lpm and meteo satellites
+240\,lpm.
+
+The most common fax images (synoptic maps) are transmitted only in black and
+white, but some images like retransmission of weather satellite images are in
+gray scale.
+ 
+\subsubsection{Facsimile transmission modes}
+
+\placetable[][none]{Facsimile transmission modes.}
+{
+
+\bTABLE
+\setupTABLE[row][first][align=center]
+\setupTABLE[row][each][offset=\dimexpr1mm+.5pt]
+\setupTABLE[column][2,3,4,5,6,7][align=center]
+
+\bTABLEhead
+\bTR \bTH Name	 \eTH \bTH  IOC	 \eTH \bTH  lpm	 \eTH \bTH  APT start \eTH \bTH  d \eTH \bTH APT stop	 \eTH \bTH d	 \eTH \bTH Note \eTH \eTR 
+\eTABLEhead
+\bTABLEbody
+\bTR \bTD Wefax 288    \eTD \bTD 	288	\eTD \bTD  120\,/\,90\,/\,60 \eTD \bTD  675 Hz \eTD \bTD  3 s~\eTD \bTD  450 Hz \eTD \bTD  3 s~\eTD \bTD     \eTD \eTR 
+\bTR \bTD Wefax 576    \eTD \bTD 	576	\eTD \bTD  120\,/\,90\,/\,60 \eTD \bTD  300 Hz \eTD \bTD  3 s~\eTD \bTD  450 Hz \eTD \bTD  3 s~\eTD \bTD     \eTD \eTR 
+\bTR \bTD Ham Color    \eTD \bTD 	204	\eTD \bTD  360 	   \eTD \bTD  200 Hz \eTD \bTD  5 s~\eTD \bTD  450 Hz \eTD \bTD  5 s~\eTD \bTD  color  \eTD \eTR 
+\bTR \bTD Ham 288b     \eTD \bTD 	240	\eTD \bTD  240\,/\,120\eTD \bTD  675 Hz \eTD \bTD  5 s~\eTD \bTD  450 Hz \eTD \bTD  5 s~\eTD \bTD           \eTD \eTR 
+\bTR \bTD Color 240    \eTD \bTD 	288	\eTD \bTD  240 	   \eTD \bTD  200 Hz \eTD \bTD  3 s~\eTD \bTD  450 Hz \eTD \bTD  5 s~\eTD \bTD  color  \eTD \eTR 
+\bTR \bTD FAX 480	     \eTD \bTD   204 	\eTD \bTD     480   \eTD \bTD  500 Hz \eTD \bTD  3 s~\eTD \bTD  450 Hz \eTD \bTD  3 s~\eTD \bTD           \eTD \eTR 
+\bTR \bTD Photopress   \eTD \bTD 	352	\eTD \bTD      60   \eTD \bTD   ?	    \eTD \bTD   ?  \eTD \bTD  450 Hz \eTD \bTD  ?	  \eTD \bTD           \eTD \eTR 
+\eTABLEbody
+\eTABLE
+
+$d$ -- minimal duration of APT signal
+}
+
+\section{Professional stations}
+
+There are dozens of stations operating on high frequency bands. It depends on
+your location, some of them are well-catchable all day, others only when
+conditions improve. Broadcast images are in most cases a variety of
+meteorological maps, synoptic charts, graphs of pressure and altitude, direction
+of wind, weather forecasts, cyclone or typhoon warnings, retransmissions of
+satellite imagery and broadcast of news agencies.
+
+Even today when Internet is almost everywhere the fax broadcast has still its
+foundation. The main customers are naval ships, military, remote airports and
+islands, where the shortwave transmission is only way how to get actual
+information. They are often very important, because station distributes also
+weather warning of upcoming storm and hurricanes.
+
+Each station has given its daily broadcast schedule, for example
+\in{see}[nort_sched]. You can find here what images will be transmitted in a
+time of day.
+
+\placefigure[][nort_sched]{The station schedule of GYA.}{
+	\externalfigure[fax/obr/northwood_sched.png][width=.8\makeupwidth]
+}
+
+For first experiments with facsimile reception are suitable strong local
+stations. Here in Europe it is the German station DDHx, which is active on
+frequencies 3855.0, 7880,0 a 13\,882,5 kHz. As already announced, station
+always receive in USB mode and tune it 1900\,Hz below. Therefore DDH3 tune on
+3853.1\,kHz. Its speed is 120\,lpm and IOC 576.
+
+\placefigure[][]{Test chart of DDH3 transmitted daily in 11:10 UTC.}{
+	\externalfigure[fax/obr/test_chart_offenbach_c.png][width=.8\makeupwidth]
+}
+
+Another station is an Englich GYA broadcasting from Northwood (120/576) on
+frequencies 2618.5, 4610.0, 8040.0, 11085.5\,kHz (active are at least two
+channels simultaneously).
+
+From long distance stations cab be received  almost daily Tokyo station JMH4.
+Of the three transmitters is the best JMH4 on 13597.0\,kHz with 5\,kW output
+power. Besides the usual synoptic chart there are available satellite imagery
+too. 
+
+\placefigure[][]{Test chart from JMH4 available daily at 13:00 UTC.}{
+	\externalfigure[fax/obr/tokyo_test_chart.png][width=.8\makeupwidth]
+}
+
+Next Tokyo station is JJC, it is Kyodo News Agency. Transmission speed is
+60\,lpm and IOC 576, sometimes 120\,lpm when weather charts are posted. The
+station broadcast simultaneously on several frequencies: 12745.5, 16971.0,
+17069.6, 22542.0\,kHz,  by listening find the active frequency. Interestingly,
+the owner of JJC station was in 1997 thinking about closure, if they find some
+other way for news distribution. It didn't stop yet and Kyodo News Agency still
+distributes newspapers via facsimile.
+
+\placefigure[][]{Typical JJC transmission.}{
+	\externalfigure[fax/obr/kyodo_news_jap.png][width=.8\makeupwidth]
+}
+
+For those who deal with DX radio reception on the HF While listening to the
+interesting DXů will be rewarded by received image. Complete list of stations sorted by country or frequency see \in{chapter}[faxlist].
+
+The detail list of frequencies and station schedule can be find in  publication
+{\em Marine Worldwide Radiofacsimile Broadcast Schedules}, which is published
+by the National Oceanic and Atmospheric Administration's (NOAA) and it's
+freely available to download.
+
+\URL{Radiofacsimile Worldwide Marine Broadcast Schedules}{http://www.nws.noaa.gov/om/marine/rfax.pdf}
+
+Another excellent source of information for those who are interested in receiving 
+of meteorological data is the website of the {\em World Meteorological
+Organizations W.M.O.} Besides general information about meteorology there are
+lists of frequencies and schedules, not only for the fax, but also for other professional stations which use for distribution radio teletype (RTTY), NAVTEX and other
+types of digital modes.
+
+\URL{World Meteorological Organization}{http://www.wmo.ch/}
+

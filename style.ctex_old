@@ -1,0 +1,300 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Autor: Martin Bruchanov                                                     %
+% email: bruxy at regnet dot cz                                               %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Nastaveni jazyka -----------------------------------------------------------
+\mainlanguage[en]
+\language[en] 
+\enableregime[utf] % latin2
+
+%bib modul NEFUNGUJE!
+%\usemodule[bib] % sazba referenci pomoci BiBTeXu
+% http://wiki.contextgarden.net/Bibliography
+%\usemodule[bibltx]
+%\usemodule[amsl]
+\usemodule[newmat]
+%\usemodule[nath]
+\setupbibtex[database=ostatni/literef]
+ 
+\setupoutput[pdftex] % dvips, acrobat
+\pdfminorversion=4 % verze pdf
+
+%\definetypeface [palatino] [rm] [serif] [palatino] [default] [encoding=ec]
+%\definetypeface [palatino] [mm] [math] [palatino] [default] [encoding=ec]
+
+\definetypeface [boldmath] [mm] [boldmath] [latin-modern] [modern] [encoding=texnansi]
+
+
+\setupbodyfont[12pt]  %
+\enablemode[A4,paper]
+
+%\setuppapersize[A4, portrait][A4, portrait] % A3, A4, A5, A6; landscape
+% \setuparranging[2*2] % zmena stranek pro vyrobu knizky
+
+% Rozmery stranky ------------------------------------------------------------
+%\setuplayout
+%	[width=190mm,
+%	height=137mm,
+%	backspace=10mm,
+%	topspace=5mm,
+%	top=0mm,
+%	header=20mm,
+%	footer=20mm,
+%	bottom=5mm,
+%	margin=10mm,
+%	rightedgedistance=5mm,
+%	rightedge=50mm]
+
+% Debugovani vzhledu ----------------------------------------------------------
+%\showframe % ukaze nastaveni vzhledu stranky
+%\showgrid   
+
+% Moznosti pro vnorene uvozovky a definice uv
+
+\setupdelimitedtext
+  [quotation]
+  [1]
+  [left={\symbol[leftquotation]},
+   right={\symbol[rightquotation]}]
+
+\setupdelimitedtext
+  [quotation]
+  [2]
+  [left={\symbol[leftquote]},
+   right={\symbol[rightquote]}]
+
+\def\uv#1{\quotation{#1}}
+
+% Pouziti barev
+\setupcolors[state=start]
+\setupcolor[rgb]
+
+\setupinterlinespace[medium]
+
+\setupwhitespace[medium]
+
+\setuptabulate[header=repeat]
+
+\setupbodyfontenvironment[default][em=italic]
+
+\setuppagenumbering[%
+	alternative=singlesided,  % doublesided
+	location={footer, center}, % header, middle, inleft, inmargin
+%   location=,                % zrusi cislovani uplne
+	style={\bf\switchtobodyfont[11pt]},               %
+%	conversion=numbers,        % characters Characters romannumerals 
+%	left={\lhd~},                % znak pred
+% 	right={~\rhd},               % znak za
+%	command=\Page,
+]
+
+\let\floatcaptionsuffix=: % zobrazuje Tabulka X.:
+
+% Interaktivni dokument ------------------------------------------------------
+
+\setupinteraction[state=start,color=darkred] % klikaci dokument
+\setupurl[style=type,color=darkred]
+
+
+% Vzhled obsahu ---------------------------------------------------------------
+\setupcombinedlist[content][level=1,alternative=b] 
+% a -- stranka hned za, b -- stranka na konci radku, 
+% c -- jako b, ale teckovany radek, d -- jako jeden odstavec
+\setuplist[chapter][width=10mm,style=bold]
+%\setuplist[section][width=10mm]
+%\setuplist[subsection][width=15mm]
+% pagestyle=normal for changing the appearance of pagenumber
+	
+
+% Odstavce ------------------------------------------------------------------
+% mezery mezi odstavci
+\setupwhitespace[none] 
+
+% velikost odsazeni
+\setupindenting[small,next]  % none, small, medium, bix, next, first, [rozmer]
+\indenting[yes]
+
+% vicesloupcova sazba
+%\setupcolumns[n=, ]
+
+
+% Nastaveni paticky
+%\setupfootertexts[][][]
+
+% Odstraneni mezer mezi polozkamy seznamu
+\setupitemize[4,packed]
+
+\setuphead[section][
+	style={\ss\switchtobodyfont[15pt]},
+]
+
+\setuphead[subsection][
+	style={\ss\switchtobodyfont[13pt]},
+]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Definice vzhledu stranku
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Nastaveni hlavicky
+\setupheader[style=\tfx\sc]
+\setupheadertexts[][chapter]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Definice vzhledu nadpisu
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% vzhled cisla
+\def\Cislovani#1{{#1}.} % tecka za cislem kapitoly
+
+\def\MyChapterCommand#1#2%
+%{\hbox{\vtop{#2}\rlap{\hskip\rightmargindistance#1}}}
+{
+\framed[frame=off,leftframe=on,rulethickness=5pt]{
+\hbox{\vtop{\switchtobodyfont[18pt]{#2}}\rlap{\hfil\switchtobodyfont[24pt,bf]{~#1}}}
+}
+}
+
+\setuphead[chapter][
+%	numbercommand=\Cislovani,
+%	pagebreak=no,
+%	color=colchap,
+%	style={\bf\switchtobodyfont[24pt]},
+%	after={\nowhitespace\blank[2cm]},
+	command=\MyChapterCommand,
+%	before=\info,
+%	header=empty,
+%	footer=none,
+%	after={\nowhitespace\hairline\blank[1cm]},
+]
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\URL#1#2{
+\startalignment[center]
+\useURL[#1][#2]
+#1: \from[#1]
+\stopalignment
+}
+
+\useURL[homepage][http://bruxy.regnet.cz/web/hamradio/EN/sstv-handbook][][{http://bruxy.regnet.cz/}]
+
+
+
+\def\bookinfo{
+\placeintermezzo[here][]{none}{
+\startframedtext[align=middle]
+{\tfxx\ss
+This chapter is part of the book {\em Image Communication on Short Waves~-- Hamradio Handbook}.
+
+{\bf \copyright{} 2011, Martin Bruchanov -- OK2MNM}
+
+\startlines
+{\bf WWW:}  \from[homepage] \\
+{\bf Version:} \currentdate
+\stoplines
+}
+\stopframedtext
+}
+\blank[line]
+}
+
+\def\warning#1{
+\placeintermezzo[here][]{none}{
+\startframedtext[align=middle]
+{\bf #1}
+\stopframedtext
+}
+}
+
+\definedescription[descr][%
+  	headstyle=bold,
+	style=normal,
+	align=flushleft,
+	location=hanging,
+  	width=broad,
+	margin=2em
+]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Odkazy na WWW
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\PutURL#1{
+        \useURL[#1][#1][][\type{#1}]
+        \startframedtext[
+                background=screen,
+        %       backgroundcolor=gray,
+                align=center,
+                frame=off,
+                rightframe=on,
+                rulethickness=3pt,
+                framecolor=darkred,
+                width=broad]
+        \from[#1]
+        \stopframedtext
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Odkazy na literatury
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\bracketed#1{\hbox to 20pt{\hfill [{#1}]}}
+
+\setuppublications
+            [sorttype=bbl,
+             autohang=no,
+             refcommand=num,
+             criterium=all,
+             numbering=bib,
+             numbercommand=\bracketed]
+
+\setuppublicationlayout[book]{%
+    \insertauthors{}{: }{\inserteditors{}{, editor%
+                          \ifnum\getvalue{editor@num}> 1 s\fi
+                              \ \global\editedbooktrue 
+                     \unskip: }{\unskip}}%
+    \inserttitle{\bgroup\it }{.\/\egroup}{}%
+    \insertseries{ (}{)}{}%
+    \insertedition{ }{\insertmonth{}{}{} edn. }{ }%
+    \insertcity{}{: }{}%
+    \insertpubname{}{ }{}%
+    \insertpubyear{}{}{}%
+    \insertnote{ [}{].}{.}%
+}
+
+
+\setuppublicationlayout[article]{%
+  \insertartauthors{}{: } {\insertthekey{}{,}{}}%
+  \insertarttitle   {\bgroup\it}{.\/ \egroup} {}%
+  \insertjournal    {\space\bgroup}{\unskip\egroup}{}%
+  \insertvolume     {,\space vol.~} 
+        {\insertissue {,\space no.~} {} {}} {}%
+  \insertpages      {,\space pp.\space}       {} {}%
+  \insertpubyear    {,\space\insertmonth{}{\space}{}} 
+                                         {} {}%
+  \insertnote       {.\space}            {.} {.}
+}
+
+
+\defineframedtext[warning]
+    [strut=yes,
+     offset=0.25em,
+     background=color,
+     backgroundcolor=yellow,
+     width=\makeupwidth,
+    align=right,
+    location=middle,
+]
+
+
+

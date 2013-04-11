@@ -1,0 +1,49 @@
+\page[yes]
+
+\section{List by frequency}
+
+\def\faxlisthead{
+\bTR[topframe=on]
+	\bTH Freq. \eTH
+	\bTH Ident. \eTH
+	\bTH[nr=2,bottomframe=on] Station \eTH
+	\bTH[nr=2,bottomframe=on] lpm \eTH
+	\bTH[nr=2,bottomframe=on] IOC \eTH
+	\bTH[nr=2,bottomframe=on] Note \eTH
+\eTR
+\bTR[bottomframe=on]
+	\bTH kHz \eTH
+	\bTH Call sign \eTH
+%	\bTH     \eTH
+%	\bTH     \eTH
+%	\bTH      \eTH
+%	\bTH  \eTH
+\eTR
+}
+
+
+\bTABLE[split=repeat,style=\tfx,frame=off,option=stretch]
+\setupTABLE[column][1][alignmentcharacter={.},aligncharacter=yes,align=center]
+\setupTABLE[column][2,4,5][align=center]
+\setupTABLE[column][first,2,3,4,5,6][leftframe=on]
+\setupTABLE[column][last][rightframe=on]
+%\setupTABLE[row][first][topframe=on]
+\setupTABLE[row][last][bottomframe=on]
+%\setupTABLE[row][first][align={center,middle}]
+
+\setupTABLE[header][align={center,middle}]
+
+\bTABLEhead
+	\faxlisthead
+\eTABLEhead
+
+%\bTABLEnext
+%	\faxlisthead
+%\eTABLEnext
+
+\bTABLEbody
+\input fax/stan_freq.ctex
+\eTABLEbody
+\eTABLE
+ 
+

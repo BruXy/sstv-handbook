@@ -1,0 +1,22 @@
+\startlines[align=middle]
+{\sc
+Martin Bruchanov OK2MNM
+}
+\blank[4cm]
+{\switchtobodyfont[36pt]\bf Image Communication on Short Waves}
+%\blank[4cm]
+\vfill
+
+%\vfill
+
+\bgroup\tfb
+%\startalignment[flushright]
+%Slow-scan Television \blank[3mm]
+%Radio facsimile \blank[3mm]
+%Digital SSTV
+%\stopalignment
+\vfill
+\framed[background=color,backgroundcolor=gray,frame=off,width=\makeupwidth,offset=1em]{\tt\bf www.sstv-handbook.com}
+\egroup
+\stoplines
+

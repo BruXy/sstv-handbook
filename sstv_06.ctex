@@ -1,0 +1,11 @@
+\input style.ctex
+
+\starttext
+
+\setupheadnumber[chapter][5]
+
+\input sstv/zarizeni.ctex 
+
+\stoptext
+
+

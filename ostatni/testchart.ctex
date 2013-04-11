@@ -1,0 +1,9 @@
+\page[new]
+
+
+\placefigure[][none]{none}{
+	\externalfigure[ostatni/obr/testchart.pdf][factor=fit]
+}
+
+\pagereference[testchart]
+

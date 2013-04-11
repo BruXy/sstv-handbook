@@ -1,0 +1,556 @@
+\startchapter%
+[title={List of professional\crlf{} stations},
+list={List of professional stations},
+reference={faxlist}]
+\stopchapter
+
+%\chapter[faxlist]{List of professional stations} 
+
+There is list of HF professional stations. Be sure to tune in USB mode for
+$1.9$\,kHz lower! Time values are given in UTC {\em Coordinated Universal
+Time\/}. 
+
+\def\tabstart{
+	\bgroup
+	\bTABLE[frame=off,align=center]
+	\setupTABLE[c][1][style=\ss]
+	\setupTABLE[c][2][alignmentcharacter={.},aligncharacter=yes]
+%	\bTABLEhead
+		\bTR 
+			\bTH Ident. \eTH
+			\bTH Frequency \eTH
+			\bTH lpm \eTH
+			\bTH IOC \eTH
+			\bTH Power \eTH
+			\bTH Note \eTH
+		\eTR
+%	\eTABLEhead
+%	\bTABLEbody
+}
+
+\def\tabstop{
+%	\eTABLEbody
+	\eTABLE
+	\egroup
+}
+
+
+%\newcommand{\tabstop}{\end{tabular} \normalsize}
+
+%\renewcommand{\arraystretch}{1.0}
+
+\section{Europe}
+%%%%%%%%%%%%%%%%
+
+%\subsection{Skamleb\ae{}k, Dánsko}
+%
+% \tabstart
+%OXT  \eTD\bTD  5,850.0 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD  20 kW  \eTD\bTD  00:28--10:05     \eTD\eTR %
+%OXT  \eTD\bTD  9,360.0 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD  20 kW  \eTD\bTD  \footnotesize 00:03--00:25, 10:08--12:15,12:43--13:05, 18:28--18:50   \eTD\eTR % 
+%OXT  \eTD\bTD  13,855.0 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD  20 kW  \eTD\bTD 	12:18--12:40, 13:08--13:30, 18:03--18:20   \eTD\eTR %5
+%OXT  \eTD\bTD  17,510.0 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD  20 kW  \eTD\bTD 	13:33--13:55    \eTD\eTR % 
+% \tabstop
+
+%Broadcast time:  by frequency.
+
+\subsection{Athens, Greece}
+
+\tabstart
+\bTR\bTD SVJ4  \eTD\bTD  4,481.0 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD  8 kW  \eTD\bTD  08:45--10:44 \eTD\eTR %FREQ
+\bTR\bTD SVJ4  \eTD\bTD  8,105.0 kHz \eTD\bTD   120  \eTD\bTD  576  \eTD\bTD  8 kW  \eTD\bTD  08:45--10:44 \eTD\eTR %FREQ
+\tabstop
+
+Broadcast time: 08:45--10:44.
+
+\subsection{Hamburg/Pinnenberg, Germany}
+
+\tabstart
+\bTR\bTD DDH3  \eTD\bTD   3,855.0 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD   10 kW  \eTD\bTD   \eTD\eTR %FREQ
+\bTR\bTD DDK3  \eTD\bTD   7,880.0 kHz \eTD\bTD   120  \eTD\bTD  576  \eTD\bTD   20 kW  \eTD\bTD   \eTD\eTR %FREQ
+\bTR\bTD DDK6  \eTD\bTD  13,882.5 kHz \eTD\bTD   120  \eTD\bTD  576  \eTD\bTD   20 kW  \eTD\bTD   \eTD\eTR %FREQ
+\tabstop
+
+Broadcast time: 04:30--11:45, 15:20-22:00. 
+
+
+\subsection{Roma, Italy}
+
+\tabstart
+\bTR\bTD IMB51  \eTD\bTD  4,777.5 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD  5 kW  \eTD\bTD   \eTD\eTR %FREQ
+\bTR\bTD IMB55  \eTD\bTD  8,146.6 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD  5 kW  \eTD\bTD   \eTD\eTR %FREQ
+\bTR\bTD IMB56  \eTD\bTD  13,597.4 kHz \eTD\bTD   120  \eTD\bTD  576  \eTD\bTD  5 kW  \eTD\bTD   \eTD\eTR %FREQ
+\tabstop
+
+Broadcast time: continuous.
+
+\subsection{Moscow, Russia}
+
+\tabstart
+\bTR\bTD  \eTD\bTD  3,830.0 kHz \eTD\bTD  90, 120  \eTD\bTD  576, 288  \eTD\bTD   \eTD\bTD   \eTD\eTR %FREQ
+\bTR\bTD  \eTD\bTD  5,008.0 kHz \eTD\bTD  90, 120  \eTD\bTD  576, 288  \eTD\bTD   \eTD\bTD   \eTD\eTR %FREQ
+\bTR\bTD  \eTD\bTD  6,987.0 kHz \eTD\bTD  90, 120  \eTD\bTD  576, 288  \eTD\bTD   \eTD\bTD    \eTD\eTR %FREQ
+\bTR\bTD  \eTD\bTD  7,695.0 kHz \eTD\bTD  90, 120  \eTD\bTD  576, 288  \eTD\bTD   \eTD\bTD     \eTD\eTR %FREQ
+\bTR\bTD RCC76 \eTD\bTD 10,980.0 kHz \eTD\bTD  90, 120  \eTD\bTD  576, 288  \eTD\bTD   \eTD\bTD    \eTD\eTR %FREQ
+\bTR\bTD RDD78 \eTD\bTD 11,617.0 kHz \eTD\bTD  90, 120  \eTD\bTD  576, 288  \eTD\bTD   \eTD\bTD    \eTD\eTR %FREQ 
+\bTR\bTD RCC76 \eTD\bTD 10,980.0 kHz \eTD\bTD  90, 120  \eTD\bTD  576, 288  \eTD\bTD   \eTD\bTD    \eTD\eTR %FREQ
+\tabstop
+
+Broadcast time: continuous.
+
+\subsection{Murmansk, Russia}
+
+\tabstart
+\bTR\bTD RBW41  \eTD\bTD  5,336.0 kHz \eTD\bTD  90, 120  \eTD\bTD  576  \eTD\bTD   \eTD\bTD   \eTD\eTR %FREQ  
+\bTR\bTD RBW41  \eTD\bTD  6,445.5 kHz \eTD\bTD  90, 120  \eTD\bTD  576  \eTD\bTD   \eTD\bTD  main frequency  \eTD\eTR %FREQ 
+\bTR\bTD RBW41  \eTD\bTD  7,908.8 kHz \eTD\bTD  90, 120  \eTD\bTD  576  \eTD\bTD   \eTD\bTD  19:00--06:00    \eTD\eTR %FREQ 
+\bTR\bTD RBW48  \eTD\bTD  10,130.0 kHz \eTD\bTD  90, 120  \eTD\bTD  576  \eTD\bTD   \eTD\bTD  06:00--19:00   \eTD\eTR %FREQ   
+\tabstop
+
+%Update 03/2002 - May only be transmitting on 6446.0 kHz. 
+
+Broadcast time: 07:00--08:00, 14:00--14:30, 18:50, 20:00.
+ 
+\subsection{Northwood, The United Kingdom}
+
+\tabstart
+\bTR\bTD GYA  \eTD\bTD  2,618.5 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD  10 kW  \eTD\bTD  20:00--06:00 \eTD\eTR %FREQ
+\bTR\bTD GYA  \eTD\bTD  4,610.0 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD  10 kW  \eTD\bTD   \eTD\eTR %FREQ
+\bTR\bTD GYA  \eTD\bTD  8,040.0 kHz \eTD\bTD   120  \eTD\bTD  576  \eTD\bTD  10 kW  \eTD\bTD   \eTD\eTR %FREQ
+\bTR\bTD GYA  \eTD\bTD  11,086.5 kHz \eTD\bTD   120  \eTD\bTD  576  \eTD\bTD  10 kW  \eTD\bTD  06:00--20:00 \eTD\eTR %FREQ
+\tabstop
+
+Broadcast time: continuous, at least on two frequencies. 
+
+\section{Africa}
+%%%%%%%%%%%%%%%%
+
+%\subsection{Nairobi, Kenya}
+%
+%\tabstart
+%5YE  \eTD\bTD  9,044.9 kHz \eTD\bTD  120, 180  \eTD\bTD   576   \eTD\bTD  6 KW  \eTD\bTD    \eTD\eTR % 
+%5YE  \eTD\bTD  17,447.5 kHz \eTD\bTD  120, 180  \eTD\bTD    576  \eTD\bTD  6 KW  \eTD\bTD    \eTD\eTR %
+%\tabstop
+
+%Broadcast time: 01:00:10--01:40, 05:40--14:55, 16:00--19:36, 20:55--23:50.
+
+
+\subsection{Cape Naval, South Africa}
+ 
+
+\tabstart
+\bTR\bTD ZSJ  \eTD\bTD   4,014.0 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD  10 kW \eTD\bTD  pouze od  16 h do 06 h   \eTD\eTR %FREQ 
+\bTR\bTD ZSJ  \eTD\bTD   7,508.0 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD 10 kW  \eTD\bTD   \eTD\eTR %FREQ 
+\bTR\bTD ZSJ  \eTD\bTD  13,538.0 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD 10 kW  \eTD\bTD   \eTD\eTR %FREQ
+\bTR\bTD ZSJ  \eTD\bTD  18,238.0 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD 10 kW  \eTD\bTD  pouze od  06 h do 16 h   \eTD\eTR %FREQ 
+\tabstop
+
+Broadcast time: 04:30--11:00, 15:30, 17:00, 22:30.
+
+%--- 100 Pro
+
+
+%\subsection{Dakar, Senegal}
+%
+ %
+%
+%\tabstart
+%6VU 23  \eTD\bTD  4,790.5 kHz \eTD\bTD 120  \eTD\bTD  576  \eTD\bTD  5 kW    \eTD\bTD   \eTD\eTR %F REQ
+%6VU 73  \eTD\bTD  13,667.5 kHz \eTD\bTD 120  \eTD\bTD  576  \eTD\bTD  10 kW   \eTD\bTD   \eTD\eTR %F REQ
+%6VU 79  \eTD\bTD  19,750.0 kHz \eTD\bTD 120  \eTD\bTD  576  \eTD\bTD  10 kW   \eTD\bTD   \eTD\eTR %F REQ
+%\tabstop
+%
+%
+%Broadcast time: 01:100, 03:40--11:45, 13:00, 16:00--23:45.
+
+% --- Mozna zrusena 
+
+
+
+\section{Asia}
+%%%%%%%%%%%%%%
+
+\subsection{Beijing, China}
+
+\tabstart
+\bTR\bTD BAF6   \eTD\bTD   5,526.9 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD   6-8 kW  \eTD\bTD   \eTD\eTR %FREQ
+\bTR\bTD BAF36  \eTD\bTD   8,121.9 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD   6-8 kW  \eTD\bTD   \eTD\eTR %FREQ
+\bTR\bTD BAF4   \eTD\bTD  10,116.9 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD   10 kW  \eTD\bTD   \eTD\eTR %FREQ
+\bTR\bTD BAF8   \eTD\bTD  14,366.9 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD   15 kW  \eTD\bTD   \eTD\eTR %FREQ
+\bTR\bTD BAF9   \eTD\bTD  16,025.9 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD   ?? kW  \eTD\bTD   \eTD\eTR %FREQ
+\bTR\bTD BAF33  \eTD\bTD  18,236.9 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD   6-8 kW  \eTD\bTD   \eTD\eTR %FREQ
+\tabstop
+
+Broadcast time: 00:08--11:58, 13:40, 19:04--22:40.
+
+
+\subsection{Beijing, China}
+
+\tabstart
+\bTR\bTD 3SD  \eTD\bTD  8,461.9 kHz \eTD\bTD  120   \eTD\bTD 576  \eTD\bTD  10 kW   \eTD\bTD   \eTD\eTR %FREQ
+\bTR\bTD 3SD  \eTD\bTD  12,831.9 kHz \eTD\bTD  120   \eTD\bTD 576  \eTD\bTD  10 kW   \eTD\bTD   \eTD\eTR %FREQ
+\bTR\bTD 3SD  \eTD\bTD  16,903.9 kHz \eTD\bTD  120   \eTD\bTD 576  \eTD\bTD   30 kW   \eTD\bTD   \eTD\eTR %FREQ
+\tabstop
+
+
+Broadcast time: 07:55, 11:30.
+
+% POZOR
+\subsection{Shanghai, China}
+
+\tabstart
+\bTR\bTD BDF  \eTD\bTD  3,241.0 kHz \eTD\bTD  120   \eTD\bTD 576  \eTD\bTD   \eTD\bTD    \eTD\eTR %FREQ
+\bTR\bTD BDF  \eTD\bTD  5,100.0 kHz \eTD\bTD  120   \eTD\bTD 576  \eTD\bTD   \eTD\bTD    \eTD\eTR %FREQ
+\bTR\bTD BDF  \eTD\bTD  7,420.0 kHz \eTD\bTD  120   \eTD\bTD 576  \eTD\bTD   \eTD\bTD    \eTD\eTR %FREQ
+\bTR\bTD BDF  \eTD\bTD  11,420.0 kHz \eTD\bTD  120   \eTD\bTD 576  \eTD\bTD   \eTD\bTD    \eTD\eTR %FREQ
+\bTR\bTD BDG  \eTD\bTD  18,940.0 kHz \eTD\bTD  120   \eTD\bTD 576  \eTD\bTD   \eTD\bTD    \eTD\eTR %FREQ
+\tabstop
+
+Broadcast time: 00:10, 01:30, 18:10, 20:30.
+
+\subsection{New Delhi, India}
+
+\tabstart
+\bTR\bTD ATP57  \eTD\bTD  7,404.9 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD  10 kW  \eTD\bTD  14:30--02:30   \eTD\eTR %FREQ 
+\bTR\bTD ATP65  \eTD\bTD 14,842.0 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD  10 kW  \eTD\bTD  02:30--14:30  \eTD\eTR %FREQ
+\tabstop
+
+Broadcast time: continuous.
+
+\subsection{Tokyo, Japan}
+
+\tabstart
+\bTR\bTD JMH   \eTD\bTD  3,622.5 kHz \eTD\bTD 120  \eTD\bTD  576  \eTD\bTD  5 kW  \eTD\bTD   \eTD\eTR %FREQ
+\bTR\bTD JMH2  \eTD\bTD  7,305.0 kHz \eTD\bTD 120  \eTD\bTD  576  \eTD\bTD  5 kW \eTD\bTD   \eTD\eTR %FREQ
+\bTR\bTD JMH4  \eTD\bTD  13,597.0 kHz \eTD\bTD 120  \eTD\bTD  576  \eTD\bTD  5 kW  \eTD\bTD   \eTD\eTR %FREQ
+\tabstop
+
+% 100pro 
+
+Broadcast time: continuous.
+
+
+\subsection{Pevek, Chukotka peninsula}
+
+\tabstart
+\bTR\bTD   \eTD\bTD  148.0 kHz \eTD\bTD  90  \eTD\bTD  576  \eTD\bTD    \eTD\bTD   \eTD\eTR %FREQ
+\tabstop
+ 
+Broadcast time: 05:30--07:30, 11:30--13:30, 14:30--16:30.
+
+\subsection{Taipei, China}
+
+ \tabstart
+\bTR\bTD BMF  \eTD\bTD  4,616.0 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD  10 kW  \eTD\bTD   \eTD\eTR %FREQ
+\bTR\bTD BMF  \eTD\bTD   5,250.0 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD  10 kW  \eTD\bTD   \eTD\eTR %FREQ
+\bTR\bTD BMF  \eTD\bTD   8,140.0 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD  10 kW  \eTD\bTD   \eTD\eTR %FREQ
+\bTR\bTD BMF  \eTD\bTD  13,900.0 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD  10 kW  \eTD\bTD   \eTD\eTR %FREQ
+\bTR\bTD BMF  \eTD\bTD  18,560.0 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD  10 kW  \eTD\bTD   \eTD\eTR %FREQ
+\tabstop
+
+%--- 100 pro
+
+Broadcast time: 00:40--10:10,  13:10--22:10.
+
+\subsection{Seoul, Republic of Korea}
+
+\tabstart
+\bTR\bTD HLL1  \eTD\bTD  3,585.0 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD   3 kW  \eTD\bTD   \eTD\eTR %FREQ
+\bTR\bTD HLL2  \eTD\bTD  5,857.5 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD   3 kW  \eTD\bTD   \eTD\eTR %FREQ
+\bTR\bTD HLL3  \eTD\bTD  7,433.5 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD  3 kW  \eTD\bTD   \eTD\eTR %FREQ
+\bTR\bTD HLL4  \eTD\bTD  9,165.0 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD  3 kW  \eTD\bTD   \eTD\eTR %FREQ
+\bTR\bTD HLL5  \eTD\bTD  13,570.0 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD  3 kW  \eTD\bTD   \eTD\eTR %FREQ
+\tabstop
+
+Broadcast time: 00:00--10:40,  12:00--22:40.
+
+\subsection{Bangkok, Thailand}
+
+\tabstart
+\bTR\bTD HSW64  \eTD\bTD  7,396.8 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD   3 kW  \eTD\bTD   \eTD\eTR %FREQ
+%\bTR\bTD HSW61  \eTD\bTD  17,520.0 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD  10 kW  \eTD\bTD   \eTD\eTR %
+\tabstop
+
+Broadcast time: 00:50--06:00, 07:20--10:20, 13:00, 17:00, 23:00.
+
+%\subsection{Tashkent 1, Uzbekistan}
+
+%\tabstart
+%RBV70  \eTD\bTD  3,690.0 kHz \eTD\bTD  60, 90, 120  \eTD\bTD  576, 288  \eTD\bTD   \eTD\bTD 13:00-01:30  \eTD\eTR % 
+%RPJ78  \eTD\bTD  4,365.0 kHz \eTD\bTD  60, 90, 120  \eTD\bTD  576, 288  \eTD\bTD   \eTD\bTD    \eTD\eTR %
+%RBV78  \eTD\bTD  5,890.0 kHz \eTD\bTD  60, 90, 120  \eTD\bTD  576, 288  \eTD\bTD   \eTD\bTD    \eTD\eTR %
+%RBX72  \eTD\bTD  7,570.0 kHz \eTD\bTD  60, 90, 120  \eTD\bTD  576, 288  \eTD\bTD   \eTD\bTD 01:30-13:00  \eTD\eTR % 
+%RCH72  \eTD\bTD  9,340.0 kHz \eTD\bTD  60, 90, 120  \eTD\bTD  576, 288  \eTD\bTD   \eTD\bTD    \eTD\eTR %
+%RBV76  \eTD\bTD  14,982.5 kHz \eTD\bTD  60, 90, 120  \eTD\bTD  576, 288  \eTD\bTD     \eTD\bTD   \eTD\eTR %
+%\tabstop
+
+%Broadcast time: continuous.
+
+%--- 1990
+
+%\subsection{Tashkent 2, Uzbekistan }
+
+%
+%\tabstart
+%RBX70  \eTD\bTD  3,280.0 kHz \eTD\bTD  60, 90  \eTD\bTD  576  \eTD\bTD   \eTD\bTD    \eTD\eTR %
+%RBX71  \eTD\bTD  5,285.0 kHz \eTD\bTD  60, 90  \eTD\bTD  576  \eTD\bTD   \eTD\bTD    \eTD\eTR %
+%RIJ75  \eTD\bTD  8,083.0 kHz \eTD\bTD  60, 90  \eTD\bTD  576  \eTD\bTD   \eTD\bTD  14:00-02:00    \eTD\eTR % 
+%RCH73  \eTD\bTD  9,150.0 kHz \eTD\bTD  60, 90  \eTD\bTD  576  \eTD\bTD   \eTD\bTD    \eTD\eTR %
+%ROM5  \eTD\bTD  13,947.0 kHz \eTD\bTD  60, 90  \eTD\bTD  576  \eTD\bTD   \eTD\bTD  02:00-14:00    \eTD\eTR %
+%\tabstop
+
+%---- Non operational 
+
+%Broadcast time: continuous.
+
+
+\subsection{Kyodo News Agency, Japan}
+
+\tabstart
+\bTR\bTD JJC  \eTD\bTD  4,316.0 kHz \eTD\bTD  60  \eTD\bTD  576  \eTD\bTD   5 kW  \eTD\bTD  meteo. maps 120 lpm \eTD\eTR %FREQ
+\bTR\bTD JJC  \eTD\bTD  8,467.5 kHz \eTD\bTD  60  \eTD\bTD  576  \eTD\bTD   10 kW  \eTD\bTD meteo. maps 120 lpm \eTD\eTR %FREQ
+\bTR\bTD JJC  \eTD\bTD  12,745.5 kHz \eTD\bTD  60  \eTD\bTD  576  \eTD\bTD    15 kW  \eTD\bTD meteo. maps 120 lpm \eTD\eTR %FREQ
+\bTR\bTD JJC  \eTD\bTD  16,971.0 kHz \eTD\bTD  60  \eTD\bTD  576  \eTD\bTD   15 kW  \eTD\bTD meteo. maps 120 lpm \eTD\eTR %FREQ
+\bTR\bTD JJC  \eTD\bTD  17,069.6 kHz \eTD\bTD  60  \eTD\bTD  576  \eTD\bTD   15 kW \eTD\bTD  meteo. maps 120 lpm \eTD\eTR  %FREQ
+\bTR\bTD JJC  \eTD\bTD  22,542.0 kHz \eTD\bTD  60  \eTD\bTD  576  \eTD\bTD   15 kW  \eTD\bTD meteo. maps 120 lpm \eTD\eTR %FREQ
+\tabstop
+
+Broadcast time: 01:45--07:45, 11:00--11:30, 13:35--22:15.
+
+\subsection{Kyodo News Agency, Singapore}
+
+\tabstart
+\bTR\bTD 9VF/252  \eTD\bTD  16,035.0 kHz \eTD\bTD  60  \eTD\bTD  576  \eTD\bTD  10 kW  \eTD\bTD  07:40--10:10, 14:15--18:15   \eTD\eTR %FREQ
+\bTR\bTD 9VF/252  \eTD\bTD  17,430.0 kHz \eTD\bTD  60  \eTD\bTD  576  \eTD\bTD  10 kW  \eTD\bTD  07:40--10:10, 14:15--18:15   \eTD\eTR %FREQ
+\tabstop
+
+Broadcast time: 07:40--10:10, 14:15--18:15.
+
+\subsection{Northwood, Persian Gulf Base}
+
+\tabstart
+%\bTR\bTD GYA  \eTD\bTD  3,289.5 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD  10 kW  \eTD\bTD  náhradní kmitočet   \eTD\eTR %
+\bTR\bTD GYA  \eTD\bTD  6,834.0 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD  10 kW  \eTD\bTD   18:00--08:00  \eTD\eTR %FREQ
+\bTR\bTD GYA  \eTD\bTD  14,436.0 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD  10 kW  \eTD\bTD  nepřetržitý provoz   \eTD\eTR %FREQ
+\bTR\bTD GYA  \eTD\bTD  18,261.0 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD  10 kW  \eTD\bTD  08:00--18:00  \eTD\eTR %FREQ
+\tabstop
+
+%INFORMATION DATED 03 JUNE 2005 
+
+%Broadcast time: continuous.
+
+\section{South America}
+%%%%%%%%%%%%%%%%%%%%%%%
+ 
+%\subsection{Puerto Belgrano, Argentina}
+%
+%\tabstart
+%LOR  \eTD\bTD  5,705.0 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD   \eTD\bTD   \eTD\eTR %F REQ 
+%LOR  \eTD\bTD 12,672.0 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD   \eTD\bTD   \eTD\eTR %F REQ 
+%\tabstop
+
+
+ 
+\subsection{Rio de Janeiro, Brazil}
+
+\tabstart
+\bTR\bTD PWZ-33  \eTD\bTD  12,665.0 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD   1 kW  \eTD\bTD   \eTD\eTR %FREQ 
+\bTR\bTD PWZ-33  \eTD\bTD  16,978.0 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD   1 kW  \eTD\bTD   \eTD\eTR %FREQ 
+\tabstop
+
+Broadcast time: 07:45--08:50.16:30--17:35.
+
+
+
+\subsection{Valparaiso Playa Ancha, Chile}
+
+\tabstart
+\bTR\bTD CBV  \eTD\bTD  4,228.0 kHz \eTD\bTD   120  \eTD\bTD  576  \eTD\bTD  1 kW  \eTD\bTD   \eTD\eTR %FREQ
+\bTR\bTD CBV  \eTD\bTD  8,677.0 kHz \eTD\bTD   120  \eTD\bTD  576  \eTD\bTD  1 kW  \eTD\bTD   \eTD\eTR %FREQ
+\bTR\bTD CBV  \eTD\bTD  17,146.4 kHz \eTD\bTD   120  \eTD\bTD  576  \eTD\bTD   1 kW  \eTD\bTD    \eTD\eTR %FREQ
+\tabstop
+
+Broadcast time: 11:15--23:25. 
+
+
+\section{North America}
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Halifax, Nova Scotia Canada}
+
+ 
+\tabstart
+\bTR\bTD CFH  \eTD\bTD  122.5 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD  10 kW  \eTD\bTD    \eTD\eTR %FREQ
+\bTR\bTD CFH  \eTD\bTD  4,271.0 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD   6 kW  \eTD\bTD    \eTD\eTR %FREQ
+\bTR\bTD CFH  \eTD\bTD  6,496.4 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD   6 kW  \eTD\bTD    \eTD\eTR %FREQ
+\bTR\bTD CFH  \eTD\bTD 10,536.0 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD   6 kW   \eTD\bTD    \eTD\eTR %FREQ
+\bTR\bTD CFH  \eTD\bTD 13,510.0 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD   6 kW  \eTD\bTD    \eTD\eTR %FREQ
+\tabstop
+
+%--- 100PRO 
+
+Broadcast time: continuous. 
+
+\subsection{Iqaluit, NWT Canada}
+
+\tabstart
+\bTR\bTD VFF  \eTD\bTD  3,253.0 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD  5 kW  \eTD\bTD  21:00--23:30 \eTD\eTR %FREQ
+\bTR\bTD VFF  \eTD\bTD  7,710.0 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD  5 kW  \eTD\bTD  00:10--09:00 \eTD\eTR %FREQ
+\tabstop
+
+Broadcast time: since middle of June till the end of November.
+
+%--- 100pro  
+
+\subsection{Resolute, NWT Canada}
+
+\tabstart
+\bTR\bTD VFR  \eTD\bTD  3,253.0 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD  5 kW  \eTD\bTD  00:10--09:00  \eTD\eTR %FREQ
+\bTR\bTD VFR  \eTD\bTD  7,710.0 kHz \eTD\bTD   120  \eTD\bTD  576  \eTD\bTD  5 kW   \eTD\bTD  21:00--23:30  \eTD\eTR %FREQ
+\tabstop
+
+Broadcast time: since middle of June till the end of November.
+
+%--- 100pro
+
+\subsection{Sydney, Nova Scotia Kanada}
+
+\tabstart
+\bTR\bTD VCO  \eTD\bTD  4,416.0 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD   \eTD\bTD  11:21, 11:42, 17:41    \eTD\eTR %FREQ
+\bTR\bTD VCO  \eTD\bTD  6,915.0 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD   \eTD\bTD  22:00, 23:31    \eTD\eTR %FREQ
+\tabstop
+
+Broadcast time: by frequency.
+
+%--- 100 Pro 
+
+\subsection{Kodiak, Alaska USA}
+
+\tabstart
+\bTR\bTD NOJ  \eTD\bTD  2,054.0 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD  7.5 kW  \eTD\bTD   \eTD\eTR %FREQ
+\bTR\bTD NOJ  \eTD\bTD  4,298.0 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD 7.5 kW  \eTD\bTD   \eTD\eTR %FREQ
+\bTR\bTD NOJ  \eTD\bTD  8,459.0 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD 7.5 kW \eTD\bTD   \eTD\eTR %FREQ
+\bTR\bTD NOJ  \eTD\bTD 12,412.5 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD  7.5 kW \eTD\bTD   \eTD\eTR %FREQ
+\tabstop
+
+Broadcast time: 04:00--11:59, 16:00-00:18.
+
+
+%--- 100 pro
+
+
+
+\subsection{Pt. Reyes, California USA}
+
+\tabstart
+\bTR\bTD NMC  \eTD\bTD  4,346.0 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD  4 kW  \eTD\bTD  01:40--16:08  \eTD\eTR %FREQ
+\bTR\bTD NMC  \eTD\bTD  8,682.0 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD  4 kW  \eTD\bTD   \eTD\eTR  %FREQ
+\bTR\bTD NMC  \eTD\bTD  12,786.0 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD   4 kW  \eTD\bTD   \eTD\eTR  %FREQ
+\bTR\bTD NMC  \eTD\bTD  17,151.2 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD  4 kW  \eTD\bTD   \eTD\eTR  %FREQ
+\bTR\bTD NMC  \eTD\bTD  22,527.0 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD   4 kW  \eTD\bTD  18:40--23:56   \eTD\eTR %FREQ
+\tabstop
+
+Broadcast time: continuous.
+
+
+\subsection{New Orleans, Louisiana USA}
+
+\tabstart
+\bTR\bTD NMG  \eTD\bTD  4,317.9 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD   4 kW  \eTD\bTD    \eTD\eTR %FREQ
+\bTR\bTD NMG  \eTD\bTD  8,503.9 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD  4 kW  \eTD\bTD   \eTD\eTR %FREQ
+\bTR\bTD NMG  \eTD\bTD 12,789.9 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD  4 kW  \eTD\bTD   \eTD\eTR %FREQ
+\bTR\bTD NMG  \eTD\bTD 17,146.4 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD  4 kW  \eTD\bTD  12:00--20:45   \eTD\eTR %FREQ
+\tabstop
+
+Broadcast time: 00:00--08:45, 12:00--20:45.
+
+\subsection{Boston, Massachusetts USA}
+
+\tabstart
+\bTR\bTD NMF  \eTD\bTD   4,235.0 kHz \eTD\bTD   120  \eTD\bTD  576  \eTD\bTD  4 kW  \eTD\bTD  02:30--10:28  \eTD\eTR %FREQ
+\bTR\bTD NMF  \eTD\bTD   6,340.5 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD  4 kW  \eTD\bTD    \eTD\eTR %FREQ
+\bTR\bTD NMF  \eTD\bTD   9,110.0 kHz \eTD\bTD 120  \eTD\bTD  576  \eTD\bTD  4 kW  \eTD\bTD    \eTD\eTR %FREQ
+\bTR\bTD NMF  \eTD\bTD  12,750.0 kHz \eTD\bTD 120  \eTD\bTD  576  \eTD\bTD  4 kW  \eTD\bTD  14:00--22:28   \eTD\eTR %FREQ
+\tabstop
+
+Broadcast time: 02:30--10:28, 14:00--22:28.
+
+\subsection{Inuvik, Canada}
+
+\tabstart
+\bTR\bTD VFA  \eTD\bTD  8,457.8 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD  1 kW  \eTD\bTD  02:00, 16:30  \eTD\eTR  %FREQ
+\tabstop
+
+Broadcast time: 02:00, 16:30. 
+ 
+%\subsection{Airborne Ice Transmissions, Kanada}
+%
+%\tabstart
+% \eTD\bTD   4,616.0 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD   \eTD\bTD   \eTD\eTR %F REQ
+% \eTD\bTD   7,708.1 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD   \eTD\bTD   \eTD\eTR%F REQ
+% \eTD\bTD   6,915.1 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD   \eTD\bTD   \eTD\eTR%F REQ
+%\tabstop
+%
+%Broadcast time: continuous.
+
+%\subsection{Coast Guard Ice Breakers, Kanada}
+%
+%\tabstart
+%  \eTD\bTD  14,770.0 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD   \eTD\bTD   \eTD\eTR %F REQ
+%\tabstop
+%
+%Broadcast time: 16:30--19:49. 
+
+
+\section{Australia and Oceania}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Charleville, Australia}
+
+\tabstart
+\bTR\bTD VMC  \eTD\bTD  2,628.0 kHz \eTD\bTD   120  \eTD\bTD  576  \eTD\bTD  1 kW  \eTD\bTD  09:00--19:00   \eTD\eTR %FREQ
+\bTR\bTD VMC  \eTD\bTD  5,100.0 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD  1 kW  \eTD\bTD   \eTD\eTR %FREQ
+\bTR\bTD VMC  \eTD\bTD  11,030.0 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD  1 kW  \eTD\bTD   \eTD\eTR %FREQ
+\bTR\bTD VMC  \eTD\bTD  13,920.0 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD  1 kW  \eTD\bTD   \eTD\eTR %FREQ
+\bTR\bTD VMC  \eTD\bTD  20,469.0 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD  1 kW  \eTD\bTD  19:00--09:00   \eTD\eTR %FREQ
+\tabstop
+
+Broadcast time: continuous. 
+
+\subsection{Wiluna, Australia}
+
+\tabstart
+\bTR\bTD VMW  \eTD\bTD  5,755.0 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD    1 kW   \eTD\bTD  11:00--21:00  \eTD\eTR %FREQ
+\bTR\bTD VMW  \eTD\bTD  7,535.0 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD  1 kW  \eTD\bTD   \eTD\eTR %FREQ
+\bTR\bTD VMW  \eTD\bTD  10,555.0 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD  1 kW  \eTD\bTD   \eTD\eTR %FREQ
+\bTR\bTD VMW  \eTD\bTD  15,615.0 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD  1 kW  \eTD\bTD   \eTD\eTR %FREQ
+\bTR\bTD VMW  \eTD\bTD  18,060.0 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD  1 kW  \eTD\bTD  21:00--11:00  \eTD\eTR %FREQ
+\tabstop
+
+Broadcast time: continuous. 
+
+\subsection{Wellington, New Zealand}
+
+\tabstart
+\bTR\bTD ZKLF  \eTD\bTD  3,247.4 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD  5 kW  \eTD\bTD  09:45--17:00  \eTD\eTR %FREQ
+\bTR\bTD ZKLF  \eTD\bTD   5,807.0 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD  5 kW  \eTD\bTD   \eTD\eTR %FREQ
+\bTR\bTD ZKLF  \eTD\bTD   9,459.0 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD  5 kW  \eTD\bTD   \eTD\eTR %FREQ
+\bTR\bTD ZKLF  \eTD\bTD  13,550.5 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD  5 kW  \eTD\bTD   \eTD\eTR %FREQ
+\bTR\bTD ZKLF  \eTD\bTD  16,340.1 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD  5 kW  \eTD\bTD  21:45--05:00  \eTD\eTR %FREQ
+\tabstop
+
+Broadcast time: 00:00--04:00, 09:00--16:00, 21:00--23:00 (beginning every whole hour).
+
+\subsection{Honolulu, Hawaii USA}
+
+\tabstart
+\bTR\bTD KVM70  \eTD\bTD  9,982.5 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD   5 kW  \eTD\bTD  05:19--15:56   \eTD\eTR %FREQ
+\bTR\bTD KVM70  \eTD\bTD  11,090.0 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD   5 kW  \eTD\bTD      \eTD\eTR %FREQ
+\bTR\bTD KVM70  \eTD\bTD  16,135.0 kHz \eTD\bTD  120  \eTD\bTD  576  \eTD\bTD   5 kW  \eTD\bTD   17:19--03:56   \eTD\eTR %FREQ
+%\bTR\bTD KVM70  \eTD\bTD  23,331.5 kHz \eTD\bTD 120  \eTD\bTD  576  \eTD\bTD  5 kW  \eTD\bTD   23:45--03:54   \eTD\eTR %F REQ
+\tabstop
+
+%--- 100 Pro
+Broadcast time: continuous, by frequency.
+
+
+

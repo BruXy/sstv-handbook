@@ -1,0 +1,131 @@
+\chapter[biglist]{List of SSTV modes}
+
+%\bTABLE[split=repeat,offset=\dimexpr0mm-.5pt]\tfx
+\bTABLE[split=repeat]\tfx
+%\bTABLE[split=repeat,style=\tfx,height=1.1em]
+\setupTABLE[c][each][align={middle,lohi},]
+\setupTABLE[r][1][align={middle,lohi},]
+\setupTABLE[c][1][width=2.5cm]
+\setupTABLE[c][3,4,5,6,7,8][align=center]
+\setupTABLE[c][2][align=flushleft]
+\setupTABLE[c][8][alignmentcharacter={.},aligncharacter=yes,align=middle]
+
+\bTABLEhead
+\bTR \bTH	{\bf System}	 \eTH\bTH  {\bf Mode}  \eTH\bTH  {\bf Colors}	 \eTH\bTH  {\bf VIS code}  \eTH\bTH  {\bf Duration [s]}	 \eTH\bTH  {\bf Lines}	 \eTH\bTH  {\bf Columns}  \eTH\bTH {\bf lpm}  \eTH \eTR
+\eTABLEhead
+
+\bTABLEbody
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bTR\bTD[nr=5]Amiga Video Transceiver	  \eTD\bTD  AVT 24	  \eTD\bTD  RGB	  \eTD\bTD  64,65,66,67$^{a}$	  \eTD\bTD  31	  \eTD\bTD  128	  \eTD\bTD  128	  \eTD\bTD  960.000  \eTD\eTR 
+	  \bTR	\bTD  AVT 90	  \eTD\bTD  RGB	  \eTD\bTD  68,69,70,71$^{a}$	  \eTD\bTD  98	  \eTD\bTD  240	  \eTD\bTD  256	  \eTD\bTD  480.000  \eTD\eTR 
+	  \bTR	\bTD  AVT 94	  \eTD\bTD  RGB	  \eTD\bTD  72,73,74,75$^{a}$	  \eTD\bTD  102	  \eTD\bTD  200	  \eTD\bTD  320	  \eTD\bTD  384.000  \eTD\eTR 
+	  \bTR	\bTD  AVT 188	  \eTD\bTD  RGB	  \eTD\bTD  76$^{b}$,77,78,79$^{a}$	  \eTD\bTD  196	  \eTD\bTD  400	  \eTD\bTD  320	  \eTD\bTD  384.000  \eTD\eTR 
+	  \bTR	\bTD  AVT 125 BW  \eTD\bTD  BW	  \eTD\bTD  80,81,82,83$^{a}$	  \eTD\bTD  133	  \eTD\bTD  400	  \eTD\bTD  320	  \eTD\bTD  192.000  \eTD\eTR 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bTR\bTD FAX480  \eTD \bTD \eTD \bTD  BW	  \eTD\bTD  85	  \eTD\bTD  138	  \eTD\bTD  480	  \eTD\bTD  512	  \eTD\bTD  224.497  \eTD\eTR 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bTR\bTD FAST FM  \eTD \bTD \eTD \bTD  YCrCb	  \eTD\bTD  90$^{f}$	  \eTD\bTD  13	  \eTD\bTD  240	  \eTD\bTD  320	  \eTD\bTD  1118.881  \eTD\eTR 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bTR\bTD[nr=4] Martin	  \eTD\bTD  M1	  \eTD\bTD  RGB	  \eTD\bTD  44	  \eTD\bTD  114	  \eTD\bTD  256	  \eTD\bTD  320	  \eTD\bTD  134.395  \eTD\eTR 
+	  \bTR	\bTD  M2	  \eTD\bTD  RGB	  \eTD\bTD  40	  \eTD\bTD  58	  \eTD\bTD  256	  \eTD\bTD  320	  \eTD\bTD  264.553  \eTD\eTR 
+	  \bTR	\bTD  M3	  \eTD\bTD  RGB	  \eTD\bTD  36	  \eTD\bTD  57	  \eTD\bTD  128	  \eTD\bTD  320	  \eTD\bTD  134.395  \eTD\eTR 
+	  \bTR	\bTD  M4	  \eTD\bTD  RGB	  \eTD\bTD  32	  \eTD\bTD  29	  \eTD\bTD  128	  \eTD\bTD  320	  \eTD\bTD  264.553  \eTD\eTR 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bTR\bTD[nr=2]Martin HQ	  \eTD\bTD  HQ1	  \eTD\bTD  YCrCb	  \eTD\bTD  41	  \eTD\bTD  90	  \eTD\bTD  240	  \eTD\bTD  320	  \eTD\bTD  85.055  \eTD\eTR 
+	  \bTR	\bTD  HQ2	  \eTD\bTD  YCrCb	  \eTD\bTD  42	  \eTD\bTD  112	  \eTD\bTD  240	  \eTD\bTD  320	  \eTD\bTD  68.680  \eTD\eTR 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bTR\bTD[nr=19]MMSSTV	  \eTD\bTD  MC110-N	  \eTD\bTD  RGB	  \eTD\bTD  0x14$^{e}$	  \eTD\bTD  110	  \eTD\bTD  256	  \eTD\bTD  320	  \eTD\bTD  137.143  \eTD\eTR 
+	  \bTR	\bTD  MC140-N	  \eTD\bTD  RGB	  \eTD\bTD  0x15$^{e}$	  \eTD\bTD  140	  \eTD\bTD  256	  \eTD\bTD  320	  \eTD\bTD  109.389  \eTD\eTR 
+	  \bTR	\bTD  MC180-N	  \eTD\bTD  RGB	  \eTD\bTD  0x16$^{e}$	  \eTD\bTD  180	  \eTD\bTD  256	  \eTD\bTD  320	  \eTD\bTD  85.167  \eTD\eTR 
+%%\cline{2-9}
+	  \bTR	\bTD  MP73	  \eTD\bTD  YCrCb	  \eTD\bTD  0x2523$^{d}$	  \eTD\bTD  73	  \eTD\bTD  256	  \eTD\bTD  320	  \eTD\bTD  210.526  \eTD\eTR 
+	  \bTR	\bTD  MP115	  \eTD\bTD  YCrCb	  \eTD\bTD  0x2923$^{d}$	  \eTD\bTD  115	  \eTD\bTD  256	  \eTD\bTD  320	  \eTD\bTD  133.038  \eTD\eTR 
+	  \bTR	\bTD  MP140	  \eTD\bTD  YCrCb	  \eTD\bTD  0x2a23$^{d}$	  \eTD\bTD  140	  \eTD\bTD  256	  \eTD\bTD  320	  \eTD\bTD  110.092  \eTD\eTR 
+	  \bTR	\bTD  MP175	  \eTD\bTD  YCrCb	  \eTD\bTD  0x2c23$^{d}$	  \eTD\bTD  175	  \eTD\bTD  256	  \eTD\bTD  320	  \eTD\bTD  87.591  \eTD\eTR 
+%%\cline{2-9}
+	  \bTR	\bTD  MP73-N	  \eTD\bTD  YCrCb	  \eTD\bTD  0x02$^{e}$	  \eTD\bTD  73	  \eTD\bTD  256	  \eTD\bTD  320	  \eTD\bTD  210.526  \eTD\eTR 
+	  \bTR	\bTD  MP110-N	  \eTD\bTD  YCrCb	  \eTD\bTD  0x04$^{e}$	  \eTD\bTD  115	  \eTD\bTD  256	  \eTD\bTD  320	  \eTD\bTD  139.860  \eTD\eTR 
+	  \bTR	\bTD  MP140-N	  \eTD\bTD  YCrCb	  \eTD\bTD  0x05$^{e}$  \eTD\bTD  140	  \eTD\bTD  256	  \eTD\bTD  320	  \eTD\bTD  110.092  \eTD\eTR 
+%%\cline{2-9}
+	  \bTR	\bTD  MR73	  \eTD\bTD  YCrCb	  \eTD\bTD  0x4523$^{d}$	  \eTD\bTD  73	  \eTD\bTD  256	  \eTD\bTD  320	  \eTD\bTD  419.141  \eTD\eTR 
+	  \bTR	\bTD  MR90	  \eTD\bTD  YCrCb	  \eTD\bTD  0x4623$^{d}$	  \eTD\bTD  90	  \eTD\bTD  256	  \eTD\bTD  320	  \eTD\bTD  340.619  \eTD\eTR 
+	  \bTR	\bTD  MR115	  \eTD\bTD  YCrCb	  \eTD\bTD  0x4923$^{d}$	  \eTD\bTD  115	  \eTD\bTD  256	  \eTD\bTD  320	  \eTD\bTD  266.489  \eTD\eTR 
+	  \bTR	\bTD  MR140	  \eTD\bTD  YCrCb	  \eTD\bTD  0x4a23$^{d}$	  \eTD\bTD  140	  \eTD\bTD  256	  \eTD\bTD  320	  \eTD\bTD  218.858  \eTD\eTR 
+	  \bTR	\bTD  MR175	  \eTD\bTD  YCrCb	  \eTD\bTD  0x4c23$^{d}$	  \eTD\bTD  175	  \eTD\bTD  256	  \eTD\bTD  320	  \eTD\bTD  175.362  \eTD\eTR 
+	  \bTR	\bTD  MR180	  \eTD\bTD  YCrCb	  \eTD\bTD  0x8523$^{d}$	  \eTD\bTD  180	  \eTD\bTD  496	  \eTD\bTD  640	  \eTD\bTD  330.306  \eTD\eTR 
+	  \bTR	\bTD  MR240	  \eTD\bTD  YCrCb	  \eTD\bTD  0x8623$^{d}$	  \eTD\bTD  240	  \eTD\bTD  496	  \eTD\bTD  640	  \eTD\bTD  248.293  \eTD\eTR 
+	  \bTR	\bTD  MR280	  \eTD\bTD  YCrCb	  \eTD\bTD  0x8923$^{d}$	  \eTD\bTD  280	  \eTD\bTD  496	  \eTD\bTD  640	  \eTD\bTD  212.277  \eTD\eTR 
+	  \bTR	\bTD  MR320	  \eTD\bTD  YCrCb	  \eTD\bTD  0x8a23$^{d}$	  \eTD\bTD  320	  \eTD\bTD  496	  \eTD\bTD  640	  \eTD\bTD  185.960  \eTD\eTR 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bTR\bTD[nr=2] MSCAN	  \eTD\bTD  TV-1	  \eTD\bTD  RGB	  \eTD\bTD  104	  \eTD\bTD  320	  \eTD\bTD  256	  \eTD\bTD  320	  \eTD\bTD  84.383  \eTD\eTR 
+	  \bTR	\bTD  TV-2	  \eTD\bTD  RGB	  \eTD\bTD  105	  \eTD\bTD  320	  \eTD\bTD  256	  \eTD\bTD  320	  \eTD\bTD  134.530  \eTD\eTR 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bTR\bTD[nr=3]Pasokon	  \eTD\bTD  P3	  \eTD\bTD  RGB	  \eTD\bTD  113	  \eTD\bTD  203	  \eTD\bTD  496	  \eTD\bTD  640	  \eTD\bTD  146.565  \eTD\eTR 
+	  \bTR	\bTD  P5	  \eTD\bTD  RGB	  \eTD\bTD  114	  \eTD\bTD  305	  \eTD\bTD  496	  \eTD\bTD  640	  \eTD\bTD  97.710  \eTD\eTR 
+	  \bTR	\bTD  P7	  \eTD\bTD  RGB	  \eTD\bTD  115	  \eTD\bTD  406	  \eTD\bTD  496	  \eTD\bTD  640	  \eTD\bTD  73.282  \eTD\eTR 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\bTR\bTD[nr=7] PD	  \eTD\bTD  PD 50	  \eTD\bTD  YCrCb	  \eTD\bTD  93	  \eTD\bTD  50	  \eTD\bTD  256	  \eTD\bTD  320	  \eTD\bTD  309.151  \eTD\eTR 
+	  \bTR	\bTD  PD 90	  \eTD\bTD  YCrCb	  \eTD\bTD  99	  \eTD\bTD  90	  \eTD\bTD  256	  \eTD\bTD  320	  \eTD\bTD  170.687  \eTD\eTR 
+	  \bTR	\bTD  PD 120	  \eTD\bTD  YCrCb	  \eTD\bTD  95	  \eTD\bTD  126	  \eTD\bTD  496	  \eTD\bTD  640	  \eTD\bTD  235.997  \eTD\eTR 
+	  \bTR	\bTD  PD 160	  \eTD\bTD  YCrCb	  \eTD\bTD  98	  \eTD\bTD  161	  \eTD\bTD  400	  \eTD\bTD  512	  \eTD\bTD  149.177  \eTD\eTR 
+	  \bTR	\bTD  PD 180	  \eTD\bTD  YCrCb	  \eTD\bTD  96	  \eTD\bTD  187	  \eTD\bTD  496	  \eTD\bTD  640	  \eTD\bTD  159.101  \eTD\eTR 
+	  \bTR	\bTD  PD 240	  \eTD\bTD  YCrCb	  \eTD\bTD  97	  \eTD\bTD  248	  \eTD\bTD  496	  \eTD\bTD  640	  \eTD\bTD  120.000  \eTD\eTR 
+	  \bTR	\bTD  PD 290	  \eTD\bTD  YCrCb	  \eTD\bTD  94	  \eTD\bTD  289	  \eTD\bTD  616	  \eTD\bTD  800	  \eTD\bTD  128.030  \eTD\eTR 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bTR\bTD Proskan	  \eTD\bTD  J120	  \eTD\bTD  RGB	  \eTD\bTD  100	  \eTD\bTD  120	  \eTD\bTD  240	  \eTD\bTD  320	  \eTD\bTD  128.046  \eTD\eTR 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bTR\bTD[nr=8]Robot  	  \eTD\bTD  Color 12	  \eTD\bTD  YCrCb 	  \eTD\bTD  0	  \eTD\bTD  12	  \eTD\bTD  120	  \eTD\bTD  160	  \eTD\bTD  600.000  \eTD\eTR 
+	  \bTR	\bTD  Color 24	  \eTD\bTD  YCrCb 	  \eTD\bTD  4	  \eTD\bTD  24	  \eTD\bTD  120	  \eTD\bTD  160	  \eTD\bTD  300.000  \eTD\eTR 
+	  \bTR	\bTD  Color 36	  \eTD\bTD  YCrCb 	  \eTD\bTD  8	  \eTD\bTD  36	  \eTD\bTD  240	  \eTD\bTD  320	  \eTD\bTD  400.000  \eTD\eTR 
+	  \bTR	\bTD  Color 72	  \eTD\bTD  YCrCb 	  \eTD\bTD  12	  \eTD\bTD  72	  \eTD\bTD  240	  \eTD\bTD  320	  \eTD\bTD  200.000  \eTD\eTR 
+%%% \cline{2-9}
+	  \bTR	\bTD  B\&W 8	  \eTD\bTD  BW	  \eTD\bTD  1, 2, 3$^{c}$ 	  \eTD\bTD  8	  \eTD\bTD  160	  \eTD\bTD  120	  \eTD\bTD  900.000  \eTD\eTR 
+	  \bTR	\bTD  B\&W 12	  \eTD\bTD  BW	  \eTD\bTD  5, 6, 7$^{c}$	  \eTD\bTD  12	  \eTD\bTD  320	  \eTD\bTD  240	  \eTD\bTD  600.000  \eTD\eTR 
+	  \bTR	\bTD  B\&W 24	  \eTD\bTD  BW	  \eTD\bTD  9, 10, 11$^{c}$ 	  \eTD\bTD  24	  \eTD\bTD  320	  \eTD\bTD  240	  \eTD\bTD  300.000  \eTD\eTR 
+	  \bTR	\bTD  B\&W 36	  \eTD\bTD  BW	  \eTD\bTD  13, 14, 15$^{c}$	  \eTD\bTD  36	  \eTD\bTD  320	  \eTD\bTD  240	  \eTD\bTD  200.000  \eTD\eTR 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bTR\bTD[nr=5]Scottie	  \eTD\bTD  S1	  \eTD\bTD  RGB	  \eTD\bTD  60	  \eTD\bTD  110	  \eTD\bTD  256	  \eTD\bTD  320	  \eTD\bTD  140.115  \eTD\eTR 
+	  \bTR	\bTD  S2	  \eTD\bTD  RGB	  \eTD\bTD  56	  \eTD\bTD  71	  \eTD\bTD  256	  \eTD\bTD  320	  \eTD\bTD  216.067  \eTD\eTR 
+	  \bTR	\bTD  S3	  \eTD\bTD  RGB	  \eTD\bTD  52	  \eTD\bTD  55	  \eTD\bTD  128	  \eTD\bTD  320	  \eTD\bTD  140.115  \eTD\eTR 
+	  \bTR	\bTD  S4	  \eTD\bTD  RGB	  \eTD\bTD  48	  \eTD\bTD  36	  \eTD\bTD  128	  \eTD\bTD  320	  \eTD\bTD  216.067  \eTD\eTR 
+	  \bTR	\bTD  DX	  \eTD\bTD  RGB	  \eTD\bTD  76$^{b}$	  \eTD\bTD  269	  \eTD\bTD  256	  \eTD\bTD  320	  \eTD\bTD  57.127  \eTD\eTR 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bTR\bTD Scottie DX2	  \eTD\bTD  	  \eTD\bTD  RGB	  \eTD\bTD  80	  \eTD\bTD  136	  \eTD\bTD  256	  \eTD\bTD  320	  \eTD\bTD  112.905  \eTD\eTR 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bTR\bTD SP-17 BW    \eTD\bTD     \eTD\bTD  BW   \eTD\bTD  125    \eTD\bTD   17   \eTD\bTD  256  \eTD\bTD  128  \eTD\bTD         895.520   \eTD\eTR 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bTR\bTD Vester Color FAX	  \eTD\bTD  	  \eTD\bTD  RGB	  \eTD\bTD  86	  \eTD\bTD  414	  \eTD\bTD  480  \eTD\bTD  512  \eTD\bTD  74.832  \eTD\eTR 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bTR\bTD[nr=8] Wraase SC1	  \eTD\bTD  8	  \eTD\bTD  BW	  \eTD\bTD   17, 18, 19$^{c}$	  \eTD\bTD  8	  \eTD\bTD  120	  \eTD\bTD  128	  \eTD\bTD  1000.000  \eTD\eTR 
+	  \bTR	\bTD  16	  \eTD\bTD  BW	  \eTD\bTD   21, 22, 23$^{c}$ 	  \eTD\bTD  16	  \eTD\bTD  120	  \eTD\bTD  256	  \eTD\bTD  500.000  \eTD\eTR 
+	  \bTR	\bTD  24	  \eTD\bTD  BW	  \eTD\bTD  25, 26, 27$^{c}$	  \eTD\bTD  24	  \eTD\bTD  256	  \eTD\bTD  128	  \eTD\bTD  930.520  \eTD\eTR 
+	  \bTR	\bTD  32	  \eTD\bTD  BW	  \eTD\bTD  29, 30, 31$^{c}$	  \eTD\bTD  32	  \eTD\bTD  240	  \eTD\bTD  256	  \eTD\bTD  500.000  \eTD\eTR 
+%% \cline{2-9}
+	  \bTR	\bTD  24	  \eTD\bTD  RGB	  \eTD\bTD  16	  \eTD\bTD  24	  \eTD\bTD  128	  \eTD\bTD  128	  \eTD\bTD  900.000  \eTD\eTR 
+	  \bTR	\bTD  48	  \eTD\bTD  RGB	  \eTD\bTD  20	  \eTD\bTD  48	  \eTD\bTD  128	  \eTD\bTD  256	  \eTD\bTD  489.102  \eTD\eTR 
+	  \bTR	\bTD  48Q	  \eTD\bTD  RGB	  \eTD\bTD  24	  \eTD\bTD  48	  \eTD\bTD  256	  \eTD\bTD  128	  \eTD\bTD  900.000  \eTD\eTR 
+	  \bTR	\bTD  96	  \eTD\bTD  RGB	  \eTD\bTD  28	  \eTD\bTD  96	  \eTD\bTD  256	  \eTD\bTD  256	  \eTD\bTD  500.000  \eTD\eTR 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bTR\bTD[nr=4]Wraase SC2	  \eTD\bTD  30	  \eTD\bTD  RGB	  \eTD\bTD  51	  \eTD\bTD  30	  \eTD\bTD  128	  \eTD\bTD  320	  \eTD\bTD  249.595  \eTD\eTR 
+	  \bTR	\bTD  60	  \eTD\bTD  RGB	  \eTD\bTD  59	  \eTD\bTD  60	  \eTD\bTD  256	  \eTD\bTD  320	  \eTD\bTD  249.600  \eTD\eTR 
+	  \bTR	\bTD  120	  \eTD\bTD  RGB	  \eTD\bTD  63	  \eTD\bTD  120	  \eTD\bTD  256	  \eTD\bTD  320	  \eTD\bTD  126.175  \eTD\eTR 
+	  \bTR	\bTD  180	  \eTD\bTD  RGB	  \eTD\bTD  55	  \eTD\bTD  180	  \eTD\bTD  256	  \eTD\bTD  320	  \eTD\bTD  84.383  \eTD\eTR 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\eTABLEbody
+\eTABLE
+
+\subsubject{Notes:}
+
+{\tfx
+\startitemize
+\item $a$ -- VIS code order: Normal, Narrow mode, QRM mode, Narrow+QRM;
+\item $b$ -- Scottie DX and AVT 188 were created at the same time and accidentally share the same VIS code;
+\item $c$ -- VIS codes for each color component (red, green, blue). The green component is comonly used for BW images;
+\item $d$ -- Uses 16 bit VIS (see \in{sec.}[mmscan]); 
+\item $e$ -- Uses another digital code N-VIS (see \in{sec.}[mmscan]); 
+\item $f$ -- Uses odd parity; 
+\stopitemize
+}
+

@@ -1,0 +1,141 @@
+\chapter{Formats of slow-scan TV transmission}
+
+\section{Black and white SSTV systems}
+
+The earlier modes of SSTV transmission were displayed on long
+persistent monitors with radar CRT. The duration of transmission
+for each image frame took 7.2 to 8 seconds, and when the last line
+was received the first line was still visible. It was possible to see
+the whole picture in a darkened room.
+
+Both 7.2s and 8s modes were used in the same period. The  7.2\,s frame speed mode, was used in Europe while the 8\,s  were used in America.
+The synchronization of signals is derived from the electrical
+mains~-- 50 or 60\,Hz. If an image was synchronized at 60\,Hz
+and received on 50\,Hz equipment, it was still readable, but the image
+was a little distorted. For long distance QSOs, it was possible to change
+the oscillator to achieve European or American synchronization. 
+
+The disadvantages of 8s SSTV are low image resolution and a loss
+of synchronization due to signal interference. The loss of synchronization could lead
+to the loss of a few lines or the whole image.
+
+The differences between modern SSTV modes and this old system are many,
+but one parameter remains the same. Almost all new systems use 1200\,Hz frequency for 
+sync pulses and the frequency band
+from 1500\,Hz (black) to 2300\,Hz (white) for video signals. Also the old 8s mode is still
+supported by many SSTV programs for transmission. It
+is important to note that 8s mode has the shortest transfer time and should be used in special conditions.
+
+\subsection{Modes for digital converters}
+
+There are many modes for B\&W image transmission which differ in 
+transfer time and resolution. Modes Wraase and Robot are implemented
+in modern converters. The transfer was extended to 256 lines and
+also transmission time was prolonged  to achieve better horizontal
+resolution. 
+
+Commonly used modes were: the 16 second mode with 128 lines, 32 second mode
+with 256 lines and the 64 second mode with 256 lines which provides maximal image quality. All these
+modes are related to the original 8s mode and also have image aspect
+ratio 1:1. The number of lines, columns or both were simply multiplied twice.
+This design was used in Wraase B\&W converters.
+
+While Wraase modes were derived from the European 7.2s mode, the Robot Research
+developed an original system for their converters. Robot modes aren't simply derived
+by \uv{doubling} parameters but their parameters are derived from line speed. The American 60\,Hz/8s norm has a transfer speed of 900,0\,lpm. The line speeds for new modes were chosen at 600,0\,lpm for 12s mode with 120 lines and for 24s mode
+with 240 lines. The mode with the best resolution has a line speed of 400,0\,lpm and a total transmission time of 36 seconds.
+ 
+The Robot SSTV system reserves the first 16 or 8 lines (for a 240 or 120 line
+image) for gradation gray scale. The scale can be used to tune the signal more precisely. 
+
+Although Robot Research cooperated with Copthorn MacDonald, they ignored
+the trend in amateur construction of digital converters with doubled modes.
+Despite this fact, Robot system and its converter {\em Robot~300} became
+quite popular even with a price tag of over  \$800  in the mid-seventies.
+
+During the 70's and 80's, the ham radio market was not the only outlet for SSTV converters, but the companies found opportunities in the telecommunication market and sold SSTV monitors and cameras as devices for image transmission over telephone lines.
+
+\placetable[][tab:vis_system]{Parameters of black and white SSTV modes.}{
+\bTABLE\tfx
+\setupTABLE[column][4,5,6][alignmentcharacter={.},aligncharacter=yes,align=middle]
+\setupTABLE[column][2,3][align=middle]
+\setupTABLE[row][each][offset=\dimexpr1mm+.5pt] 
+\bTABLEhead
+\bTR[bottomframe=off]
+	\bTH[nr=2,align={middle,center}] Mode	\eTH
+	\bTH[nr=2,align={middle,center}] Resolution	\eTH	
+	\bTH Aspect	\eTH	
+	\bTH Sync.	\eTH 
+	\bTH Scan line \eTH
+	\bTH Line speed \eTH
+\eTR
+\bTR[topframe=off]
+%	\bTH 	\eTH
+%	\bTH	\eTH	
+	\bTH ratio	\eTH	
+	\bTH (ms)	\eTH 
+	\bTH (ms) \eTH
+	\bTH (lpm) \eTH
+\eTR
+\eTABLEhead
+\bTABLEbody
+\bTR\bTD 7.2s (50 Hz)      \eTD\bTD 120$\times$120 \eTD\bTD 1:1 \eTD\bTD 5.0  \eTD\bTD 55.0  \eTD\bTD 1000.0  \eTD\eTR
+\bTR\bTD 8s (60 Hz)          \eTD\bTD 120$\times$120 \eTD\bTD 1:1 \eTD\bTD 5.0  \eTD\bTD 60.0  \eTD\bTD  900.0  \eTD\eTR
+\bTR\bTD Wraase SC-1 8       \eTD\bTD 128$\times$128 \eTD\bTD 1:1 \eTD\bTD 5.0  \eTD\bTD 55.0  \eTD\bTD 1000.0  \eTD\eTR
+\bTR\bTD Wraase SC-1 16      \eTD\bTD 256$\times$128 \eTD\bTD 1:1 \eTD\bTD 5.0  \eTD\bTD 115.0 \eTD\bTD  500.0  \eTD\eTR
+\bTR\bTD Wraase SC-1 16 Q    \eTD\bTD 128$\times$256 \eTD\bTD 1:1 \eTD\bTD 5.0  \eTD\bTD 55.0  \eTD\bTD 1000.0  \eTD\eTR
+\bTR\bTD Wraase SC-1 32      \eTD\bTD 256$\times$256 \eTD\bTD 1:1 \eTD\bTD 5.0  \eTD\bTD 115.0 \eTD\bTD  500.0  \eTD\eTR
+\bTR\bTD 64\,s~mode            \eTD\bTD 256$\times$256 \eTD\bTD 1:1 \eTD\bTD 5.0  \eTD\bTD 115.0 \eTD\bTD  250.0  \eTD\eTR
+\bTR\bTD Robot B\&W 8        \eTD\bTD 160$\times$120 \eTD\bTD 4:3 \eTD\bTD 10.0 \eTD\bTD 56.0  \eTD\bTD  900.0  \eTD\eTR
+\bTR\bTD Robot B\&W 12       \eTD\bTD 160$\times$120 \eTD\bTD 4:3 \eTD\bTD  7.0 \eTD\bTD 93.0  \eTD\bTD  600.0  \eTD\eTR
+\bTR\bTD Robot B\&W 24       \eTD\bTD 320$\times$240 \eTD\bTD 4:3 \eTD\bTD 12.0 \eTD\bTD 93.0  \eTD\bTD  300.0  \eTD\eTR
+\bTR\bTD Robot B\&W 36       \eTD\bTD 320$\times$240 \eTD\bTD 4:3 \eTD\bTD 12.0 \eTD\bTD 138.0 \eTD\bTD  200.0  \eTD\eTR
+\bTR\bTD AVT  125            \eTD\bTD 320$\times$400 \eTD\bTD 4:3 \eTD\bTD[aligncharacter=no] ---      \eTD\bTD 312.5 \eTD\bTD 192.000 \eTD\eTR
+\bTR\bTD FAX 480             \eTD\bTD 512$\times$480 \eTD\bTD 1:1 \eTD\bTD 5.12 \eTD\bTD262.144\eTD\bTD 224.497  \eTD\eTR
+\bTR\bTD SP-17 BW            \eTD\bTD 128$\times$256 \eTD\bTD 4:3 \eTD\bTD 5.0  \eTD\bTD 62.0   \eTD\bTD  895.520 \eTD\eTR
+
+ % line 0,001500 backporch +	0,060500 video
+
+\eTABLEbody
+\eTABLE
+}
+
+\subsection{BW transmission with computer software}
+
+An example of B\&W mode implemented with computers is the AVT~125~BW  mode of the {\em Amiga Video Transceiver} 
+system and it is suitable for good quality image transfer in circa
+2 minutes. The mode has a vertical resolution of 200 lines because the Amiga computer resolution was 320$\times$200.
+The AVT system is different from the previous B\&W modes because it has no line sync
+like WEFAX. The transmission is based on a fully synchronous communication
+and the exact timing of corresponding stations. This special feature is described
+in more detail in \in{chapter}[avt] about color AVT modes.
+
+There is also the FAX480 mode for high resolution transmission, with 512$\times$480
+image resolution described further in \in{chapter}[fax480].
+
+Early B\&W modes Wraase and Robot, need to be synchronized with 
+both line and vertical synchronization. 
+The line speed describes the free-run speed, but in reality it can
+be deviated up to $\pm$~5\,\%.
+
+Modern modes like FAX480 and AVT~125~BW need accurate precision
+of line speed, because just a little deviation of values in 
+tenths causes image slant and distortion.
+
+The advantage of longer transmission is improved image
+quality.  The disadvantage, is that a lot of time is needed for the transfer,
+which could be better utilized for the transmission of color images.
+ 
+\placefigure[][none]{Comparison of Robot system's BW modes.}
+{
+	\startcombination[2*2]
+		{\externalfigure[sstv/obr/rob8bw.png][width=0.4\makeupwidth]}%
+		{Robot  B\&W 8}
+		{\externalfigure[sstv/obr/rob12bw.png][width=0.4\makeupwidth]}%
+		{Robot  B\&W 12}
+		{\externalfigure[sstv/obr/rob24bw.png][width=0.4\makeupwidth]}%	
+		{Robot  B\&W 24}
+		{\externalfigure[sstv/obr/rob36bw.png][width=0.4\makeupwidth]}%
+		{Robot  B\&W 36}
+	\stopcombination
+}

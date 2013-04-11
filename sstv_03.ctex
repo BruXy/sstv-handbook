@@ -1,0 +1,13 @@
+\def\singlefile{1}
+
+\input style.ctex
+
+\starttext
+\setupheadnumber[chapter][2]
+
+\input sstv/modern_sstv.ctex
+\input sstv/charakteristika.ctex
+
+\stoptext
+
+

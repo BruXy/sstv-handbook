@@ -1,0 +1,15 @@
+\input style.ctex
+
+\starttext
+\setupheadnumber[chapter][10]
+%11
+\input fax/fax.ctex
+\input fax/fax_sat.ctex
+\input fax/fax_amateri.ctex
+\input fax/fax_standard.ctex
+% 12
+%\input fax/stations.ctex
+%\input fax/fax_stanice.ctex
+\stoptext
+
+

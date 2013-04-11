@@ -1,0 +1,11 @@
+\input style.ctex
+
+\starttext
+\setupheadnumber[chapter][6]
+
+\input software/konfig.ctex
+\input software/win32soft.ctex
+
+\stoptext
+
+

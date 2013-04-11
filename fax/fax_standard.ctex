@@ -1,0 +1,128 @@
+\section[fax_standard]{International facsimile standard recommedation}
+
+\startitemize[n] % 1
+\item Drum speed:
+
+	60, 90, 120, 240 revolutions per minute, if speeds greater then 120 rpm are used, they should be multiples of 60 rpm.
+
+\item Diameter of drum:
+
+	152\,mm, in the case of flat-bed scanners this will be length of the scanning line (including the dead sector).
+
+\item Index of co-operation (IOC):
+
+	\startitemize % 2
+	\item 576 for minimum black or white picture elements of 0.4\,mm and 
+	\item 288 for minimum picture elements of 0.7\,mm.
+	\stopitemize % 2
+
+\item Length of drum:
+	
+	the length of the drum should be at least 550mm
+
+\item	Spanning density
+
+	Scanning density = IOC / diameter of drum
+
+	It is approximately: 4 lines per mm for index 576, 2 lines per mm for index 288.
+
+\item Direction of scanning:
+
+at the transmitter, the plane (developed in the case of drum transmitter) of the message area is scanned along lines running from left to right commencing in the left hand corner at the bottom and this is equivalent of scanning over a left hand helix.
+
+\item	Dead sector:
+
+4.5\,\% $\pm$ 0.5\,\%  of the length of the scanning line. The signal transmitted during the passage of the dead sector should correspond to white but it is permitted that a black pulse be transmitted within and not exceeding one half length of the dead sector.
+
+\item Selection of index of co-operation:
+
+a five second transmission of alternating black and white signal at 300 Hz for index 576, 675 Hz for index 288. The envelopes of the signals transmitted will be roughly rectangular.
+
+\item	Synchronization:
+
+the scanning speed should be maintained within 5 part in $10^6$ of the normal value.
+
+\item Starting recorders:
+
+recorders should be designed to start upon receipt of either the index selection signal or the phasing signal and no special signal for starting will be transmitted.
+
+\item Phasing:
+
+a 30 second transmission of alternating white and black signal at the following frequencies:
+
+\startitemize %3
+\item 1.0\,Hz for speed of 60\,rpm,
+\item 1.5\,Hz for speed of 90\,rpm,
+\item 2.0\,Hz for speed of 120\,rpm.
+\stopitemize %3
+
+\item	Adjustment of recording levels:
+
+adjustment of recording level when used should be effected by reference to phasing signal.
+
+\item	Stopping recorders:
+
+a 5 second transmission of alternating black and white signals at 450 Hz followed by 10 seconds of signals corresponding to continuous black.
+
+\item Modulation characteristics
+
+\startitemize %4
+\item Amplitude Modulation
+
+The maximum amplitude of the carrying frequency should correspond to the transmission of signal black. Value of the carrying frequency: 1800 Hz.
+
+\item Modulation by frequency deviation 
+
+	\startitemize %5
+		\item Value of central frequency: 1900\,Hz.
+		\item Value of frequency for black: 1500\,Hz.
+		\item Value of frequency for white: 2300\,Hz.
+	\stopitemize %5
+
+	The frequency for black and white should not vary by over 8 Hz over a period of 30 s and by more than 16 Hz over a period of 15 minutes.
+
+\stopitemize %4
+
+\item 	Levels of signals in case of AM:
+
+receiving equipment should accept any level between $+5$\,dB and $-20$\,db, zero reference level corresponding to a power of one milliwatt dissipated in a resistence of 600 ohms.
+
+\item	Contrast ratio
+
+contrast ratio for picture signals and control signals will be the same for any transmission and will be between 12 and 25\,dB.
+
+\item	Facsimile transmission op meteorological charts over radio circuits:
+
+\startitemize %5
+\item When frequency modulation of the sub-carrier is employed for the facsimile transmission of meteorological charts over radio circuits, the following characteristics should be used:
+
+\startitemize %6
+\item Centre frequency:	1900\,Hz.
+\item Frequency corresponding to black:	1500\,Hz.
+\item Frequency corresponding to white:	2300\,Hz.
+\stopitemize %6
+
+\item When direct frequency modulation (FSK) is employed for the facsimile transmission of meteorological ctorts over radio circuits, the following characteristics apply:
+
+\startitemize %7
+\item Decametric waves (3\,MHz~-- 30\,MHz) 
+
+	\startitemize
+	\item Centre frequency: $f_0$. 
+	\item Frequency corresponding to black: $f_0 - 400$\,Hz.
+	\item Frequency corresponding to white: $f_0 + 400$\,Hz.
+	\stopitemize
+	
+\item Kilometric waves (30\,kHz~-- 300\,kHz) 
+
+	\startitemize
+	\item Centre frequency: $f_0$. 
+	\item Frequency corresponding to black: $f_0 - 150$\,Hz.
+	\item Frequency corresponding to white: $f_0 + 150$\,Hz.
+	\stopitemize
+
+\stopitemize
+
+\stopitemize
+
+\stopitemize

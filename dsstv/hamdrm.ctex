@@ -1,0 +1,220 @@
+\section{HamDRM system}
+
+Communication system {\em HamDRM} is derived from open standard
+Digital Radio Mondiale~\cite{etsi_drm}, which was created for
+digitalization of radio broadcast on medium-wave and short-wave bands.
+Normal DRM use bandwidth 4.5\,kHz to 20\,kHz for sound quality similar
+to FM broadcast on VHF. The hamradio version {\em HamDRM} was created
+by Francesco Lanza, HB9TLK. It is modified for usage in SSB channel with
+2.5\,kHz bandwidth. HamDRM can be used for image and data file
+transfer and also for voice communication, so it should be competitor
+for analog SSB in future.
+
+The used modulation is {\em COFDM (Coded Orthogonal Frequency
+Division Multiplex)}, which has maximal utilization of communication
+channel. The Reed-Solomon code is used for error correction.
+
+\placefigure[][none]{The frequency spectrum of HamDRM system.}
+{
+	\externalfigure[dsstv/obr/drm_best_spectrum-en.pdf]
+}
+
+The OFDM signal consists of a huge number of subcarriers in baseband.
+There are from 29 to 57 subcarriers in case of HamDRM. An each
+subcarrier is modulated independently with quadrature amplitude
+modulation (QAM) and together with error-correction code creates
+COFDM. This modulation is well resistant to phase distortion,
+attenuation, selective fading and pulse interference. The used modulation
+techniques are described later in \in{section}[qammod].
+
+\placefigure[][fig:drm_digtrx]{The tuning spectroscope in DIGTRX. 
+Note three frequency peeks, that is used as guidelines for
+proper tuning.
+}
+{
+	\externalfigure[dsstv/obr/drm_digtrx.png][width=5cm]
+}
+
+Unlike RDFT, which needs 3 partial operations~-- coding, recording of
+broadcast and decoding, the HamDRM doesn't transmit data in whole block, but
+the file is divided into separate segments, so the  image can be 
+decoded and displayed  during transmission.
+
+HamDRM can be used in three basic modes. The {\em Mode A} allows 
+the fastest transmission, but does not protect against the
+negative effects caused by selective fading. The {\em Mode B} is slower 
+than the first mode, but is resistant against the negative impacts and
+it's much more robust. The last mode is {\em Mode E}, which is designed
+for communication through a channel with large delay and Doppler effect.
+
+The QAM modulation is used with 4, 16 or 64 states. Modulation QAM-64
+is the fastest but it needs a very good level of signal-noise ratio,
+at least 18\,dB. Modulation QAM-4 is slower, but is more resistant to
+interference and requires a lower signal-noise ratio, about 5--6\,dB.
+Minimum SNR for QAM-16 should be about 8--10\,dB. The selection of
+modulation depends on an user and an actual conditions prevailing on
+the band. Other HamDRM features that can be set by user are following:
+
+\startitemize
+
+\item {\em Interleaving} is used for change of symbol sequence, it is
+a way to arrange data in a non-contiguous way to increase performance.
+The long interleave has 2 seconds, it supports better error-correction
+but causes longer delay during decoding. The short interleave take
+400\,ms.
+
+\item {\em Bandwidth} can be changed to 2.3\,kHz or 2.5\,kHz. A
+narrower SSB filter can be used for lower bandwidth, but transfer
+speed is little lower.
+
+\item {\em Amount of instances} is value that gives number of 
+file repetitions during transmission. If there is more than one
+instance then all segments will be repeated and the error parts
+can be corrected automatically on reception side during second
+or third instance. The number of instances makes transmission time
+longer.
+
+\item {\em Leadin} is broadcast at beginning of transmission.
+This initialization is used to receiver synchronization, extra
+time allows better synchronization and automatic set up
+of reception settings.
+\stopitemize
+
+Details of the mode and its parameters, along with the call sign is
+broadcast throughout the transmission with QAM-4 modulation, so it is
+possible to tune to signal during transmission, but the complete data
+will be received if at least one complete instance of the transferred
+file is received.
+
+\placetable[][tab:drmmodes]{The parameters of HamDRM modes and their
+transmission speed.}
+{
+\bTABLE
+\setupTABLE[column][each][align={center,middle}]
+\bTABLEhead
+\bTR
+	\bTH[nr=2] Mode \eTH
+	\bTH[nr=2] Bandwidth\eTH 
+	\bTH[bottomframe=off] Number of\eTH
+	\bTH[bottomframe=off] Level of\eTH
+\bTH[nc=3] Transmission  speed [bps] \eTH
+\eTR
+\bTR
+ 	\bTH[topframe=off] subcarriers  \eTH
+ 	\bTH[topframe=off] MSC FEC\eTH
+ 	\bTH QAM-4  \eTH
+ 	\bTH QAM-16  \eTH
+ 	\bTH QAM-64  \eTH
+\eTR
+\eTABLEhead
+\bTABLEbody
+ \bTR\bTD[nr=4]{\bf A} \eTD\bTD[nr=2] 2,3 kHz \eTD\bTD[nr=2] 53 \eTD\bTD normal \eTD\bTD 1480 \eTD\bTD 2710 \eTD\bTD 4170 \eTD\eTR % \cline{4-7} 
+ \bTR \bTD low \eTD\bTD 1900 \eTD\bTD 3470 \eTD\bTD 5340 \eTD\eTR % \cline{2-7}
+ \bTR \bTD[nr=2] 2,5 kHz \eTD\bTD[nr=2] 57 \eTD\bTD normal \eTD\bTD 1760 \eTD\bTD 3220 \eTD\bTD 4960 \eTD\eTR %\cline{4-7}
+ \bTR \bTD low \eTD\bTD 2260 \eTD\bTD 4130 \eTD\bTD 6360 \eTD\eTR %
+ %\hline\hline
+ \bTR\bTD[nr=4]{\bf B} \eTD\bTD[nr=2] 2,3 kHz \eTD\bTD[nr=2] 45 \eTD\bTD normal \eTD\bTD 1070 \eTD\bTD 1950 \eTD\bTD 3000\eTD\eTR %\cline{4-7}
+ \bTR \bTD low \eTD\bTD 1370 \eTD\bTD 2500 \eTD\bTD 3850\eTD\eTR %\cline{2-7}
+ \bTR\bTD[nr=2] 2,5 kHz \eTD\bTD[nr=2] 51 \eTD\bTD normal \eTD\bTD 1270 \eTD\bTD 2320 \eTD\bTD 3570\eTD\eTR %\cline{4-7}
+ \bTR\bTD low \eTD\bTD 1630 \eTD\bTD 2970 \eTD\bTD 4580\eTD\eTR %
+ %\hline\hline
+ \bTR\bTD[nr=4]{\bf E} \eTD\bTD[nr=2] 2,3 kHz \eTD\bTD[nr=2] 29 \eTD\bTD normal \eTD\bTD 690 \eTD\bTD 1270 \eTD\bTD 1950\eTD\eTR %\cline{4-7}
+ \bTR \bTD low \eTD\bTD 890 \eTD\bTD 1620 \eTD\bTD 2500\eTD\eTR %\cline{2-7}
+ \bTR\bTD[nr=2] 2,5 kHz \eTD\bTD[nr=2] 31 \eTD\bTD normal \eTD\bTD 820 \eTD\bTD 1510 \eTD\bTD 2320\eTD\eTR %\cline{4-7}
+ \bTR \bTD low \eTD\bTD 1060 \eTD\bTD 1930 \eTD\bTD 2970 \eTD\eTR %
+\eTABLEbody
+\eTABLE
+}
+
+Parameter selection of HamDRM modes affects the transmission
+performance, and hence the transmission speed, which depends on the
+settings, see \in{table}[tab:drmmodes]. The two corresponding stations
+should not communicate with each other in the same mode. E.g. station
+X has a considerable local interference, so station Y sends in a more
+resistant mode, but Y hasn't this problem, so X can easily transmit
+in a faster but less resistant mode.
+
+If the transfer of some segments fails completely, it is not lost at all,
+because your QSO partner can send {\em bad segment report (BSR)} and you can
+resend bad segments again. It's important to send BSR in same mode. The
+repeated segments can be received third station too and if have not all
+segments received it can complete whole data. When band conditions are really
+bad and part of resend fails again, it is possible to generate the new BSR, so
+the amount of transfered data will be lower in next resent.
+
+The DRM transfer consist of three channels~-- MSC, SDC and FAC. Each
+channel is dedicated for transmission of certain data or service
+information and also for each is used different coding and modulation
+scheme.
+
+\startdescr{MSC}~-- {\em Main Service Channel} contains data for all services
+of DRM multiplex. The multiplex can contain one to four services and
+each can transfer data or service information.
+\stopdescr
+
+\startdescr{FAC}~-- {\em Fast Access Channel}, is support channel. It uses
+QAM-4 and broadcast callsign, DRM mode identification (band spectrum
+occupancy, interleaving, mode of MSC and SDC modulation,\ldots).
+
+FAC channel with service information transfer packet with 40 bit size:
+
+\startitemize
+\item	2 bit FRAME-ID, identifies a frame in a superframe, value 0, 1, 2
+\item	1 bit Spectrum Occupancy (2.3 / 2.5 kHz)
+\item	1 bit Interleaver Depth (400\,ms / 2\,s)
+\item	1 bit MSC Mode (QAM-16 / QAM-64)
+\item	1 bit Protection Level (amount of FEC used)
+\item	1 bit Audio/Data
+\item	if {\em audio} is used, then follows:
+	  \startitemize
+	  \item 2 bit, audio codec: LPC, unused, SPEEX;
+	  \item 1 bit, text flag;
+	  \stopitemize
+	\item	if {\em data} is used, then follows:
+	  \startitemize
+	  \item 2 bity, Packet ID; 
+	  \item 1 bit, extended MSC mode (QAM-4);
+	  \stopitemize
+	\item	21 bits, Label, consisting of $3\times7$ bit ASCII characters (9 characters in superframe)
+	\item	1 bit, dummy
+	\item	8 bitů, CRC, used polynomial $G(x)=x^8+x^4+x^3+x^2+1$.
+\stopitemize
+\stopdescr
+
+\startdescr{SDC}~-- {\em Service Description Channel} contains
+information of MSC decoding scheme and broadcast service attributes
+during multiplexing. 
+\stopdescr
+
+\placefigure[][fig:drm_ramec]{Example of frame for {\em Mode B}, spectrum
+occupancy 2.5 kHz. Legend: 
+{\tt :}~-- DC-carrier,
+{\tt 	.}~-- MCS cells,
+{\tt 	X}~-- FAC cells,
+{\tt 	T}~-- time pilots,
+{\tt f}~-- frequency pilots,
+{\tt 	0}~-- scattered pilots,
+{\tt 	*}~-- boosted scattered pilots.
+}
+{
+	\externalfigure[dsstv/obr/hamdrm_mode_b.pdf]
+}
+
+\subsection{Comparison of HamDRM and RDFT}
+
+There are several software products for RDFT and HamDRM, but
+preference of users inclines to HamDRM. Main reason for HamDRM
+popularity over RDFT are:
+
+\startitemize
+	\item it is possible to decode and display image during transmission;
+	\item transfer speed is better up to 3$\times$;
+	\item HamDRM continuously broadcasts station identification, so
+	receiving operator can start reception and direct yagi;
+	\item thanks to several instances, it isn't necessary to record the transmission from beginning to end;	
+	\item when reception failed, only bad segments can be repeated, not
+whole transmission;
+	\item main disadvantage of HamDRM is, that the powerful PC configuration
+and OS better then Windows 2000 is a must.
+\stopitemize
+

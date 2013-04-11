@@ -1,0 +1,4 @@
+Radius: 2,0 
+Mira: 1,5
+Treshold: 0
+

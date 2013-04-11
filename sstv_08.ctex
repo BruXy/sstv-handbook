@@ -1,0 +1,12 @@
+\input style.ctex
+
+\starttext
+
+\setupheadnumber[chapter][7]
+
+\input ostatni/provoz.ctex
+\input ostatni/satelit.ctex
+
+\stoptext
+
+
