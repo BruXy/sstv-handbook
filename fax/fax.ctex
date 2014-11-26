@@ -107,6 +107,7 @@ frequency modulation of subcarrier 1900\,Hz. Then the transmitter changes
 frequency between black and white colour. Black color corresponds to 1500\,Hz
 and white 2300\,Hz.
 
+
 The amplitude modulation (AM) used for image transmission on VHF and microwave
 meteo satellite downlinks. There is used positive AM and level of modulation
 determines the brightness. For black colour it is 4\,\% level and for white it
@@ -139,18 +140,24 @@ modulation 450\,Hz and switches the receiving device back to stand-by mode.
 Shortwave facsimile reception can be realized by using upper single sideband
 (USB) receiver. For this reason, you'll have to tune on the frequency, which si
 about 1900\,Hz below the station frequency. So if the station uses frequency
-3855.0\,kHz, you must tune in USB on 3853.1\,kHz (i.e. 1900 Hz below). All
-facsimile reception software is equipped by spectroscope, the same as for SSTV,
-so precise tuning should not be a problem. You can control tuning by the fact
-that the largest portion in the fax image is mostly white.
+3855.0\,kHz, you must tune in USB on 3853.1\,kHz (i.e. 1900 Hz below),
+\in{see}[faxusb]. All facsimile reception software is equipped by spectroscope,
+the same as for SSTV, so precise tuning should not be a problem. You can
+control tuning by the fact that the largest portion in the fax image is mostly
+white.
+
+\placefigure[][faxusb]{Relation between reception and transmission frequencies.}
+{
+	\externalfigure[fax/obr/usb_fax_channel.pdf]%[width=.7\makeupwidth]
+}
+
+There are still used analog WEFAX receivers with electromechanical printers,
+but in our case we can use only PC with sound card and proper software.
 
 \placefigure[][]{Modern receiver Sony CRF-V21 for WEFAX and RTTY reception
 equipped with printer.}{
 	\externalfigure[fax/obr/crfv21cs.jpg][width=.7\makeupwidth]
 }
-
-There are still used analog WEFAX receivers with electromechanical printers,
-but in our case we can use only PC with sound card and proper software.
 
 The most important parameters of the transmission are the speed and {\em index
 of cooperation~-- IOC}. The IOC relates with a horizontal scan rate and
