@@ -4,24 +4,6 @@
 
 .SUFFIXES: .pdf .ctex
 
-SWF_OUT = ./web/download/
-SWF_DOCS = $(SWF_OUT)sstv_01.swf \
-           $(SWF_OUT)sstv_02.swf \
-           $(SWF_OUT)sstv_02.swf \
-           $(SWF_OUT)sstv_03.swf \
-           $(SWF_OUT)sstv_04.swf \
-           $(SWF_OUT)sstv_05.swf \
-           $(SWF_OUT)sstv_06.swf \
-           $(SWF_OUT)sstv_07.swf \
-           $(SWF_OUT)sstv_08.swf \
-           $(SWF_OUT)sstv_09.swf \
-           $(SWF_OUT)sstv_10.swf \
-           $(SWF_OUT)sstv_11.swf \
-           $(SWF_OUT)sstv_12.swf \
-           $(SWF_OUT)sstv_13.swf \
-           $(SWF_OUT)sstv-handbook.swf 
-	
-
 PDF_OUT = ./
 PDF_DOCS = $(PDF_OUT)sstv_01.pdf \
            $(PDF_OUT)sstv_02.pdf \
@@ -37,13 +19,11 @@ PDF_DOCS = $(PDF_OUT)sstv_01.pdf \
            $(PDF_OUT)sstv_12.pdf \
            $(PDF_OUT)sstv_13.pdf 
 
-all: $(PDF_DOCS) $(SWF_DOCS)
+all: $(PDF_DOCS)
 
-TEX = @rm -f $(SWF_OUT)$(patsubst %.pdf,%.swf,$(@)); \
-      context $(patsubst %.pdf,%.ctex,$(@)); \
-	  cp $@ $(SWF_OUT)
-		
-sstv_01.pdf: sstv/uvod.ctex 
+TEX = context $(patsubst %.pdf,%.ctex,$(@))
+
+sstv_01.pdf: sstv/uvod.ctex
 	$(TEX)
 
 sstv_02.pdf: sstv/sstv_start.ctex
@@ -88,9 +68,6 @@ sstv-handbook.pdf: sstv/uvod.ctex sstv/sstv_start.ctex sstv/modern_sstv.ctex sst
 .SUFFIXES: .pdf .ctex
 #      context $(patsubst %.pdf,%.ctex,$(@)); \
 
-$(SWF_OUT)%.swf: %.pdf
-	pdf2swf -s zoom=144 --viewer ./web/rfxview.swf $< -o $@
-
 ################################################################################
 
 .PHONY: all clean backup veryclean
@@ -102,7 +79,7 @@ USERNAME = bruxy
 SITE     = www.rado1.sk
 INPUT_DIR = $(shell pwd)/*
 DIR      = /home/bruxy/book_backup/
-EXCLUDE  = --exclude 'Makefile' 
+EXCLUDE  = --exclude 'Makefile'
 OPTIONS  = --verbose --no-perms --delete --stats --progress --recursive -z -e ssh --inplace --partial --times $(EXCLUDE)
 
 backup: 
