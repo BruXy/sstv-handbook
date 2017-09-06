@@ -1,0 +1,57 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                         %
+% Typescripts for Microsoft Office Chinese Truetype fonts %
+%                                                         %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Improved version from Hans Hagen
+
+\starttypescriptcollection[microsoft-chinese-old]
+
+    \starttypescript [serif] [mschinese,mschinese-light]
+        \definefontsynonym [STSong]      [name:STSong] [features=chinese]
+        \definefontsynonym [STKaiti]     [name:STKaiti] [features=chinese]
+        \definefontsynonym [STZHongsong] [name:STZHongsong] [features=chinese]
+        \definefontsynonym [STFangsong]  [name:STFangsong] [features=chinese]
+    \stoptypescript
+
+    \starttypescript [sans] [mschinese]
+        \definefontsynonym [STXIHei] [name:STXIHei] [features=chinese]
+    \stoptypescript
+
+    \starttypescript [serif] [mschinese]
+        \usetypescript[serif][fallback]
+        \definefontsynonym [Serif]       [STSong]      [features=chinese]
+        \definefontsynonym [SerifItalic] [STKaiti]     [features=chinese]
+        \definefontsynonym [SerifBold]   [STZHongsong] [features=chinese]
+    \stoptypescript
+
+    \starttypescript [serif] [mschinese-light]
+        \usetypescript[serif][fallback]
+        \definefontsynonym [Serif]       [STFangsong]  [features=chinese]
+        \definefontsynonym [Serif]       [STSong]      [features=chinese]
+        \definefontsynonym [SerifItalic] [STKaiti]     [features=chinese]
+        \definefontsynonym [SerifBold]   [STZHongsong] [features=chinese]
+    \stoptypescript
+
+    \starttypescript [sans] [mschinese]
+        \setups[font:fallback:sans]
+        \definefontsynonym [Sans] [STXIHei] [features=chinese]
+    \stoptypescript
+
+    \starttypescript[mschinese]
+        \definetypeface [mschinese] [rm] [serif] [mschinese] [default]
+        \definetypeface [mschinese] [ss] [sans]  [mschinese] [default]
+        \definetypeface [mschinese] [mm] [math]  [pagella]
+        \definetypeface [mschinese] [tt] [mono]  [modern]
+    \stoptypescript
+
+    \starttypescript[mschinese-light]
+        \definetypeface [mschinese] [rm] [serif] [mschinese-light] [default]
+        \definetypeface [mschinese] [ss] [sans]  [mschinese] [default]
+        \definetypeface [mschinese] [mm] [math]  [modern]
+        \definetypeface [mschinese] [tt] [mono]  [modern]
+    \stoptypescript
+
+\stoptypescriptcollection
+

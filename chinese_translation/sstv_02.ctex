@@ -1,0 +1,11 @@
+\input style.ctex
+
+\starttext
+
+\setupheadnumber[chapter][1]
+
+\input sstv/sstv_start.ctex
+
+\stoptext
+
+

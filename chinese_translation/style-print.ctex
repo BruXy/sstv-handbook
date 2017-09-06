@@ -1,0 +1,27 @@
+\input style.ctex
+
+\setupbodyfont[12pt]  
+\enablemode[A4,paper]
+
+% Rozmery stranky ------------------------------------------------------------
+%\setuplayout
+%	[width=190mm,
+%	height=137mm,
+%	backspace=10mm,
+%	topspace=5mm,
+%	top=0mm,
+%	header=20mm,
+%	footer=20mm,
+%	bottom=5mm,
+%	margin=10mm,
+%	rightedgedistance=5mm,
+%	rightedge=50mm]
+
+
+
+\setuphead[chapter][
+	before=,
+]
+
+
+

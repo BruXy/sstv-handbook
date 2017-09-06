@@ -1,0 +1,25 @@
+\startlines[align=middle]
+{\sc
+Martin Bruchanov OK2MNM 著
+储皓元 9V1HY 译
+}
+\blank[4cm]
+{\switchtobodyfont[36pt]\bf短波图像传输}
+\blank[4cm]
+{\switchtobodyfont[18pt]Image Communication on Short Waves}
+%\blank[4cm]
+\vfill
+
+%\vfill
+
+\bgroup\tfb
+%\startalignment[flushright]
+%Slow-scan Television \blank[3mm]
+%Radio facsimile \blank[3mm]
+%Digital SSTV
+%\stopalignment
+\vfill
+\framed[background=color,backgroundcolor=gray,frame=off,width=\makeupwidth,offset=1em]{\tt\bf www.sstv-handbook.com}
+\egroup
+\stoplines
+

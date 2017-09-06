@@ -1,0 +1,82 @@
+\input style-print.ctex
+
+\def\singlefile{0}
+
+\starttext
+
+\startfrontmatter
+\setupheader[state=stop]
+\setupheader[state=stop]
+\page[makeup,header=empty,footer=empty]
+\setuppagenumber[state=stop]
+\input ostatni/title.ctex
+
+\page
+
+\setnumber[page]{1}
+\setuppagenumber[state=start]
+\completecontent[criterium=all]
+
+\stopfrontmatter
+
+\startbodymatter
+
+\input sstv/uvod.ctex         % proofreading done
+\input sstv/sstv_start.ctex   % proofreading done
+
+%\input sstv/modern_sstv.ctex  % proofreading done
+%\input sstv/charakteristika.ctex
+%\input sstv/bw_mode.ctex
+%\input sstv/color.ctex
+%\input sstv/hi-res.ctex
+%\input sstv/experiment.ctex % sazba tabulek
+%\input sstv/list.ctex
+%\input sstv/zarizeni.ctex
+%\input software/konfig.ctex  % proofreading 
+%\input software/win32soft.ctex
+%% KAPITOLY z software
+%\input ostatni/provoz.ctex
+%\input ostatni/satelit.ctex
+%
+%% Digital SSTV
+%\input dsstv/dsstv_uv.ctex
+%\input dsstv/komunikace.ctex
+%\input dsstv/code.ctex
+%\input dsstv/komprese.ctex
+%
+%% DSSTV systems
+%\chapter{DSSTV transmission systems}
+%%\chapter{DSSTV communication systems}
+%
+%\input dsstv/rdft.ctex
+%\input dsstv/hamdrm.ctex
+%\input dsstv/qam_ofdm.ctex
+%\input dsstv/spojeni.ctex
+%\input dsstv/waterfall.ctex
+%
+%\input fax/fax.ctex
+%\input fax/fax_sat.ctex
+%\input fax/fax_amateri.ctex
+%\input fax/fax_standard.ctex
+%\input fax/stations.ctex
+%\input fax/fax_stanice.ctex
+%
+%\input ostatni/pcgfx.ctex
+%%\input ostatni/gimp....
+%\input ostatni/testchart.ctex
+%
+%
+%\stopbodymatter
+%
+%\startbackmatter
+%\setupheader[state=stop]
+%\title{References}
+%{\tfx
+%\placepublications[criterium=all]
+%}
+%
+%
+%\stopbackmatter
+%
+\stoptext
+

@@ -1,0 +1,46 @@
+\mainlanguage[cn]
+\language[cn]
+\enableregime[utf] % latin2
+\setscript[hanzi]
+\input mschinese.ctex
+
+% Fonts
+\input mschinese.ctex
+\setupbodyfont [mschinese,12pt]
+\usebodyfont   [mschinese-light,12pt]
+\definebodyfontenvironment[24pt]
+\definebodyfontenvironment[18pt]
+
+
+\setuppagenumber[numberconversion=cn]
+\definestructureconversionset[chinese][numbers][cn]
+
+% Headings style
+
+\setupheads[sectionconversionset=chinese]
+
+\define[2]\ChineseChapter
+  {第#1章 #2}
+
+\setuphead [chapter] [command=\ChineseChapter,style={\bf\switchtobodyfont[24pt]}]
+\setuphead[section][style={\bf\switchtobodyfont[18pt]}]
+
+\setuppagenumbering[state=start,
+    alternative=singlesided,
+    location={footer, center},
+    style={\bf\switchtobodyfont[11pt]}
+]
+
+
+% Using colors
+\setupcolors[state=start]
+\setupcolor[rgb]
+
+\setupinterlinespace[medium]
+
+\setupwhitespace[medium]
+
+\setuptabulate[header=repeat]
+
+\setupbodyfontenvironment[default][em=italic]
+
