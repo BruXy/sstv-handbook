@@ -30,7 +30,8 @@ sstv_02.pdf: sstv/sstv_start.ctex
 	$(TEX)
 
 #sstv_03.pdf: sstv/modern_sstv.ctex sstv/charakteristika.ctex
-#	$(TEX)
+sstv_03.pdf: sstv/modern_sstv.ctex
+	$(TEX)
 #
 #sstv_04.pdf: sstv/bw_mode.ctex sstv/color.ctex sstv/hi-res.ctex sstv/experiment.ctex
 #	$(TEX)
