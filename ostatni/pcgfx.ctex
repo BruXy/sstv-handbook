@@ -1,6 +1,6 @@
 \startchapter
 [title={Computer image\crlf{} processing},
-list={Computer image processing}] 
+list={Computer image processing}]
 
 %\chapter{Computer image processing}
 
@@ -12,19 +12,19 @@ editors for bitmap images to simple viewers with few editing functions.
 Some SSTV programs have also image editing functions.
 
 The selection of suitable program depends on a user and his needs
-and although a control of programs can be slightly different the 
+and although a control of programs can be slightly different the
 procedures described later are so general that it would not be a problem
 to achieve results using your favorite editor. The appropriate
 editor is generally any program for editing of raster/bitmap images,
 such as: GIMP, Paint Shop Pro, Adobe Photoshop, Pixel32,\ldots{} Less
 suitable are vector image editors, such as: Corel Draw!, Inkscape, etc.
 
-There are described some basic principles and functions, which 
+There are described some basic principles and functions, which
 are used in most common programs. Although some functions below
 are shown in GIMP, see \in{sec.}[gimp], it should not be problem for
 savvy user to find same functions in his favourite editor.
 
-Later, see \in{section}[gimp], there are specific tutorials only for GIMP. 
+Later, see \in{section}[gimp], there are specific tutorials only for GIMP.
 
 \section{Image resizing}
 
@@ -41,10 +41,10 @@ image is test chart on \at{page}[testchart].
 \placefigure[][fig:resizing]{Results of image resizing with two different
 algorithms.}
 {
-	\startcombination[2*1]
-	{\externalfigure[ostatni/obr/resize_testchart_bad.png][width=0.4\makeupwidth]}{}
-	{\externalfigure[ostatni/obr/resize_testchart_good.png][width=0.4\makeupwidth]}{}
-	\stopcombination
+    \startcombination[2*1]
+    {\externalfigure[ostatni/obr/resize_testchart_bad.png][width=0.4\makeupwidth]}{}
+    {\externalfigure[ostatni/obr/resize_testchart_good.png][width=0.4\makeupwidth]}{}
+    \stopcombination
 }
 
 There is a result of two image scaling algorithms. The left image was
@@ -56,7 +56,7 @@ some details are lost completely, e.g. thin lines are lost and on
 originally smooth curves are stair-like lines more evident. The linear
 interpolation is more considerate to details, but it depends on
 amount of decreasing and sometimes there should arise a {\em moiré},
-here on the raster of changing white and black stripes. 
+here on the raster of changing white and black stripes.
 
 Almost every image editing software give an option for used scaling method, so
 choose linear interpolation (or bilinear or bicubic). A raster image for
@@ -77,10 +77,10 @@ the number of pixel in the particular tone.
 
 \placefigure[][fig:histogram]{The image histogram for 256 brigtness values.}
 {
-	\startcombination[2*1]
-	{\externalfigure[ostatni/obr/lenna_bw_256.png][width=0.4\makeupwidth]}{}
-	{\externalfigure[ostatni/obr/histogram.pdf]}{}
-	\stopcombination
+    \startcombination[2*1]
+    {\externalfigure[ostatni/obr/lenna_bw_256.png][width=0.4\makeupwidth]}{}
+    {\externalfigure[ostatni/obr/histogram.pdf]}{}
+    \stopcombination
 }
 
 In digital photography, you can easily review exposure  by histogram. If the
@@ -99,7 +99,7 @@ equalization see \in{pic.}[fig:ekvalizace].
 \placefigure[][fig:ekvalizace]{Positive influence of histogram equalization
 on image contrast.}
 {
-	\externalfigure[ostatni/obr/hist_equal.pdf]
+    \externalfigure[ostatni/obr/hist_equal.pdf]
 }
 
 In the GIMP the tool for histogram adjustment is in menu {\em Colors~$\rightarrow$ Levels}. In case of low contrast image in \in{pic.}[fig:ekvalizace]
@@ -108,10 +108,10 @@ make also automatic equalization with \in{dialog}[fig:gimp_equal].
 
 \placefigure[][fig:gimp_equal]{}
 {
-	\startcombination[2*1]
-		{\externalfigure[ostatni/obr/gimp_equal-en.png][width=0.4\makeupwidth]}{}
-		{\externalfigure[ostatni/obr/gimp_krivky-en.png][width=0.4\makeupwidth]}{}
-	\stopcombination
+    \startcombination[2*1]
+        {\externalfigure[ostatni/obr/gimp_equal-en.png][width=0.4\makeupwidth]}{}
+        {\externalfigure[ostatni/obr/gimp_krivky-en.png][width=0.4\makeupwidth]}{}
+    \stopcombination
 }
 
 The second important tool is curve adjustment, its the one of most important
@@ -149,14 +149,14 @@ image darkening move the point downwards, it's in \in{example}[fig:krivky]C,
 also there is moved the right edge of the curve so lighter pixel are more
 brighter now.
 
-For changing contrast use the curve in \in{}[fig:krivky]D, there are 
+For changing contrast use the curve in \in{}[fig:krivky]D, there are
 two control points. The curve with \uv{S} shape makes dark tones darker
 and light tones brighter.
 
 In addition to basic editing the curve can be used for a variety of effects,
 see \in{example}[fig:krivky]. The shape is little crazy and result image
 lost real tones. Notice, that there is inversion of dark tones in left
-part of the curve. 
+part of the curve.
 
 The curve and histogram adjustment is possible to do for image luminance and
 for each color component too, so it is possible to change color perception
@@ -164,7 +164,7 @@ of an image.
 
 \placefigure[][fig:krivky]{}
 {
-	\externalfigure[ostatni/obr/lenna_krivky.pdf][]
+    \externalfigure[ostatni/obr/lenna_krivky.pdf][]
 }
 
 \section{Filters}
@@ -198,7 +198,7 @@ with dimensions $3\times3$ or $5\times5$, but also others.
 
 \placefigure[][fig:konvoluce]{Computation of discrete convolution.}
 {
-	\externalfigure[ostatni/obr/konvoluce-en.pdf][]
+    \externalfigure[ostatni/obr/konvoluce-en.pdf][]
 }
 
 The kernel moves pixel by pixel along lines and columns of the source image and
@@ -210,31 +210,31 @@ Then the matrix moves to next pixel and computation is repeated.
 
 The target image changes in way defined by values of convolution kernel,
 e.g. matrix $\mathbf{H}_2$ in \in{fig.}[fig:konvoluce] use pixel and
-its neighborhood of $3\times3$ size and computes weighted mean from 
+its neighborhood of $3\times3$ size and computes weighted mean from
 these nine pixel with kernel:
 
-\startformula 
-  \mathbf{H}_2 = \frac{1}{16} \left( 
-  \startmathmatrix 
-   \NC 1 \NC{} 2 \NC{} 1 \NR 
-   \NC 2 \NC{} 4 \NC{} 2 \NR 
-   \NC 1 \NC{} 2 \NC{} 1  
-  \stopmathmatrix  
- \right), \qquad 	 
-  \eqalign{ 
-  \frac{1}{16}(% 
-   1 \cdot 50 +  
-   2 \cdot 75 +  
-   1 \cdot 74 + \cr 
-   + 2 \cdot 47 + 
-   4 \cdot 76 + 
-   2 \cdot 75 + \cr 
-   + 1 \cdot 51 + 
-   2 \cdot 76 + 
-   1 \cdot 74) 
-  } 
-  = 69 
-\stopformula 
+\startformula
+  \mathbf{H}_2 = \frac{1}{16} \left(
+  \startmathmatrix
+   \NC 1 \NC{} 2 \NC{} 1 \NR
+   \NC 2 \NC{} 4 \NC{} 2 \NR
+   \NC 1 \NC{} 2 \NC{} 1 \NR
+  \stopmathmatrix
+ \right), \qquad
+  \eqalign{
+  \frac{1}{16}(%
+   1 \cdot 50 +
+   2 \cdot 75 +
+   1 \cdot 74 + \cr
+   + 2 \cdot 47 +
+   4 \cdot 76 +
+   2 \cdot 75 + \cr
+   + 1 \cdot 51 +
+   2 \cdot 76 +
+   1 \cdot 74)
+  }
+  = 69
+\stopformula
 
 The result is an image smoothing and noise reduction. Other matrices are used
 to increase sharpness, edge detection or to create a relief.
@@ -249,7 +249,7 @@ offset automatically.
 
 \placefigure[][fig:gimp_konv]{Convolution matrix parameters in GIMP.}
 {
-	\externalfigure[ostatni/obr/conv_gimp.pdf][]
+    \externalfigure[ostatni/obr/conv_gimp.pdf][]
 }
 
 \subsection{Noise reduction}
@@ -258,11 +258,11 @@ Thanks to noise reduction it is possible to  improve partially received SSTV or
 WEFAX images by smoothing. It can be done several ways. Since SSTV transmission
 takes a relatively long time the noise levels are often uneven, affected by
 random interference and transmission conditions, so you can by tool {\em
-Selection} mark affected areas, where apply the filter. 
+Selection} mark affected areas, where apply the filter.
 
 \subsubsection{Spatial average filtering}
 
-The simplest way to reduce noise is {\em average filter} with 
+The simplest way to reduce noise is {\em average filter} with
 convolution kernel $\mathbf{H}_1$.
 
 \startformula
@@ -271,7 +271,7 @@ convolution kernel $\mathbf{H}_1$.
 \startmathmatrix
 \NC 1 \NC{} 1 \NC{} 1 \NR
 \NC 1 \NC{} 1 \NC{} 1 \NR
-\NC 1 \NC{} 1 \NC{} 1 
+\NC 1 \NC{} 1 \NC{} 1 \NR
 \stopmathmatrix\right)
 \stopformula
 
@@ -280,43 +280,43 @@ they aren't using neighbor pixel with same weight, but near pixels have
 greater coefficients then farther. The values of the coefficients are
 based on binomial series.
 
-\startformula 
-\mathbf{H}_2 =  
-\frac{1}{16}\left( 
-\startmathmatrix 
-\NC 1 \NC{} 2 \NC{} 1 \NR 
-\NC 2 \NC{} 4 \NC{} 2 \NR 
-\NC 1 \NC{} 2 \NC{} 1  
-\stopmathmatrix \right)\qquad% 
-% 
-\mathbf{H}_3 =  
-\frac{1}{256}\left( 
-\startmathmatrix 
-\NC 1 \NC{} 4 \NC{} 6 \NC{} 4 \NC{} 1 \NR 
-\NC 4 \NC{} 16 \NC{} 24 \NC{} 16 \NC{} 4 \NR 
-\NC 6 \NC{} 24 \NC{} 36 \NC{} 24 \NC{} 6 \NR 
-\NC 4 \NC{} 16 \NC{} 24 \NC{} 16 \NC{} 4 \NR 
-\NC 1 \NC{} 4 \NC{} 6 \NC{} 4 \NC{} 1  
+\startformula
+\mathbf{H}_2 =
+\frac{1}{16}\left(
+\startmathmatrix
+\NC 1 \NC{} 2 \NC{} 1 \NR
+\NC 2 \NC{} 4 \NC{} 2 \NR
+\NC 1 \NC{} 2 \NC{} 1 \NR
+\stopmathmatrix \right)\qquad%
+%
+\mathbf{H}_3 =
+\frac{1}{256}\left(
+\startmathmatrix
+\NC 1 \NC{} 4 \NC{} 6 \NC{} 4 \NC{} 1 \NR
+\NC 4 \NC{} 16 \NC{} 24 \NC{} 16 \NC{} 4 \NR
+\NC 6 \NC{} 24 \NC{} 36 \NC{} 24 \NC{} 6 \NR
+\NC 4 \NC{} 16 \NC{} 24 \NC{} 16 \NC{} 4 \NR
+\NC 1 \NC{} 4 \NC{} 6 \NC{} 4 \NC{} 1 \NR
 \stopmathmatrix
-\right) 
-\stopformula 
+\right)
+\stopformula
 
 %Note that one important condition, averaging filters have an average
 %value of all coefficients equal to 1, e.g. for  $\mathbf{H}_2$ is
 %the average $\frac{1}{16}(1+2+1+2+4+2+1+2+1)=1$.
 
-The disadvantage of averaging filters is that smoothing 
+The disadvantage of averaging filters is that smoothing
 distorts sharp color gradients and due to it   thin lines
 and other details are distorted.
 
 \placefigure[][fig:noise_removing]{}
 {
-	\startcombination[2*2]
-	{\externalfigure[ostatni/obr/vosa_noise.png][width=0.4\makeupwidth]}{Received image}
-	{\externalfigure[ostatni/obr/vosa_avg.png][width=0.4\makeupwidth]}{Averaging $\mathbf{H}_1$}
-	{\externalfigure[ostatni/obr/vosa_bin3.png][width=0.4\makeupwidth]}{Binom. filter $3\times{}3 \mathbf{H}_2$}
-	{\externalfigure[ostatni/obr/vosa_bin5.png][width=0.4\makeupwidth]}{Binom. filter $5\times{}5 \mathbf{H}_3$}
-	\stopcombination
+    \startcombination[2*2]
+    {\externalfigure[ostatni/obr/vosa_noise.png][width=0.4\makeupwidth]}{Received image}
+    {\externalfigure[ostatni/obr/vosa_avg.png][width=0.4\makeupwidth]}{Averaging $\mathbf{H}_1$}
+    {\externalfigure[ostatni/obr/vosa_bin3.png][width=0.4\makeupwidth]}{Binom. filter $3\times{}3 \mathbf{H}_2$}
+    {\externalfigure[ostatni/obr/vosa_bin5.png][width=0.4\makeupwidth]}{Binom. filter $5\times{}5 \mathbf{H}_3$}
+    \stopcombination
 }
 
 Next filters for noise reduction in GIMP are in menu {\em Filters~$\rightarrow$
@@ -333,41 +333,41 @@ size, then sort their values and takes the median, i.e. middle value of the
 sequence:
 
 \placetable[here][]{none}{
-	\bTABLE[frame=off,align={middle,center}]
-	\bTR\bTD[width=0.3\makeupwidth]
+    \bTABLE[frame=off,align={middle,center}]
+    \bTR\bTD[width=0.3\makeupwidth]
 
-	\startformula
-	\startmathmatrix
-	\NC 21 \NC{}  22 \NC{}  20 \NR 
-	\NC 21 \NC{}  19 \NC{}  231 \NR
-	\NC	19 \NC{}  21 \NC{}  20 
-	\stopmathmatrix
-	\stopformula
+    \startformula
+    \startmathmatrix
+    \NC 21 \NC{} 22 \NC{} 20 \NR
+    \NC 21 \NC{} 19 \NC{} 231 \NR
+    \NC 19 \NC{} 21 \NC{} 20 \NR
+    \stopmathmatrix
+    \stopformula
 
-	\eTD\bTD
+    \eTD\bTD
 
-	{\bf Pixels:} 21, 22, 20, 21, 19, 231, 19, 21, 20 \crlf 
-	{\bf Sorted:} 19, 19, 20, 20, $\underline{21}$, 21, 21, 22, 231 \crlf
-	{\bf Average} $\doteq 43$; {\bf Median} = 21 
+    {\bf Pixels:} 21, 22, 20, 21, 19, 231, 19, 21, 20 \crlf
+    {\bf Sorted:} 19, 19, 20, 20, $\underline{21}$, 21, 21, 22, 231 \crlf
+    {\bf Average} $\doteq 43$; {\bf Median} = 21
 
-	\eTD\eTR
-	\eTABLE
+    \eTD\eTR
+    \eTABLE
 }
 
 
 We see that if we use the averaging, then significantly skewed value 231, which
 can be caused by noise, greatly affects the result. In contrast, the median is
 not influenced by extreme deviations. The disadvantage of median filtering is
-that it sometimes distorts the thin lines and sharp gradient in the image. 
+that it sometimes distorts the thin lines and sharp gradient in the image.
 
 \placefigure[][fig:noise_removing]{The results of noise reduction with median filter.}
 {
-	\startcombination[2*2]
-	{\externalfigure[ostatni/obr/baba_noise.png][width=0.4\makeupwidth]}{Received image}
-	{\externalfigure[ostatni/obr/baba_bin3.png][width=0.4\makeupwidth]}{Binom. filter $\mathbf{H}_2$}
-	{\externalfigure[ostatni/obr/baba_med3.png][width=0.4\makeupwidth]}{Median $3\times{}3$}
-	{\externalfigure[ostatni/obr/baba_med5.png][width=0.4\makeupwidth]}{Median $5\times{}5$}
-	\stopcombination
+    \startcombination[2*2]
+    {\externalfigure[ostatni/obr/baba_noise.png][width=0.4\makeupwidth]}{Received image}
+    {\externalfigure[ostatni/obr/baba_bin3.png][width=0.4\makeupwidth]}{Binom. filter $\mathbf{H}_2$}
+    {\externalfigure[ostatni/obr/baba_med3.png][width=0.4\makeupwidth]}{Median $3\times{}3$}
+    {\externalfigure[ostatni/obr/baba_med5.png][width=0.4\makeupwidth]}{Median $5\times{}5$}
+    \stopcombination
 }
 
 In GIMP the median filter is in {\em Filters~$\rightarrow$
@@ -386,25 +386,25 @@ this case you can try to use sharpening filters, for edges highlighting. There
 are two convolution kernels for sharpening $\mathbf{H}_4$ and $\mathbf{H}_5$
 with an even stronger effect.
 
-\startformula 
-\mathbf{H}_4 =  
-\left( 
+\startformula
+\mathbf{H}_4 =
+\left(
 \startmathmatrix
-\NC 0 \NC{} -1 \NC{} 0 \NR 
-\NC -1 \NC{} 5 \NC{} -1 \NR 
-\NC 0 \NC{} -1 \NC{} 0  
-\stopmathmatrix 
-\right)\qquad% 
-% 
-\mathbf{H}_5 =  
-\left( 
-\startmathmatrix 
-\NC -1 \NC{} -1 \NC{} -1 \NR 
-\NC -1 \NC{} 9  \NC{} -1 \NR 
-\NC -1 \NC{} -1 \NC{} -1  
+\NC 0 \NC{} -1 \NC{} 0 \NR
+\NC -1 \NC{} 5 \NC{} -1 \NR
+\NC 0 \NC{} -1 \NC{} 0 \NR
 \stopmathmatrix
-\right) 
-\stopformula 
+\right)\qquad%
+%
+\mathbf{H}_5 =
+\left(
+\startmathmatrix
+\NC -1 \NC{} -1 \NC{} -1 \NR
+\NC -1 \NC{} 9  \NC{} -1 \NR
+\NC -1 \NC{} -1 \NC{} -1 \NR
+\stopmathmatrix
+\right)
+\stopformula
 
 In the GIMP the sharpening filters are in the menu {\em Filters~$\rightarrow$
 Enhance~$\rightarrow$\ldots}. The first one is {\em Sharpen}, and it has
@@ -413,12 +413,12 @@ from preview select the best results.
 
 \placefigure[][fig:sharpening]{Results of image sharpening.}
 {
-	\startcombination[2*2]
-	{\externalfigure[ostatni/obr/sharp/trx_original.png][width=0.4\makeupwidth]}{Original image from CCD camera}
-	{\externalfigure[ostatni/obr/sharp/trx_151.png][width=0.4\makeupwidth]}{Sharpening $\mathbf{H}_4$}
-	{\externalfigure[ostatni/obr/sharp/trx_191.png][width=0.4\makeupwidth]}{Sharpening $\mathbf{H}_5$}
-	{\externalfigure[ostatni/obr/sharp/trx_unsh.png][width=0.4\makeupwidth]}{radius: 2.5; amount: 1.5; threshold: 0}
-	\stopcombination
+    \startcombination[2*2]
+    {\externalfigure[ostatni/obr/sharp/trx_original.png][width=0.4\makeupwidth]}{Original image from CCD camera}
+    {\externalfigure[ostatni/obr/sharp/trx_151.png][width=0.4\makeupwidth]}{Sharpening $\mathbf{H}_4$}
+    {\externalfigure[ostatni/obr/sharp/trx_191.png][width=0.4\makeupwidth]}{Sharpening $\mathbf{H}_5$}
+    {\externalfigure[ostatni/obr/sharp/trx_unsh.png][width=0.4\makeupwidth]}{radius: 2.5; amount: 1.5; threshold: 0}
+    \stopcombination
 }
 
 The disadvantage of these filters is that, it also highlights the image noise
@@ -436,7 +436,8 @@ sharpness. Some results are influenced by these three parameters:
 
 \startitemize
 \item {\em Amount} indicates how much will increase the contrast of edges, by
-the edge lightens or darkens, this setting will affect most the degree of sharpening.
+the edge lightens or darkens, this setting will affect most the degree of
+sharpening.
 
 \item {\em Radius} sets how much pixels around edges will be used. For smaller
 radius the filter affect also smaller details, but for greater it may produce
@@ -444,11 +445,11 @@ a bright rim around edges.
 
 \item {\em Threshold} controls the minimum brightness change that will be
 sharpened. Thanks to threshold it is possible to enhance only stronger edges
-and finer leave unchanged. 
+and finer leave unchanged.
 
 \stopitemize
 
 No wonder, that unsharp mask is considered as king in improving the
-image. The only drawback is that if you blow over it, then around edges occurs 
+image. The only drawback is that if you blow over it, then around edges occurs
 distinctive bright rim and the image looks unnaturally.
 

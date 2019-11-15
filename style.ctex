@@ -5,7 +5,7 @@
 
 % Nastaveni jazyka -----------------------------------------------------------
 \mainlanguage[en]
-\language[en] 
+\language[en]
 \enableregime[utf] % latin2
 
 % http://wiki.contextgarden.net/Bibliography
@@ -17,7 +17,7 @@
 \setupbibtex[database=ostatni/literef]
  
 %20120715 \setupoutput[pdftex] % dvips, acrobat
-\pdfminorversion=4 % verze pdf
+\pdfvariable minorversion 4
 
 %\definetypeface [palatino] [rm] [serif] [palatino] [default] [encoding=ec]
 %\definetypeface [palatino] [mm] [math] [palatino] [default] [encoding=ec]

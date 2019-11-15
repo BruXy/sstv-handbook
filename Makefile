@@ -1,92 +1,124 @@
-# Martin Bruchanov, OK2MNM
-# http://sstv-handbook.com
+##############################################################################
+#                                                                            #
+#                   Image Communication on Short Waves                       #
+#                                                                            #
+#  Author  : Martin Bruchanov, OK2MNM                                        #
+#  Contact : bruchy gmail.com                                                #
+#  Source  : https://github.com/BruXy/sstv-handbook                          #
+#                                                                            #
+#                Published at: http://sstv-handbook.com                      #
+#                                                                            #
+##############################################################################
+
+# Book is written in ConTeXt, use following tutorial for installation:
 #
+# ConTeXt URL: https://wiki.contextgarden.net/ConTeXt_Standalone
 
 .SUFFIXES: .pdf .ctex
+.PHONY: all clean backup veryclean upload publish
 
-PDF_OUT = ./
-PDF_DOCS = $(PDF_OUT)sstv_01.pdf \
-           $(PDF_OUT)sstv_02.pdf \
-           $(PDF_OUT)sstv_03.pdf \
-           $(PDF_OUT)sstv_04.pdf \
-           $(PDF_OUT)sstv_05.pdf \
-           $(PDF_OUT)sstv_06.pdf \
-           $(PDF_OUT)sstv_07.pdf \
-           $(PDF_OUT)sstv_08.pdf \
-           $(PDF_OUT)sstv_09.pdf \
-           $(PDF_OUT)sstv_10.pdf \
-           $(PDF_OUT)sstv_11.pdf \
-           $(PDF_OUT)sstv_12.pdf \
-           $(PDF_OUT)sstv_13.pdf 
+# Implicit rule for .pdf creation:
+%.pdf: %.ctex
+	context $(patsubst %.pdf,%.ctex,$(@))
 
-all: $(PDF_DOCS)
+# List of files for each chapter
+# ------------------------------
 
-TEX = context $(patsubst %.pdf,%.ctex,$(@))
+CH01 = sstv/uvod.ctex
 
-sstv_01.pdf: sstv/uvod.ctex
-	$(TEX)
+CH02 = sstv/sstv_start.ctex
 
-sstv_02.pdf: sstv/sstv_start.ctex
-	$(TEX)
+CH03 = sstv/modern_sstv.ctex \
+       sstv/charakteristika.ctex
 
-sstv_03.pdf: sstv/modern_sstv.ctex sstv/charakteristika.ctex
-	$(TEX)
+CH04 = sstv/bw_mode.ctex \
+       sstv/color.ctex \
+       sstv/hi-res.ctex \
+       sstv/experiment.ctex
 
-sstv_04.pdf: sstv/bw_mode.ctex sstv/color.ctex sstv/hi-res.ctex sstv/experiment.ctex
-	$(TEX)
+CH05 = sstv/list.ctex
 
-sstv_05.pdf: sstv/list.ctex
-	$(TEX)
+CH06 = sstv/zarizeni.ctex
 
-sstv_06.pdf: sstv/zarizeni.ctex 
-	$(TEX)
+CH07 = software/konfig.ctex \
+       software/win32soft.ctex
 
-sstv_07.pdf: software/konfig.ctex software/win32soft.ctex
-	$(TEX)
+CH08 = ostatni/provoz.ctex \
+       ostatni/satelit.ctex
 
-sstv_08.pdf: ostatni/provoz.ctex ostatni/satelit.ctex
-	$(TEX)
+CH09 = dsstv/dsstv_uv.ctex \
+       dsstv/komunikace.ctex \
+       dsstv/code.ctex \
+       dsstv/komprese.ctex
 
-sstv_09.pdf: dsstv/dsstv_uv.ctex dsstv/komunikace.ctex dsstv/code.ctex dsstv/komprese.ctex
-	$(TEX)
+CH10 = dsstv/rdft.ctex \
+       dsstv/hamdrm.ctex \
+       dsstv/qam_ofdm.ctex \
+       dsstv/spojeni.ctex \
+       dsstv/waterfall.ctex
 
-sstv_10.pdf: dsstv/rdft.ctex dsstv/hamdrm.ctex dsstv/qam_ofdm.ctex dsstv/spojeni.ctex dsstv/waterfall.ctex
-	$(TEX)
+CH11 = fax/fax.ctex \
+       fax/fax_sat.ctex \
+       fax/fax_amateri.ctex \
+       fax/fax_standard.ctex
 
-sstv_11.pdf: fax/fax.ctex fax/fax_sat.ctex fax/fax_amateri.ctex fax/fax_standard.ctex
-	$(TEX)
+CH12 = fax/stations.ctex \
+       fax/fax_stanice.ctex
 
-sstv_12.pdf: fax/stations.ctex fax/fax_stanice.ctex
-	$(TEX)
+CH13 = ostatni/pcgfx.ctex
 
-sstv_13.pdf: ostatni/pcgfx.ctex
-	$(TEX)
+all: sstv_*.pdf
 
-sstv-handbook.pdf: sstv/uvod.ctex sstv/sstv_start.ctex sstv/modern_sstv.ctex sstv/charakteristika.ctex sstv/bw_mode.ctex sstv/color.ctex sstv/hi-res.ctex sstv/experiment.ctex sstv/list.ctex sstv/zarizeni.ctex software/konfig.ctex software/win32soft.ctex ostatni/provoz.ctex ostatni/satelit.ctex dsstv/dsstv_uv.ctex dsstv/komunikace.ctex dsstv/code.ctex dsstv/komprese.ctex dsstv/rdft.ctex dsstv/hamdrm.ctex dsstv/qam_ofdm.ctex dsstv/spojeni.ctex dsstv/waterfall.ctex fax/fax.ctex fax/fax_sat.ctex fax/fax_amateri.ctex fax/fax_standard.ctex fax/stations.ctex fax/fax_stanice.ctex ostatni/pcgfx.ctex ostatni/testchart.ctex
-	$(TEX)
+book: sstv-handbook.pdf
 
-.SUFFIXES: .pdf .ctex
-#      context $(patsubst %.pdf,%.ctex,$(@)); \
+sstv_01.pdf: $(CH01)
 
-################################################################################
+sstv_02.pdf: $(CH02)
 
-.PHONY: all clean backup veryclean
+sstv_03.pdf: $(CH03)
 
-#
+sstv_04.pdf: $(CH04)
+
+sstv_05.pdf: $(CH05)
+
+sstv_06.pdf: $(CH06)
+
+sstv_07.pdf: $(CH07)
+
+sstv_08.pdf: $(CH08)
+
+sstv_09.pdf: $(CH09)
+
+sstv_10.pdf: $(CH10)
+
+sstv_11.pdf: $(CH11)
+
+sstv_12.pdf: $(CH12)
+
+sstv_13.pdf: $(CH13)
+
+sstv-handbook.pdf: $(CH01) $(CH02) $(CH03) $(CH04) \
+                   $(CH05) $(CH06) $(CH07) $(CH08) \
+                   $(CH09) $(CH10) $(CH11) $(CH12) \
+                   $(CH13)
+
 # File transfering to web-site
-#
-USERNAME = bruxy
-SITE     = www.rado1.sk
-INPUT_DIR = $(shell pwd)/*
-DIR      = /home/bruxy/book_backup/
-EXCLUDE  = --exclude 'Makefile'
-OPTIONS  = --verbose --no-perms --delete --stats --progress --recursive -z -e ssh --inplace --partial --times $(EXCLUDE)
+# ----------------------------
 
-backup: 
-	rsync $(OPTIONS) $(INPUT_DIR) $(USERNAME)@$(SITE):$(DIR)
+USERNAME  = bruxy-aws
+SITE      = sstv-handbook.com
+FILE_LIST = $(shell pwd)/sstv*.pdf
+DEST_DIR  = /home/$(USERNAME)/websites/$(SITE)/download/
+OPTIONS   = --verbose --no-perms --stats \
+            --progress --recursive -z -e ssh --inplace --partial --times
+
+upload: publish
+
+publish:
+	rsync $(OPTIONS) $(FILE_LIST) $(USERNAME)@$(SITE):$(DEST_DIR)
 
 clean:
 	@rm -f *.aux *.bbl *.blg *.log *-mpgraph.mp *.top *.tmp *.tuc *.tui *.tuo
 
 veryclean: clean
-	@rm -f *.pdf
+	@rm -f sstv*.pdf
