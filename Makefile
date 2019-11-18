@@ -15,7 +15,7 @@
 # ConTeXt URL: https://wiki.contextgarden.net/ConTeXt_Standalone
 
 .SUFFIXES: .pdf .ctex
-.PHONY: all clean backup veryclean upload publish
+.PHONY: all book clean backup veryclean upload publish
 
 # Implicit rule for .pdf creation:
 %.pdf: %.ctex
@@ -23,6 +23,7 @@
 
 # List of files for each chapter
 # ------------------------------
+CHAPTERS=$(wildcard sstv_*.ctex)
 
 CH01 = sstv/uvod.ctex
 
@@ -67,7 +68,7 @@ CH12 = fax/stations.ctex \
 
 CH13 = ostatni/pcgfx.ctex
 
-all: sstv_*.pdf
+all: $(CHAPTERS:.ctex=.pdf)
 
 book: sstv-handbook.pdf
 
