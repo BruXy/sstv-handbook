@@ -1,96 +1,109 @@
+
 \chapter{Slow-scan television}
 
-{\em Slow-scan television (SSTV)}  is a mode of communication
-designed for image transfer. Because SSTV is a narrowband mode, it can
-be transmitted via voice channels with a standard SSB transceiver 
-on all radio amateur frequency bands. World-wide communication
-is also possible during good conditions on high frequency bands.
+{\em Slow-scan television (SSTV)} is a mode of communication
+designed for image transfer. Because SSTV is a narrowband mode,
+it can be transmitted via voice channels with a standard SSB
+transceiver on all radio amateur frequency bands. Worldwide
+communication is also possible during good conditions on high
+frequency bands.
 
 \section{The beginnings}
 
-In 1957 a student at the University of Kentucky, Copthorne \uv{Cop}
-Macdonalds, WA2BCW (now VY2CM) found an article about a device developed~by Bell
-laboratories for image transmission via telephone lines. The communication
-system fascinated the ham radio enthusiast because it needed a bandwidth as narrow as that of 
-voice broadcast and could be transfered by regular ham radio transmitters . 
+In 1957 a student at the University of Kentucky, Copthorne
+\uv{Cop} Macdonalds (*1936~-- \dagger{}2011), WA2BCW (later
+VY2CM) found an article about a device developed~by Bell
+laboratories for image transmission via telephone lines. The
+communication system fascinated the ham radio enthusiast because
+it needed a bandwidth as narrow as that of voice broadcast and
+could be transferred by regular ham radio transmitters.
 
-Another image mode the radio fax (facsimile) was available then, but it required a long duration
-(about 20 minutes) for a high resolution image transfer.
-Such a duration length could not provide an impression of time consistency during a QSO and it
-also needed an intricate mechanical printer and electrosensitive paper. It was
-necessary to invent something else.
+Another image mode the radio fax (facsimile) was available then,
+but it required a long duration (about 20 minutes) for a
+high-resolution image transfer. Such a duration length could not
+provide an impression of time consistency during a QSO and it
+also needed an intricate mechanical printer and electrosensitive
+paper. It was necessary to invent something else.
 
-There was an idea to transfer images coded into audio signals and
-display them on long persistence displays (CRTs used in radars or
-slow-scan oscilloscopes). 
+There was an idea to transfer images coded into audio signals
+and display them on long persistence displays (CRTs used in
+radars or slow-scan oscilloscopes).
 
 Then Copthorne started to work on how to transfer images via
-radio waves with a common ham radio transceiver. Within six months he
-carried out many experiments with amplitude and frequency modulation, 
-and it resulted in the design of slow-scan television. During the next
-six months he created an SSTV image scanner, so practical experiments
-could be done on the ham bands. The first television image crossed the
-Atlantic on the 20\high{th} of December 1959.
-        
+radio waves with a common ham radio transceiver. Within six
+months he carried out many experiments with amplitude and
+frequency modulation, and it resulted in the design of slow-scan
+television. During the next six months he created an SSTV image
+scanner, so practical experiments could be done on the ham
+bands. The first television image crossed the Atlantic on the
+20\high{th} of December 1959.
+
 \placefigure[][]{Early slow-scan television images.}
 \startcombination[2*1]
-		{\externalfigure[sstv/obr/obrazek1.png][width=0.4\makeupwidth]}{The first image that crossed the Atlantic, received by John Plowman G3AST.}
-		{\externalfigure[sstv/obr/copthorn.png][width=0.4\makeupwidth]}{Copthorne Macdonald's broadcast.}
+    {\externalfigure[sstv/obr/obrazek1.png][width=0.4\makeupwidth]}{The first image that crossed the Atlantic, received by John Plowman G3AST.}
+    {\externalfigure[sstv/obr/copthorn.png][width=0.4\makeupwidth]}{Copthorne Macdonald's broadcast.}
 \stopcombination
-	
-During the next ten years Copthorne and a group of amateurs worked on SSTV
-improvements, and they created the basic standard for SSTV and developed a
-sampling camera.
 
-Their work was completed in 1968 when the FCC (Federal Communications
-Commission) formally authorized SSTV operations.
+During the next ten years, Copthorne and a group of amateurs
+worked on SSTV improvements and they created the basic standard
+for SSTV and developed a sampling camera.
 
-A few months later ham radio magazines published the first articles about
-the new communication mode. It led to a huge interest by ham operators
-and a real SSTV boom.
+Their work was completed in 1968 when the FCC (Federal
+Communications Commission) formally authorized SSTV operations.
+
+A few months later ham radio magazines published the first
+articles about the new communication mode. It led to a huge
+interest by ham operators and a real SSTV boom.
 
 \section{Image transmission}
 
 The basic idea of SSTV is to transfer television images with the
-standard transceiver. However, a television broadcast requires a large
-bandwidth. The reduction of the television signal is achieved by lowering
-of horizontal (row) and vertical (image) scans, which must be reduced
-to a minimal frequency. This means that a typical 3MHz signal of black
-and white television must be reduced to 3\,kHz~-- the reduction of
-bandwidth is around 1000\,:\,1. Nowadays the bandwidth reduction is
-bigger, because color image needs approx. 6\,MHz. Therefore, only static images
-with lower resolution can be transfered due to the significant bandwidth
-reduction.
+standard transceiver. However, a television broadcast requires a
+large bandwidth. The reduction of the television signal is
+achieved by lowering of horizontal (row) and vertical (image)
+scans, which must be reduced to a minimal frequency. This means
+that a typical 3MHz signal of black and white television must be
+reduced to 3\,kHz~-- the reduction of bandwidth is around
+1000\,:\,1. Nowadays the bandwidth reduction is bigger because
+the color image needs approx. 6\,MHz. Therefore, only static
+images with lower resolution can be transferred due to the
+significant bandwidth reduction.
 
-During experiments, it was found that an image was visible for about 8 seconds on 
-a~long-persistent CRT with P7 phosphor. So after reception of the last
-scan-line, the first is still visible, but in a while~-- the image slowly
-disappeares. For the best impression, it was necessary to view an SSTV
-monitor in a darkened room. Usually several same images were transmitted
-in a sequence. Each consequent image slowly redrew the original which was still visible
-on the phosphor. So it was possible to display images for a longer time or to
-record it on a tape for later playback.
+During experiments, it was found that an image was visible for
+about 8 seconds on a~long-persistent CRT with P7 phosphor. So
+after reception of the last scan-line, the first is still
+visible, but in a while~-- the image slowly disappears. For the
+best impression, it was necessary to view an SSTV monitor in a
+darkened room. Usually, several same images were transmitted in
+a sequence. Each consequent image slowly redrew the original
+which was still visible on the phosphor. So it was possible to
+display images for a longer time or to record it on a tape for
+later playback.
 
-It was found that the ideal time for the correct detection of line synchronization pulses
- by electronic circuits is 5\,ms and for image (vertical) synchronization it is 30\,ms.
- Vertical synchronization initiates the automatic start up of the image display on the CRT.
+It was found that the ideal time for the correct detection of
+line synchronization pulses by electronic circuits is 5\,ms and
+for image (vertical) synchronization it is 30\,ms. Vertical
+synchronization initiates the automatic start-up of the image
+display on the CRT.
 
-The synchronization frequency for scan-lines and frames was derived from
-the electric mains frequency. For horizontal scan  50\,Hz
-divided by three~-- 16.6\,Hz is used. And for vertical scan
-$1/7.2\,\rm{s}=0.1388$\,Hz is used, this is the mains frequency divided by 360 
-(3$\times$ number of lines 120). The parameters are derived in the same
-way for countries with 60\,Hz mains.
+The synchronization frequency for scan-lines and frames was
+derived from the electric mains frequency. For horizontal scan
+50\,Hz divided by three~-- 16.6\,Hz is used. And for vertical
+scan $1/7.2\,\rm{s}=0.1388$\,Hz is used, this is the mains
+frequency divided by 360 (3$\times$ number of lines 120). The
+parameters are derived in the same way for countries with 60\,Hz
+mains.
 
-The video signal band was chosen in the range  from 1500\,Hz for black
-up to 2300\,Hz for white. Sync pulses  have a frequency of 1200\,Hz and
-because they are \uv{blacker than black} then they do not affect 
-the image information.
+The video signal band was chosen in the range from 1500\,Hz for
+black up to 2300\,Hz for white. Sync pulses have a frequency of
+1200\,Hz and because they are \uv{blacker than black} then they
+do not affect the image information.
 
-All frequency components of SSTV are inside the low-frequency band and
-it is possible to transfer them via voice channels.
+All frequency components of SSTV are inside the low-frequency
+band and it is possible to transfer them via voice channels.
 
-Other SSTV modes came out from this original standard and in most 
-cases; they differ only in scan speed and in the addition of color
-transmission.
- 
+Other SSTV modes came out from this original standard and in
+most cases; they differ only in scan speed and in the addition
+of color transmission.
+
+% vim: tw=64
