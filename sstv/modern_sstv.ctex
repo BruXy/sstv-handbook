@@ -1,65 +1,74 @@
 \chapter{Modern SSTV features}
 
-A milestone between methods of old and modern SSTV image transmission is
-without doubt the usage of semiconductor memory chips. The creation of the
-first converters between fast and slow-scan television signals, was credited to
-the existence of permanent image storage in memory. Consequently, image
-transmission could be improved because the usage of long persistence CRTs,
-which had been a  major constraining fact, was now eliminated. Due to it some
-new formats with longer transmission time were developed. They brought more
-quality to black and white transmission and helped to develop colour image
+A milestone between methods of old and modern SSTV image
+transmission is, without doubt, the usage of semiconductor memory
+chips. The creation of the first converters between fast and
+slow-scan television signals was credited to the existence of
+permanent image storage in memory. Consequently, image
+transmission could be improved because the usage of long
+persistence CRTs, which had been a  major constraining fact, was
+now eliminated. Thanks to it, some new formats with longer
+transmission time were developed. They brought more quality to
+black and white transmission and helped to develop colour image
 transmission.
 
 
-There was a trend in the design of new formats that created several modes in
-each system. There were modes with faster transmission and lower resolution and
-on the other hand, modes for the transfer of higher quality images but longer
-time length. There is a possibility to change between  them according  to the
-actual band condition.
+There was a trend in the design of new formats that created
+several modes in each system. There were modes with faster
+transmission and lower resolution and on the other hand, modes
+for the transfer of higher quality images but longer time
+length. There is a possibility to change between them according
+to the actual band condition.
 
-The early phases of development were influenced by two companies~-- the
-American {\em Robot Research Inc.} and the German {\em Wraase Electronic\/} led
-by radio amateur Volker Wraase, DL2RZ. Each of them introduced an SSTV
-converter which used each company's own transmission system. The systems are
-different in the usage of colour coding, scan line formats and synchronization
-methods. Their converters provide several modes.  {\em Mode} denotes a format
-of image transmission, its resolution and transfer speed.
+The early phases of development were influenced by two
+companies~-- the American {\em Robot Research Inc.} and the
+German {\em Wraase Electronic\/} led by radio amateur Volker
+Wraase, DL2RZ. Each of them introduced an SSTV converter that
+used each company's own transmission system. The systems are
+different in the usage of colour coding, scan line formats, and
+synchronization methods. Their converters provide several modes.
+{\em Mode} denotes a format of image transmission, its
+resolution, and transfer speed.
 
-As often happens, the professional device did not fully  satisfy ham radio
-users. So new systems with more modes were implemented into the converter
-firmware. And they were  also re-implemented into other devices to ensure
-compatibility. Sometimes a new genuine system was designed to overcome
-imperfections found in the classic predecessors.
+As often happens, the professional device did not fully satisfy
+ham radio users. So new systems with more modes were implemented
+into the converter firmware. And they were also re-implemented
+into other devices to ensure compatibility. Sometimes a new
+genuine system was designed to overcome imperfections found in
+the classic predecessors.
 
-The number of those systems has grown unbelievably. Recently they were new
-systems created for better utilization of modern computer potentials. Modern
-personal computers with the necessary equipment, are full successors of SSTV
-converters. The advantage of computers is especially bigger memory and better
+The number of those systems has grown unbelievably. Recently
+they were new systems created for better utilization of modern
+computer potentials. Modern personal computers with the
+necessary equipment, are full successors of SSTV converters. The
+advantage of computers is especially bigger memory and better
 image resolution.
 
-If we were to count the number of all SSTV modes, we would find approximately
-70! So it is possible to transfer SSTV images via seventy different modes,
-which are mutually different in transmission time, resolution, colour coding,
-etc. The vast majority of them are absolutely unique and incompatible\ldots
+If we were to count the number of all SSTV modes, we would find
+approximately 70! So it is possible to transfer SSTV images via
+seventy different modes, which are mutually different in
+transmission time, resolution, colour coding, etc. The vast
+majority of them are absolutely unique and incompatible\ldots
 
-You might be a  little scared by the previous paragraphs, but let me reassure
-you that only a few modes are actually used.
+You might be a little scared by the previous paragraphs, but let
+me reassure you that only a few modes are actually used.
 
-European amateurs widely used the SSTV mode called~{\em Martin M1}, but in
-recent times other modes; {\em Martin M2} and {\em Scottie S2} are also in use.
-A special mode used {\em Scottie DX}; is characterized by very high image
-quality. And the mode {\em Robot 36 Color} is undertaken in space
-communication. 
+European amateurs widely used the SSTV mode called~{\em Martin
+M1}, but in recent times other modes; {\em Martin M2} and {\em
+Scottie S2} are also in use. A special mode used {\em Scottie
+DX}; is characterized by the very high image quality. And the
+mode {\em Robot 36 Color} is undertaken in space communication.
 
-Fortunately, all modern converters and computer software are able to operate
-with these popular modes, so the problem that two stations can not establish
-the QSO should not occur.
+Fortunately, all modern converters and computer software are
+able to operate with these popular modes, so the problem that
+two stations can not establish the QSO should not occur.
 
-A digital vertical synchronization for automatic mode selection will be
-described shortly, because every mode uses a digital header for its
-identification. Thanks to this any SSTV device can automatically switch to the
-correct mode and begin reception. Computer software also supports mode
-detection by measuring the elapsed time between two successive sync. impulses
+A digital vertical synchronization for automatic mode selection
+will be described shortly because every mode uses a digital
+header for its identification. Thanks to this any SSTV device
+can automatically switch to the correct mode and begin
+reception. Computer software also supports mode detection by
+measuring the elapsed time between two successive sync. impulses
 of image lines.
 
 More details will be described in the following chapters.
@@ -68,91 +77,98 @@ More details will be described in the following chapters.
 
 \subsection[bandwidth]{Bandwidth}
 
-Different communication channels, whether wired or wireless, have several
-characteristics, which define their behaviour in the transfer of effective
-signals. These include for example {\em attenuation}. Attenuation defines how
-much the communication channel reduces a transferred signal. Another important
-characteristic is the {\em bias}, which refers to the various distortions that
-occurs due to imperfections within the communication path.
+Different communication channels, whether wired or wireless,
+have several characteristics, which define their behaviour in
+the transfer of effective signals. These include for example
+{\em attenuation}. Attenuation defines how much the
+communication channel reduces a transferred signal. Another
+important characteristic is the {\em bias}, which refers to the
+various distortions that occur due to imperfections within the
+communication path.
 
-There are several negative influences, that affect signal transfer within a
-communication path. Their effects are not negligible. The intensity of this
-effect depends also on the frequency of signal. Generally, it is always
-possible to identify a range of frequencies that a particular transmission path
-can transfer well and outside this frequency range the transmission is too
-poor.
+There are several negative influences, that affect signal
+transfer within a communication path. Their effects are not
+negligible. The intensity of this effect depends also on the
+frequency of the signal. Generally, it is always possible to
+identify a range of frequencies that a particular transmission
+path can transfer well and outside this frequency range the
+transmission is too poor.
 
-The signal bandwidth does not depend only on the frequency range used for
-modulation, in our case 1,500\,Hz to 2,300\,Hz, but also on the signal
-spectrum.
+The signal bandwidth does not depend only on the frequency range
+used for modulation, in our case 1,500\,Hz to 2,300\,Hz, but
+also on the signal spectrum.
 
-{\em Fourier analysis} is used to determine the spectrum bandwidth. The
-analysis can express any waveform in the form of the sum of a large number of
-sine waves~-- harmonic components.
+{\em Fourier analysis} is used to determine the spectrum
+bandwidth. The analysis can express any waveform in the form of
+the sum of a large number of sine waves~-- harmonic components.
 
-Limited bandwidth has the effect that the harmonic components lying inside this
-band will be transferred more or less without blemish and other harmonic
-components pass with a huge distortion or not at all (more
-in~\single{\in{chapter}[chap7::sampling], \at{page}[chap7::sampling]}%
-{\in{chapter}[sampling], \at{page}[sampling]}).
+Limited bandwidth has the effect that the harmonic components
+lying inside this band will be transferred more or less without
+blemish and other harmonic components pass with a huge
+distortion or not at all (more
+in~\single{\in{chapter}[chap7::sampling],
+\at{page}[chap7::sampling]}{\in{chapter}[sampling],
+\at{page}[sampling]}).
 
+{\em Bandwidth} can be seen as a characteristic of the
+transmission path given by the range of the signal spectrum.
 
-{\em Bandwidth} can be seen as a characteristic of the transmission path given
-by the range of the signal spectrum.
-
-The basic rule for the required bandwidth is called {\em Nyquist rate}. Its
-definition is that optimal bandwidth equals a half of modulation speed.  It is
-true that the necessary bandwidth increases with the amount of transferred
-information per time unit.
+The basic rule for the required bandwidth is called {\em Nyquist
+rate}. Its definition is that optimal bandwidth equals half of
+modulation speed.  It is true that the necessary bandwidth
+increases with the amount of transferred information per time
+unit.
 
 \subsection{Modulation techniques of analog SSTV}
 
-An SSTV broadcast is usually carried out using single-sideband (SSB)
-amplitude modulation with a common ham radio transceiver. Frequencies
-above 2,500\,Hz are strongly suppressed, so the frequency of white
-colour, the maximal level of an SSTV signal, was chosen at 2,300\,Hz.
+An SSTV broadcast is usually carried out using single-sideband
+(SSB) amplitude modulation with a common ham radio transceiver.
+Frequencies above 2,500\,Hz are strongly suppressed, so the
+frequency of white colour, the maximal level of an SSTV signal,
+was chosen at 2,300\,Hz.
 
-SSTV signals are transmitted via frequency modulation of an audio signal.
-To avoid any phase shift and drift (which both have negative impact on
-picture quality), the spectrum of video signal is modulated on the
-auxiliary carrier frequency 1900\,Hz~-- {\em sub-carrier}. This
-modulation method is called {\em Sub-carrier frequency modulation
-(SFCM)}.
+SSTV signals are transmitted via frequency modulation of an
+audio signal. To avoid any phase shift and drift (which both
+have a negative impact on picture quality), the spectrum of the
+video signal is modulated on the auxiliary carrier frequency
+1900\,Hz~-- {\em sub-carrier}. This modulation method is called
+{\em Sub-carrier frequency modulation (SFCM)}.
 
-The frequency of video signal varies from black by gray shades to
-white. The bandwidth needed for SSTV transmission varies in the range of 1.0
-to 3.2\,kHz and depends on the SSTV mode, transmission speed and also
-on image content, see \in{fig.}[pic:fft].
+The frequency of video signals varies from black by gray shades
+to white. The bandwidth needed for SSTV transmission varies in
+the range of 1.0 to 3.2\,kHz and depends on the SSTV mode,
+transmission speed and also on image content, see
+\in{fig.}[pic:fft].
 
 Cheap modems (based on Hamcomm) do not use perfect continuous
 harmonic signals, but also create the quantized signal. Step
-changes between quantization levels require wider bandwidth, so 
+changes between quantization levels require wider bandwidth, so
 some image details can get lost.
 
 \placefigure[][pic:fft]{The SSTV frequency spectre for two various images transferred in Martin\,M1 mode.}
-	{
-		\externalfigure[sstv/obr/sstv_spectrum.pdf]
-	}
- 
-The emission classification code  for the SSTV mode is {\em J3F},  which means:
+{
+    \externalfigure[sstv/obr/sstv_spectrum.pdf]
+}
+
+The emission classification code  for the SSTV mode is {\em
+J3F}, which means:
 
 \startitemize
-\item {\em J}~-- Carrier modulation: Single-sideband with suppressed carrier. 
-\item {\em 3}~-- Nature of modulating signal: One channel containing analogue information.
+\item {\em J}~-- Carrier modulation: Single-sideband with a suppressed carrier.
+\item {\em 3}~-- Nature of modulating signal: One channel containing analog information.
 \item {\em F}~-- Detail of signal: television signals.
 \stopitemize
 
-In the case of an SSTV transmission via a frequency modulated (FM) channel, 
-emission is classified as {\em F3F} and {\em A3F} for amplitude modulation 
-(AM) with both side bands. 
+In the case of an SSTV transmission via a frequency modulated
+(FM) channel, the emission is classified as {\em F3F} and {\em
+A3F} for amplitude modulation (AM) with both sidebands.
 
 \section[imgresol]{Image resolution}
 
-
 \placefigure[][pic:araresol]{Image quality depends on resolution.}{
 \startcombination[2*1]
-		{\externalfigure[sstv/obr/ara50x38][width=.4\makeupwidth]}{50$\times$38}
-		{\externalfigure[sstv/obr/ara120x90.png][width=.4\makeupwidth]}{120$\times$90}
+    {\externalfigure[sstv/obr/ara50x38][width=.4\makeupwidth]}{50$\times$38}
+    {\externalfigure[sstv/obr/ara120x90.png][width=.4\makeupwidth]}{120$\times$90}
 \stopcombination
 }
 
@@ -162,61 +178,68 @@ resolution has two parameters: {\em horizontal resolution}~-- the number
 of image columns~$\times$ number of image lines~-- {\em the vertical
 resolution}.
 
-In television technology the more important parameter is the
-vertical resolution (number of lines) and it is defined by the selection of the SSTV mode.
- To get the horizontal resolution is more complicated.
+In analog television technology, the more important parameter is
+the vertical resolution (number of lines) and it is defined by
+the selection of the SSTV mode. To get the horizontal resolution
+is more complicated.
 
-As has been described in previous text, the image is broadcast through the
-SSB channel on short waves and the maximal bandwidth is limited.
+As has been described in the previous text, the image is
+broadcast through the SSB channel on short waves and the maximal
+bandwidth is limited.
 
-The SSTV is an {\em analog} mode and  cannot transfer images without 
-loss. The image is not exactly the same on the reception side as on the transmission
-side. Even if the communication channel is
-without any interference or noise, the image is still distorted due to transmission speed and
-limited bandwidth . The faster the transmission speed is, the greater the distortion result.
- Therefore it is very difficult to say
-what the horizontal resolution of an SSTV image is.
+The SSTV is an {\em analog} mode and cannot transfer images
+without loss. The image is not exactly the same on the reception
+side as on the transmission side. Even if the communication
+channel is without any interference or noise, the image is still
+distorted due to transmission speed and limited bandwidth. The
+faster the transmission speed is, the greater the distortion
+result. Therefore it is very difficult to say what the
+horizontal resolution of an SSTV image is.
 
 Most of the modes carry images with 240 lines and the image is
-displayed in a 4\,:\,3 aspect ratio on a screen. We can then say that the
-number of columns is $240\times4/3=320$.  This value then corresponds
-to a theoretical resolution, but not a {\em real} image resolution.
+displayed in a 4\,:\,3 aspect ratio on a screen. We can then say
+that the number of columns is $240\times4/3=320$.  This value
+then corresponds to a theoretical resolution, but not a {\em
+real} image resolution.
 
-The test chart (\in{fig.}[pic:resolution]) is used to qualify the
-horizontal resolution of images. The resolution pattern contains
-alternating stripes of black and white in various densities from very
-rough to fine. There is a comparison of this image with normal
-photography in \in{fig.}[pic:fft].
+The test chart (\in{fig.}[pic:resolution]) is used to qualify
+the horizontal resolution of images. The resolution pattern
+contains alternating stripes of black and white in various
+densities from very rough to fine. There is a comparison of this
+image with normal photography in \in{fig.}[pic:fft].
 
 \placefigure[][pic:resolution]{Horizontal resolution comparison for several SSTV modes.}
 {
-	\startcombination[2*6]
-	{\externalfigure[sstv/obr/resol/original.png][width=.4\makeupwidth]}{}	{Test pattern original}{}
-	{\externalfigure[sstv/obr/resol/m2.png][width=.4\makeupwidth]}{} {Martin M2\hfill ($\sim$220\,$\mu$s)}{} 
-	{\externalfigure[sstv/obr/resol/r36.png][width=.4\makeupwidth]}{} {Robot	36 Color\hfill ($\sim$280\,$\mu$s)}{}
-	{\externalfigure[sstv/obr/resol/m1.png][width=.4\makeupwidth]}{} {Martin	M1\hfill ($\sim$450\,$\mu$s)}{}
-	{\externalfigure[sstv/obr/resol/mp115.png][width=.4\makeupwidth]}{} {MP115\hfill ($\sim$680\,$\mu$s)}{}
-	{\externalfigure[sstv/obr/resol/dx.png][width=.4\makeupwidth]}{} {Scottie DX\hfill ($\sim$980\,$\mu$s)}{}
-	\stopcombination
+    \startcombination[2*6]
+    {\externalfigure[sstv/obr/resol/original.png][width=.4\makeupwidth]}{}    {Test pattern original}{}
+    {\externalfigure[sstv/obr/resol/m2.png][width=.4\makeupwidth]}{} {Martin M2\hfill ($\sim$220\,$\mu$s)}{}
+    {\externalfigure[sstv/obr/resol/r36.png][width=.4\makeupwidth]}{} {Robot    36 Color\hfill ($\sim$280\,$\mu$s)}{}
+    {\externalfigure[sstv/obr/resol/m1.png][width=.4\makeupwidth]}{} {Martin    M1\hfill ($\sim$450\,$\mu$s)}{}
+    {\externalfigure[sstv/obr/resol/mp115.png][width=.4\makeupwidth]}{} {MP115\hfill ($\sim$680\,$\mu$s)}{}
+    {\externalfigure[sstv/obr/resol/dx.png][width=.4\makeupwidth]}{} {Scottie DX\hfill ($\sim$980\,$\mu$s)}{}
+    \stopcombination
 
 }
 
-All SSTV modes in \in{figure}[pic:resolution] have 320 
-columns. But as we can see, not all can transfer the image
-in actual quality. The note in brackets describes the approximate time needed
-for the transfer of one pixel. While with the Martin M2, we can hardly
-distinguish  the second fine grid, the M1 mode with double transmission
-time can transfer it without problems, but its finest pattern is distorted.
-Compare it to the real picture in~\in{fig.}[pic:m1vsm2]. The last two modes listed have
- longer times of transmission and can transfer the finest details.
-Unfortunately, it is hardly compensated for by the slow speed of transmission.
+All SSTV modes in \in{figure}[pic:resolution] have 320 columns.
+But as we can see, not all can transfer the image in actual
+quality. The note in brackets describes the approximate time
+needed for the transfer of one pixel. While with the Martin M2,
+we can hardly distinguish the second fine grid, the M1 mode
+with double transmission time can transfer it without problems,
+but its finest pattern is distorted. Compare it to the real
+picture in~\in{fig.}[pic:m1vsm2]. The last two modes listed have
+longer times of transmission and can transfer the finest
+details. Unfortunately, it is hardly compensated for by the slow
+speed of transmission.
 
 \placefigure[][pic:m1vsm2]{The comparison of two modes in real
 conditions of 14\,MHz band.}
 {
-	\startcombination[2*1]
-	{\externalfigure[sstv/obr/rozliseni_m1.png][width=.5\makeupwidth]}{Martin M1}
-	{\externalfigure[sstv/obr/rozliseni_m2.png][width=.5\makeupwidth]}{Martin M2}
-	\stopcombination
+    \startcombination[2*1]
+    {\externalfigure[sstv/obr/rozliseni_m1.png][width=.5\makeupwidth]}{Martin M1}
+    {\externalfigure[sstv/obr/rozliseni_m2.png][width=.5\makeupwidth]}{Martin M2}
+    \stopcombination
 }
 
+% vim: tw=64

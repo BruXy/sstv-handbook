@@ -289,10 +289,10 @@ This chapter is part of the book {\em Image Communication on Short Waves}.
   \insertartauthors{}{: } {\insertthekey{}{,}{}}%
   \insertarttitle   {\bgroup\it}{.\/ \egroup} {}%
   \insertjournal    {\space\bgroup}{\unskip\egroup}{}%
-  \insertvolume     {,\space vol.~} 
+  \insertvolume     {,\space vol.~}
         {\insertissue {,\space no.~} {} {}} {}%
   \insertpages      {,\space pp.\space}       {} {}%
-  \insertpubyear    {,\space\insertmonth{}{\space}{}} 
+  \insertpubyear    {,\space\insertmonth{}{\space}{}}
                                          {} {}%
   \insertnote       {.\space}            {.} {.}
 }
@@ -300,27 +300,23 @@ This chapter is part of the book {\em Image Communication on Short Waves}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \defineframedtext[warning][%
-	strut=yes,
-     offset=0.75em,
-	rulethickness=2pt,
-     background=color,
-     backgroundcolor=yellow,
-     width=\makeupwidth,
+    trut=yes,
+    offset=0.75em,
+    ulethickness=2pt,
+    background=color,
+    backgroundcolor=yellow,
+    width=\makeupwidth,
     align=right,
     location=middle,
 ]
 
 %\def\singlefile{0}
 
-\def\single#1#2 %
-{\if1\singlefile
-	#1
-   \else
-	#2
-  \fi}
+\def\single#1#2{\if1\singlefile{#1}\else{#2}\fi}
 
 % References for external documents (if each chapter has own file)
 \useexternaldocument[chap7][sstv_07]
 \useexternaldocument[chap5][sstv_05]
+\useexternaldocument[chap6][sstv_06]
 \useexternaldocument[chap11][sstv_11]
 
