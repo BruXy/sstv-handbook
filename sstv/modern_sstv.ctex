@@ -24,7 +24,7 @@ The early phases of development were influenced by two
 companies~-- the American {\em Robot Research Inc.} and the
 German {\em Wraase Electronic\/} led by radio amateur Volker
 Wraase, DL2RZ. Each of them introduced an SSTV converter that
-used each company's own transmission system. The systems are
+used each company's transmission system. The systems are
 different in the usage of colour coding, scan line formats, and
 synchronization methods. Their converters provide several modes.
 {\em Mode} denotes a format of image transmission, its
@@ -48,7 +48,7 @@ If we were to count the number of all SSTV modes, we would find
 approximately 70! So it is possible to transfer SSTV images via
 seventy different modes, which are mutually different in
 transmission time, resolution, colour coding, etc. The vast
-majority of them are absolutely unique and incompatible\ldots
+majority of them are unique and incompatible\ldots
 
 You might be a little scared by the previous paragraphs, but let
 me reassure you that only a few modes are actually used.
@@ -59,9 +59,9 @@ Scottie S2} are also in use. A special mode used {\em Scottie
 DX}; is characterized by the very high image quality. And the
 mode {\em Robot 36 Color} is undertaken in space communication.
 
-Fortunately, all modern converters and computer software are
-able to operate with these popular modes, so the problem that
-two stations can not establish the QSO should not occur.
+Fortunately, all modern converters and computer software can
+operate with these popular modes, so the problem that two
+stations can not establish the QSO should not occur.
 
 A digital vertical synchronization for automatic mode selection
 will be described shortly because every mode uses a digital
@@ -115,9 +115,8 @@ transmission path given by the range of the signal spectrum.
 
 The basic rule for the required bandwidth is called {\em Nyquist
 rate}. Its definition is that optimal bandwidth equals half of
-modulation speed.  It is true that the necessary bandwidth
-increases with the amount of transferred information per time
-unit.
+the modulation speed. The necessary bandwidth indeed increases
+with the amount of transferred information per time unit.
 
 \subsection{Modulation techniques of analog SSTV}
 
