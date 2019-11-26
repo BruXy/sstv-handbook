@@ -9,7 +9,7 @@ transmission could be improved because the usage of long
 persistence CRTs, which had been a  major constraining fact, was
 now eliminated. Thanks to it, some new formats with longer
 transmission time were developed. They brought more quality to
-black and white transmission and helped to develop colour image
+black and white transmission and helped to develop color image
 transmission.
 
 
@@ -25,7 +25,7 @@ companies~-- the American {\em Robot Research Inc.} and the
 German {\em Wraase Electronic\/} led by radio amateur Volker
 Wraase, DL2RZ. Each of them introduced an SSTV converter that
 used each company's transmission system. The systems are
-different in the usage of colour coding, scan line formats, and
+different in the usage of color coding, scan line formats, and
 synchronization methods. Their converters provide several modes.
 {\em Mode} denotes a format of image transmission, its
 resolution, and transfer speed.
@@ -47,7 +47,7 @@ image resolution.
 If we were to count the number of all SSTV modes, we would find
 approximately 70! So it is possible to transfer SSTV images via
 seventy different modes, which are mutually different in
-transmission time, resolution, colour coding, etc. The vast
+transmission time, resolution, color coding, etc. The vast
 majority of them are unique and incompatible\ldots
 
 You might be a little scared by the previous paragraphs, but let
@@ -123,7 +123,7 @@ with the amount of transferred information per time unit.
 An SSTV broadcast is usually carried out using single-sideband
 (SSB) amplitude modulation with a common ham radio transceiver.
 Frequencies above 2,500\,Hz are strongly suppressed, so the
-frequency of white colour, the maximal level of an SSTV signal,
+frequency of white color, the maximal level of an SSTV signal,
 was chosen at 2,300\,Hz.
 
 SSTV signals are transmitted via frequency modulation of an
